@@ -1,0 +1,3411 @@
+The Project Gutenberg eBook, Rudolph Eucken, by Abel J. Jones
+
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+
+
+
+
+Title: Rudolph Eucken
+
+Author: Abel J. Jones
+
+Release Date: December 15, 2004  [eBook #14357]
+
+Language: English
+
+
+***START OF THE PROJECT GUTENBERG EBOOK RUDOLPH EUCKEN***
+
+
+E-text prepared by David Garcia, Karina Aleksandrova, and the Project
+Gutenberg Online Distributed Proofreading Team
+
+
+
+RUDOLF EUCKEN
+
+A Philosophy of Life
+
+by
+
+ABEL J. JONES, M.A., B.Sc., Ph.D.
+
+     Formerly Member of the University of Jena, Scholar of Clare
+     College, Cambridge, and Assistant Lecturer at the University
+     College, Cardiff
+
+London: T. C. & E. C. Jack
+67 Long Acre, W.C., and Edinburgh
+New York: Dodge Publishing Co.
+
+
+
+
+
+
+
+[Illustration]
+
+
+
+
+PREFACE
+
+
+The name of Eucken has become a familiar one in philosophical and
+religious circles. Until recent years the reading of his books was
+confined to those possessing a knowledge of German, but of late several
+have been translated into the English language, and now the students of
+philosophy and religion are agog with accounts of a new philosopher who
+is at once a great ethical teacher and an optimistic prophet. There is
+no doubt that Eucken has a great message, and those who cannot find time
+to make a thorough study of his works should not fail to know something
+of the man and his teachings. The aim of this volume is to give a brief
+and clear account of his philosophical ideas, and to inspire the reader
+to study for himself Eucken's great works.
+
+Professor Rudolf Eucken was born in 1846, at Aurich in Frisia. He
+attended school in his native town, and then proceeded to study at the
+Universities of Göttingen and Berlin. In 1874 he was invited to the
+Professorship of Philosophy at the University of Jena, and here he has
+laboured for thirty-eight years; during this period he has been listened
+to and admired by many of the more advanced students of philosophy of
+all countries and continents.
+
+His earliest writings were historical in character, and consisted mainly
+of learned essays upon the classical and German philosophers.
+
+Following upon these appeared valuable studies in the history of
+philosophy, which brought out, too, to some extent, Eucken's own
+philosophical ideas.
+
+His latest works have been more definitely constructive. In _Life's
+Basis and Life's Ideal_, and _The Truth of Religion_, he gives
+respectively a full account of his philosophical system, and of his
+ideas concerning religion.
+
+Several smaller works contain his ideas in briefer and more popular
+form.
+
+As a lecturer he is charming and inspiring. He is not always easy to
+understand; his sentences are often long, florid, and complex.
+Sometimes, indeed, he is quite beyond the comprehension of his
+students--but when they do not understand, they admire, and feel they
+are in the presence of greatness. His writings contain many of the
+faults of his lectures. They are often laboured and obscure, diffuse and
+verbose.
+
+But these faults are minor in character, compared with the greatness of
+his work. There is no doubt that his is one of the noblest attempts ever
+made to solve the great question of life. Never was a philosophy more
+imbued with the spirit of battle against the evil and sordid, and with
+the desire to find in life the highest and greatest that can be found in
+it.
+
+I have to thank Professor Eucken for the inspiration of his lectures and
+books, various writers, translators, and friends for suggestions, and
+especially my wife, whose help in various ways has been invaluable.
+
+Passages are quoted from several of the works mentioned in the
+Bibliography, especially from Eucken's "The Truth of Religion," with the
+kind permission of Messrs. Williams & Norgate--the publishers.
+
+ABEL J. JONES.
+
+CARDIFF.
+
+
+
+
+CONTENTS
+
+
+CHAPTER
+
+   I. THE PROBLEM OF LIFE
+
+  II. HAS THE PROBLEM BEEN SOLVED?
+
+ III. ANOTHER SEARCH FOR TRUTH
+
+  IV. THE PAST, PRESENT, AND THE ETERNAL
+
+   V. THE "HIGH" AND THE "LOW"
+
+  VI. THE ASCENT TO FREEDOM AND PERSONALITY
+
+ VII. THE PERSONAL AND THE UNIVERSAL
+
+VIII. RELIGION: HISTORICAL AND ABSOLUTE
+
+  IX. CONCLUSION: CRITICISM AND APPRECIATION
+
+      BIBLIOGRAPHY
+
+      INDEX
+
+
+
+
+
+CHAPTER I
+
+THE PROBLEM OF LIFE
+
+
+Before we proceed to outline Eucken's philosophical position, it will be
+well if we can first be clear as to the special problem with which he
+concerns himself. Philosophers have at some time or other considered all
+the problems of heaven and earth to be within their province, especially
+the difficult problems for which a simple solution is impossible. Hence
+it is, perhaps, that philosophy has been in disrepute, especially in
+English-speaking countries, the study of the subject has been very
+largely limited to a small class of students, and the philosopher has
+been regarded as a dreamy, theorising, and unpractical individual.
+
+Many people, when they hear of Eucken, will put him out of mind as an
+ordinary member of a body of cranks. From Eucken's point of view this is
+the most unfortunate thing that can happen, for his message is not
+directed to a limited number of advanced students of philosophy, but is
+meant for all thinking members of the human race.
+
+The problem he endeavours to solve is far from being one of mere
+theoretical interest; on the contrary it has to do with matters of
+immediate practical concern to the life of the individual and of the
+community. To ignore him will be to fail to take account of one of the
+most rousing philosophies of modern times.
+
+The apathy that exists in regard to the subject of philosophy is not
+easy to explain. It is not that philosophising is only possible to the
+greatest intellects; it is indeed natural for the normal mind to do so.
+In a quiet hour, when the world with its rush and din leaves us to
+ourselves and the universe, we begin to ask ourselves "Why" and "How,"
+and then almost unconsciously we philosophise. Nothing is more natural
+to the human mind than to wonder, and to wonder is to begin to
+philosophise.
+
+Perhaps philosophers have been largely to blame for the indifference
+shown; their terms have often been needlessly difficult, their language
+obscure, and their ideas abstruse. Too often, too, their abstract
+speculations have caused them to ignore or forget the actual experience
+of mankind.
+
+Those who have quarrelled with philosophy for these or other reasons
+will do well to lay their prejudices aside when they start a study of
+Eucken, for though he has some of the faults of his class, he has many
+striking and exceptional excellences.
+
+Philosophers in general set out to solve the riddle of the universe.
+They differ in their statement of the problem, in the purpose of the
+attempt, and in their methods of attempting the solution. Some will
+wonder how this marvellous universe ever came into existence, and will
+consider the question of the existence of things to be the problem of
+philosophy. Others in observing the diversity of things in the universe
+wonder what is behind it all; they seek to go beyond mere appearances,
+and to investigate the nature of that behind the appearances, which they
+call the reality. In their attempts to solve one or both of these
+problems, thinkers are led to marvel how it is that we get to know
+things at all; they are tempted to investigate the possibility of
+knowledge, and are in this way side-tracked from the main problem.
+Others in their investigations are struck with amazement at the
+intricate organisation of the human mind; they leave the riddle of the
+universe to study the processes of human thought, and examine as far as
+they are able the phenomena of consciousness. Then thought itself claims
+the attention of other philosophers; they seek to find what are the laws
+of valid thought, what rules must be followed in order that through
+reasoning we may arrive at correct conclusions. Others become attracted
+to an investigation of the good in the universe, and their question
+changes from "What is?" to "What ought to be?" Others interest
+themselves in the problem of the beautiful, and endeavour to determine
+the essence of the beautiful and of its appreciation. In this way the
+subject of philosophy separates out into a number of branches. The study
+of the beautiful is called Æsthetics; of the good, Ethics; of the laws
+of thought, Logic; of the mind processes, Psychology; of the possibility
+of knowledge, the Theory of knowledge; while the deeper problems of the
+existence of things, of reality and unity in the universe, are generally
+included under Metaphysics.
+
+It need hardly be pointed out that all these branches are very closely
+related, and that a discussion of any one of them involves to some
+extent a reference to the others. One cannot, for example, attempt to
+solve the great question of reality without touching upon the
+possibility of knowledge, without some reference to the processes of the
+human mind, and the standards of the validity of thought, of the good,
+and of the beautiful.
+
+It is however essential, if one is to appreciate a philosopher, to
+understand clearly what his main problem is. Therein lies frequently the
+differences among philosophers--that is, in the special emphasis laid on
+one problem, and the attention to, or neglect of other aspects. To fail
+to be clear on this matter frequently means to misunderstand a
+philosopher.
+
+And it would seem that many critics have failed to appreciate the work
+of Eucken to the extent they should, because they have expected him to
+deal in detail with problems which it is not his intention to discuss,
+and have failed to appreciate what special problem it is that he
+attempts to solve.
+
+Eucken's special problem is that of the reality in the universe, of the
+unity there exists in the diversity of things. In so far as he makes
+this his problem, he is at one with other philosophers in investigating
+what may perhaps be considered to be the most profound problem that the
+human mind has ever conceived. The fact that distinguishes Eucken from a
+large number of other thinkers is that he starts where they leave off.
+At a rule, philosophers begin their investigation with a consideration
+of matter, and proceed by slow degrees to attempt to explain the reality
+at the basis of it. Some never get further, and dispense with the
+question of human life and thought as mere aspects or manifestations of
+the material world. But the problem of life is for Eucken the one
+problem--he seeks to find the reality beneath the superficialities of
+human existence, and he has little to say concerning the world of
+matter. And, after all, it is the problem of life that urgently calls
+for solution, for upon the solution that is accepted, the life of the
+individual is to a large extent based. It is, of course, very
+interesting to meditate and speculate upon the material world, its
+origin and evolution, but the question is very largely one of mere
+theoretical interest--a kind of game or puzzle for studious minds. It is
+the question of life itself that is ultimately of practical interest to
+every human soul. And this is the problem that Eucken would solve. Hence
+those who expect to find a closely reasoned philosophy on matter and its
+manifestations must look elsewhere, for Eucken has little for them.
+Eucken's philosophy is a philosophy of life, and he only touches
+incidentally those aspects of philosophy that are not immediately
+concerned with his special problem. He refuses to be allured from the
+main problem by subsidiary investigations, and perhaps rightly so, for
+one problem of such magnitude would seem to be enough for one human mind
+to attempt. Eucken is a philosopher who lays foundations and deals with
+broad outlines and principles; it must be left to his many disciples to
+fill in any gaps that exist on this account, by attempting to solve the
+subsidiary problems with which Eucken cannot for the present concern
+himself.
+
+If Eucken's problem differs fundamentally from that of most other
+philosophers, perhaps the purpose of his investigations is still a more
+striking characteristic. He is anxious to solve the riddle of the
+universe in order that there may be drawn from the solution an
+inspiration which shall help the human race to concentrate its energies
+upon the highest ideals of life. The desire to find a meaning which will
+explain, and at the same time infuse zest and gladness into every
+department of life has become a passion with him, and in finding that
+meaning, his great endeavour is to prove the truth of human freedom and
+personality. He wishes to solve the riddle in order that man may become
+a better man, the world a better world. His aim is definitely an
+ethical aim, and his purpose a practical one of the noblest order, and
+not one of mere intellectual interest.
+
+There is much, too, that is original in his methods--this will become
+evident in the chapters that follow. He begins with an inquiry into the
+solutions that have been offered. After careful investigation he finds
+they all fail to satisfy the conditions which a solution should satisfy.
+His discussions of these theories are most illuminating, and those who
+do not agree with his conclusions cannot fail to admire his masterly
+treatment.
+
+Having arrived at this conclusion, he searches the story of the past,
+studies the conditions of the present, and gazes into the maze of the
+future, and finds revealed in them all an eternal something, unaffected
+by time, which was, is, and ever shall be--the eternal, universal,
+spiritual his, which then must be the great reality.
+
+Upon this basis he builds a system of philosophy, which he considers to
+be more satisfactory than the solutions already offered; with which
+contention, there is little doubt, the majority of his readers will be
+inclined to agree.
+
+After the brief statement of Eucken's special problem, of the purpose
+and methods of his investigation, we can proceed to outline his theories
+in greater detail, beginning in the next chapter with his discussion of
+the solutions that have in the past been offered and accepted.
+
+
+
+
+CHAPTER II
+
+HAS THE PROBLEM BEEN SOLVED?
+
+
+What is the meaning, the value, and purpose of life, and what is the
+highest and the eternal in life--the great reality? This is the question
+that Eucken would solve. Before attempting a solution of his own, he
+examines those that have already been offered. His discussion of these
+theories is remarkable for the fairness, breadth of view, sympathy,
+insight, and accurate knowledge that is shown. There is no superficial
+criticism, neither does he concern himself with the inessential details
+of the theories.
+
+Jest-books tell us of a defendant against whom a claim for compensation
+was made by a complainant who alleged that the former's dog had bitten
+him. The defence was, first, that the dog was lame, blind, and
+toothless; second, that it had died a week before; and third, that the
+defendant never possessed a dog. A sensible judge would wish to be
+satisfied in regard to the third statement before wasting time
+discussing the others; if it proved to be true, then the case would be
+at an end. The defences of philosophical systems are often similar, and
+the critic is tempted to waste time discussing details when he should go
+to the root of the matter. Eucken does not fall into this error. His
+special method is to seek the idea or ideas which lie at the root of the
+proposed solution; if these are unsatisfactory, then he does not
+consider it necessary to discuss them further. Hence his work is free
+from the flippant and superficial argument so common to-day; he makes a
+fair and serious endeavour to find out the truth (if any) that is at the
+basis of the proposed solutions, and does not hesitate to give them
+their due meed of praise even though he considers them to be ultimately
+unsatisfactory.
+
+Before a solution can be regarded as a satisfactory one, Eucken holds
+that it should satisfy certain conditions. It should offer an
+explanation for life which can be a firm basis for life, it must admit
+of the possibility of human freedom, and must release the human being
+from sordid motives--unless it satisfy these conditions, then it cannot
+be accepted as final.
+
+The solutions of the problem of life that have been offered he considers
+to be five--Religion and Immanental Idealism, Naturalism, Socialism and
+Individualism, the first two regarding the invisible world as the
+reality in life, the others laying emphasis on man's life in the present
+world. The reader will perhaps wonder how his choice has fallen upon
+these systems of thought and these alone. The explanation is a simple
+one: he considers it necessary to deal only with those theories which
+can form, and have formed, bases for a whole system of life. Mere
+theoretical ideas of life, especially negative ideas such as those of
+agnosticism and scepticism, do not form such a basis, but the five
+chosen for discussion can, and have to some extent, posed as complete
+theories of life, upon which a system of life can be built.
+
+Has _Religion_ solved the question? If it has, then it must have done so
+in that which must be considered its highest form--in Christianity.
+Christianity has attempted the solution by placing stress upon a higher
+invisible world, a world in sharp contrast with the mere world of sense,
+and far superior to it. It unites life to a supernatural world, and
+raises mankind above the level of the natural world. It has brought out
+with great clearness the contrast between the higher world and the world
+of sin, and has shown the need for a break with the evil in the world.
+It has given to man a belief in freedom, and in the necessity for a
+complete change of heart. It has proved a source of deliverance from the
+feeling, of guilt, and a comfort in suffering. Indeed, considering all
+the facts, there seems to be no doubt that, of all the solutions
+offered, religion has been the most powerful factor in the history of
+mankind.
+
+Its influence would continue for the present and future, were it not
+that doubt has been cast upon its very foundations, and had not
+circumstances arisen to take men's minds away from thoughts of a higher
+and invisible world, and to concentrate them to a greater extent than
+formerly upon the world of sense. The progress of the natural sciences
+has done much to bring about the change. Christianity made man the
+centre of the universe, for whom all things existed, but the sciences
+have insisted upon a broader view of the universe, and have deposed man
+from his throne, and given him a much humbler position. Then as the
+conception of law became more prominent, and scientists became more and
+more inclined to explain all things as the result of natural laws, the
+idea of a personal God in constant communion with, and supervision over
+mankind, fell into disfavour.
+
+And the study of history has caused questions to be raised. Some
+historians have endeavoured to show that the idea of an overworld is
+merely the characteristic of a certain stage in the evolution of
+mankind, and that the ideas of religion are, after all, little more than
+the mental construction of a God upon the image of man's own self.
+History has attacked the doctrinal form of religion, and has endeavoured
+to show that religions have been very largely coloured and influenced by
+the prevailing ideas of the time; and the question naturally arises as
+to whether there is anything more in religion than these temporary
+elements.
+
+And this is not all. In the present age the current of human activity is
+strong. Man is beginning to accomplish things in the material world, and
+is becoming anxious to accomplish more. His railways cover the lands,
+his ships sail the seas, and his aeroplanes fly through the air. He has
+acquired a taste for this world, a zest for the conquest and the
+utilising for his own pleasure and benefit of the world of nature. And
+when this occurs, the overworld sinks into the background--he is
+satisfied with the present, and feels no need, except under special
+circumstances, of a higher world. The sense world at present makes a
+strong appeal--and the stronger it becomes, the less he listens to the
+call of an overworld.
+
+The sciences, history, and the special phases of human activity have
+drawn attention from a higher, invisible world, and have cast doubts
+upon its very existence.
+
+As a result of this, "Religion (in the traditional form), despite all it
+has effected, is for the man of to-day a question rather than an answer.
+It is itself too much of a problem to interpret to us the meaning of our
+life, and make us feel that it is worth the living."
+
+In these words Eucken states his conviction that Christianity in its
+orthodox forms cannot solve the problem of the present. This, however,
+is not all he has to say concerning religion. He is, in truth, a great
+believer in religion, and as will be seen, he believes that later it
+will again step forth in a changed form as "the fact of facts" to wield
+a power perhaps greater than ever before.
+
+As in the case of religion, _Immanent Idealism_ is a theory that gives
+life an invisible basis, but the invisible has been regarded as that
+which lies at the root of the present world, and not as a separate
+higher world outside our own. The Divine it considers not as a personal
+being apart from the world, but as a power existing in and permeating
+it, that indeed which gives to the world its truth and depth. Man
+belongs to the visible world, but inwardly he is alive to the presence
+of a deeper reality, and his ambition must be to become himself a part
+of this deeper whole. If by turning from his superficial life he can set
+himself in the depths of reality, then a magnificent life, with the
+widest prospects, opens out before him. "He may win the whole of
+infinity for his own, and set himself free from the triviality of the
+merely human without losing himself in an alien world." And if he does
+so, he is led to place greater emphasis upon the high ideals of life
+than upon material progress. He learns to value the beautiful far above
+the merely useful; the inner life above mere existence, a genuine
+spiritual culture above the mere perfecting of natural and social
+conditions. There is brought into view a new and deeper life in which
+the emphasis is placed upon the good, the beautiful, and the true. In
+this way idealism has inspired many men to put forth their energies for
+the highest aims, has lifted the individual above the narrowness of a
+life devoted to himself alone, and has produced characters of
+exceptional beauty and strength. It claims, indeed, to be able to shape
+the world of man more satisfactorily than religion can, for it has no
+need for doctrines of the Divine, the Divine being immediately present
+in the world. But despite its great influence in the past, its power
+has of late been considerably weakened.
+
+The question of the existence of a deeper invisible reality in the world
+has become as problematic as the doctrines of religion.
+
+To be a whole-hearted believer in the older forms of idealism it is
+necessary that the universe be regarded as ultimately reasonable and
+harmonious, and there must be a belief in the possibilities of great
+development on the part of the human being. But a serious study of
+things reveals to us the fact that the universe is not entirely
+reasonable and harmonious. If it were, then man's effort towards the
+ideal would be helped by the whole universe, but that is far from being
+the case; progress means fight, and difficult fight; there is definite
+opposition to the efforts of man to raise himself. Moreover, there is
+evil in the world, let pantheists and others say what they will. Eucken
+refuses to close his eyes to, or to explain away, opposition, pain, and
+evil--the world is far from being wholly reasonable and harmonious, and
+idealists must acknowledge this fact. The natural sciences, too, by
+emphasising the reign of law, tend to limit more and more the
+possibilities of the human being, ultimately robbing him of all
+freedom--hence of all possibility of creation. And how can one be an
+enthusiastic devotee of idealism if he is led to doubt man's power to
+aim at, fight towards, or even choose the highest?
+
+Idealism was at its height in those red-letter days when a high state of
+culture had been attained, and great personalities produced masterpieces
+in art, music, and literature. The progress of the sciences and of man's
+natural activity has directed the spirit of the age towards material
+progress; the ideals of mankind tend to become external and
+superficial, and the interest in the invisible world falls to a minimum.
+
+To some extent, too, idealism breathes of aristocracy--a most unpopular
+characteristic in a democratic age. Experience shows that man is raised
+above himself only in rare cases, and that the great things in the
+realms of art, music, and literature are very largely the monopoly of
+the few, and these mainly of the leisured classes. Hence the appeal of
+idealism to certain types of men and women must necessarily be a feeble
+one.
+
+Then, again, there is the general indifference of mankind to lofty aims;
+this militates against the power of idealism even more than in the case
+of religion, for while in the latter there is the idea of a personal God
+who is pleased or displeased urging men to renewed effort, the teachings
+of idealism may appear to be mere abstractions, and can, as such,
+possess little driving-power for the ordinary mind.
+
+Idealism, too, seems to be a mere compromise between religion and a life
+devoted to sense experience, and like most compromises it lacks the
+enthusing power of the original ideas.
+
+Finally, the whole theory leaves us in uncertainty--"that which was
+intended to give a firm support, and to point out a clear course to our
+life, has itself become a difficult problem."
+
+But Eucken has more to say concerning idealism, even though in a
+different form from the theories of the past. Indeed, his philosophy is
+generally classed amongst the idealisms. Eucken makes a great endeavour,
+however, to avoid the difficulties and objections to the idealistic
+position; later we shall see that a great measure of success has crowned
+his efforts.
+
+Having discussed the two solutions that place special stress on the
+invisible world, he proceeds to deal with the theories which emphasise
+the relation of the life of man to the material world.
+
+He first treats of _Naturalism_, that solution of the problem that makes
+the sense experience of surrounding nature the basis of life,
+subordinating even the life of the soul to the level of the natural,
+material world.
+
+Nature in the early ages had been superficially explained, often in the
+light of religious doctrine. Man gave to nature a variety of
+explanations and of colouring, depending largely upon his ideas of the
+place of nature in relation to himself and to the invisible world. But
+such anthropomorphic explanations could not long survive the progress of
+the sciences, for a scientific comprehension of nature could only be
+attained by getting rid of all human colouring, and by investigating
+nature entirely by itself, out of all relation to the human soul. Man
+then investigated nature more and more as an object apart from himself.
+
+The first result of these investigations was to impress upon him the
+reality of nature as something independent, and to increase on a very
+large scale his knowledge of, and control over nature. When man began to
+formulate and understand nature, he began, too, to invent machines to
+profit from the knowledge he gained. Hence followed a marvellously
+fruitful period of human activity, an activity which at first
+strengthened man in his own soul, and gave him increased consciousness
+of independence and power. While he was compelled to admit the greatness
+of the natural world, he became more and more convinced that he himself
+was far greater, for could he not put the laws of nature to his own use
+and profit? Hence the gain to man at this stage of the development of
+the sciences was very great, for he had come to appreciate more than
+before the superiority of the human soul over the material world. Hence
+resulted a more robust type of life, "a life energetic, masculine,
+pressing forward unceasingly." Matters, however, were not destined to
+remain long at this stage. As man's knowledge of the processes of nature
+increased further, a twofold result followed. On the one hand, the sense
+world of nature became increasingly absorbing in interest; on the other
+hand, laws were formulated and nature was conceived of as being a chain
+of cause and effect, a combination of mechanical elements whose
+interactions were according to law, and could be foretold with the
+utmost precision.
+
+These two factors worked in the same direction, namely, that of
+rendering less necessary the conception of a spiritual world. The
+interest of mankind became so concentrated upon material things that the
+interest in the invisible decreased, while the mechanical, soulless
+elements with their ceaseless actions and reactions in definite order,
+and according to inviolable law, were held sufficient to account for the
+phenomena of nature. The keynote was "relation to environment"; a
+constantly changing environment, changing according to law, called for
+ceaseless readjustment, and the adaptation to environment was held to be
+the stimulus to all activity in the natural world.
+
+The later development of biology, and the doctrine of the evolution of
+species, gradually extended this conception of nature to include man
+himself.
+
+What he had regarded as his distinctive characteristics were held to be
+but the product of natural factors, and his life was regarded, too, as
+under the domain of rigid, inviolable law. There was no room for, and no
+need of, the conception of free, originative thought. Thought was
+simply an answer to the demand that the sense world was making, entirely
+dependent upon the external stimulus, just as any other activity was
+entirely dependent on an external stimulus. So thought came to be
+regarded as resulting from mere sense impression, which latter
+corresponded to the external stimulus. It is obvious that the idea of
+the freedom of the human soul, and of human personality as previously
+understood, had to go. Man was simply the result of the interaction of
+numerous causes--and like the rest of nature, involved no independent
+spiritual element. Everything that was previously regarded as spiritual
+was interpreted as a mere adjunct to, or a shadow of, the sense world.
+Such a conception accounted for the whole of nature and of man, and so
+became an explanation of the universe, a philosophy.
+
+In such a theory self-preservation becomes the aim of life, the struggle
+for existence the driving-power, and adaptation to environment the means
+to the desired end. Hence it comes about that only one standard of value
+remains, that of usefulness, for that alone can be regarded as valuable
+which proves to be useful towards the preservation and enjoyment of the
+natural life. The ideas of the good, the beautiful, and the true, lose
+the glory of their original meaning, and become comparatively barren
+conceptions. Hence at a stroke the spiritual world is wiped away, the
+soul of man is degraded from its high position, the great truths of
+religion are cast aside as mere illusions.
+
+The naturalistic explanation possesses the apparent advantage of being a
+very simple one, and hence attracts the human mind with great force in
+the early stages of mental culture. All the difficulties of the
+conception of a higher world are absent, for the naturalistic position
+does not admit of its existence. It gives, too, some purpose to life,
+even though that purpose is not an ideal one.
+
+Eucken is not reluctant to give the theory all the credit it deserves,
+and he is prepared to admit that it fulfils to some extent the
+conditions which he holds a satisfactory solution should fulfil.
+
+He goes, however, immediately to the root of the matter, and finds that
+the very existence of the theory of naturalism in itself is an eloquent
+disproof of the theory. The existence of a comprehensive scientific
+conception involves an activity which is far superior to nature itself,
+for it can make nature the object of systematic study. An intellect
+which is nothing more than a mirror of sense impressions can get little
+beyond such sense impressions, whereas the highly developed scientific
+conception of nature that obtains to-day is far beyond a mere collection
+of sense impressions. Nature, indeed, is subdued and mastered by man;
+why then degrade man to the level of a universe he has mastered? To
+produce from the phenomena of nature a scientific conception of nature
+demands the activity of an independent, originative power of thought,
+which, though it may be conditioned by, and must be related to, sense
+impressions, is far above mere sense impressions.
+
+Naturalism, in directing attention to the things that are experienced,
+fails to take proper account of the mind that experiences them; it
+postulates nature without mind, when only by the mind processes can man
+become aware of nature, and construct a naturalistic scheme of life. "To
+a thorough-going naturalism, naturalism itself is logically impossible."
+Hence the impossibility of the naturalistic theory as an explanation of
+life.
+
+Then it fails to provide a high ideal for life, and to release man from
+sordid motives. It gives no place for love, for work for its own sake,
+for altruistic conduct, or for devotion to the high ideals of life. The
+aim of life is limited to this world--man has but to aim at the
+enjoyment and preservation of his own life. The mechanical explanation
+of life, too, does away with the possibility of human freedom and
+personality, and it is futile to urge man to greater efforts when
+success is impossible. It is a theory which does justice merely to a
+life of pleasure and pain, its psychology has no soul, and its political
+economy bases the community upon selfishness.
+
+In this way Eucken disproves the claim of naturalism; in doing so he
+points out that a satisfactory solution must take account of the life of
+nature in a way which religion and idealism have failed to do.
+
+Of late years _Socialism_ and _Individualism_ have come into prominence
+as theories of life. Eucken attributes the movements in the first
+instance to the receding into the background of the idea of an overworld
+which gave meaning and value to life. When doubt was thrown upon
+religion and idealism, when confidence in another world was shaken, man
+lost to an extent his moral support. Where could he turn now for a firm
+basis to life? He might, of course, turn from the invisible world to the
+world of sense, to nature. But the first result of this is to make man
+realise that he is separate from nature, and again he fails to find
+support. He is an alien in the world of nature, and disbelieves the
+existence of a higher world. When both are denied him he turns naturally
+to his fellow-men--here at least he can find community of interest--here
+at least he is among beings of his own type. Hence he confines his
+attention to the life of humanity, and in this, the universe of
+mankind, he hopes to find an explanation of his own life, and a value
+for it.
+
+The progress of humanity, then, must become the aim of life--all our
+strength and effort must be focussed upon human nature itself. But an
+immediate difficulty arises. Where are we to find Man? "Is it in the
+social community where individual forces are firmly welded together to
+form a common life, or among individuals as they exist for themselves in
+all their exhaustless diversity?" If we put the community first, then
+the social whole must be firmly rooted in itself and be independent of
+the caprice of its members. The duty of the individual is to subordinate
+himself to the community--this means socialism. If, on the other hand,
+the great aim is to develop the individual and to give him the maximum
+of opportunity to unfold his special characteristics, we arrive at an
+opposing theory--that of individualism.
+
+In the history of society we find an age of socialistic ideas followed
+by one of individualistic ideas, and vice versa, and there is much that
+is valuable in each, in that it tends to modify and disprove the other's
+extreme position.
+
+The present wave in the direction of _socialism_ arises, to an extent,
+in reaction from the extremely individualistic position of previous
+ages. Man is now realising that the social relations of life are of
+importance as well as the character of his own life. He realises the
+interdependence of members of a community, and the conception of the
+State as a whole, a unit, instead of a mere sum of individuals, grows
+up. The modern industrial development and the organisation of labour
+have, too, emphasised the fact that the value of the individual depends
+largely upon his being a part of society. His work must be in
+co-operation with the work of others to produce the best effect; for in
+such co-operation it produces effects which reach far beyond his own
+individual capacity. Hence his life appears to receive value from the
+social relations, and the social ideal is conceived. The development of
+the individual no longer becomes the aim but rather the development of
+the community. In setting out the development of society as his aim, the
+individual makes considerable sacrifices. All that is distinctly
+individual must go, in character, in work, in science, and art, and that
+which is concerned with the common need of society must receive
+attention. This means undoubtedly a limitation of the life of the
+individual, and often entails a considerable sacrifice; but the
+sacrifice is made because of the underlying belief that in the sum of
+individual judgments there is reason, and that in the opinion of the
+majority there is truth. This socialistic culture finds in the present
+condition of society, plenty of problems to hand, and in its treatment
+of these problems a vigorous socialistic type of life is developed. The
+most pressing problem is concerned with the distribution of material and
+spiritual goods. Material goods and the opportunity for spiritual
+culture that go with them have been largely a monopoly of the
+aristocracy. Now arises a demand for a more equal distribution, and this
+is felt to be a right demand, not only from the point of view of
+justice, but also for the sake of spiritual culture itself. So it is
+that the movement for the social amelioration of the masses starts. The
+welfare of humanity is its aim, and all things, religion, science, and
+art, must work towards this end, and are only of value in so far as they
+contribute towards it.
+
+Now it is a fundamental principle of a logical socialistic system that
+truth must be found in the opinions of the masses, and the average
+opinion of mankind must be the final arbiter of good and evil. The
+tendency of the masses as such is to consider material advancement the
+most cherished good. Hence, inevitably, a thorough-going socialism must
+become materialistic, even though at an earlier stage it was actuated by
+the desire for opportunities of spiritual culture.
+
+A genuinely socialistic culture, too, makes the individual of value only
+as a member of society. This, Eucken affirms, is only true in the most
+primitive societies. As civilisation progresses, man becomes conscious
+of himself, and an inner life, which in its interests is independent of,
+and often opposed to society, develops. His own thought becomes
+important to man, and as his life deepens, religion, science, art, work
+&c., become more and more a personal matter.
+
+All such deepening of culture, and of creative spiritual activity, is a
+personal matter. From this deepening and enriching of the inner life of
+the individual proceeds creative spiritual activity, which attempts
+spiritual tasks as an end in themselves, and which gradually builds up a
+kingdom of truth and spiritual interest which immeasurably transcends
+mere human standards. All these are historical facts of experience; the
+socialistic system finds no place and no explanation for them, and
+consequently it cannot be regarded as a sufficiently comprehensive
+explanation of the problem. To a man who has once realised these
+individual experiences, the merely human, socialistic system becomes
+intolerable.
+
+Again, if considerations of social utility limit creative activity, the
+creations of such activity must be meagre in nature. Spiritual
+creativeness is most fruitful when it is concerned with tasks that are
+attempted for their intrinsic value, and is not fettered by the thought
+of their usefulness to society.
+
+It is, too, a dangerous thing to look for truth in the opinion of the
+majority, for this is such a changing phenomenon that only a part, at
+most, can be permanent truth. The course of history has taught us, too,
+that great ideas have come to individuals and have been rejected by the
+masses for long periods of time.
+
+The immediate effect of the failure of socialism is the encouragement of
+_individualism_, for indeed some of the arguments against the former are
+arguments in favour of the latter. Individualism opens up a new life, a
+life which is free, joyous, and unconventional.
+
+But can individualism give a meaning and value to life as a whole? Man
+cannot from his own resources produce a high ideal which compels him to
+fight for higher development, and it is not possible for him from an
+individualistic standpoint to regard himself as a manifestation of a
+larger life. His whole life must be spent in the improvement of his own
+condition. Even in the case of strongly marked personalities, they can
+never get beyond themselves and their own subjective states, for they
+must always live upon themselves, and eternally reflect upon their own
+doings.
+
+But such a view of life cannot satisfy man; he is a contemplative being,
+and he must find some all-inclusive whole, of which he is a part. If he
+fails to find it, life for him must become a blank, and he must fall a
+prey to boredom and satiety. Man's life is not to be confined to his own
+particular sphere, his life must extend far beyond that--he must concern
+himself with the infinite in the universe; "He must view life--nay,
+more, he must live it--in the light of this larger whole." A life based
+upon individualism then, will seem, even in the case of strong
+personalities, to be extremely narrow. How much more so will this be
+true of the ordinary man, who takes little interest in his own
+individuality, or pleasure in its development?
+
+Thus it is that both forms of humanistic culture--socialism and
+individualism--fail to give a real meaning to life. "Socialistic culture
+directs itself chiefly to the outward conditions of life, but in care
+for these it neglects life itself." Individualistic culture, on the
+other hand, endeavours to deal with life itself, but fails to see life
+as a whole, or as possessing any real inwardness.
+
+Both types of culture are apt to deceive themselves in regard to their
+own emptiness, because, unconsciously, they make more out of man than is
+consistent with their assumptions. "They presuppose a spiritual
+atmosphere as a setting for our human life and effort. In the one case,
+this cementing of a union between individuals appears to set free the
+springs of love and truth; in the other, each single unit seems to have
+behind it the background of a spiritual world whose development is
+fostered by means of its individual labour." In this way life acquires
+in both cases a meaning, but it does so only by departing from both
+positions, and taking up what is, at least partly, an idealistic
+position.
+
+The theories, too, can only be made really plausible by idealising man
+to an unwarrantable extent. The socialist assumes that a change of
+material surroundings will be immediately followed by a change in the
+character of man, and that men will work happily together for the sake
+of the community. The individualist asks us to believe that man is
+naturally noble and highminded, and cares only for the higher and better
+things. But experience, says Eucken, does not justify us in placing so
+much faith in humanity. "Do we not see the great masses of our
+population possessed by a passion that sweeps all before it, a reckless
+spirit of aggressiveness, a disposition to lower all culture to the
+level of their interests and comprehension--evincing the while a defiant
+self-assertion? And on the side of individualism, what do we see? Paltry
+meanness in abundance, embroidered selfishness, idle self-absorption,
+the craving to be conspicuous at all costs, repulsive hypocrisy, lack of
+courage despite all boastful talk, a lukewarm attitude towards all
+spiritual tasks, but the busiest industry when personal advantage is
+concerned."
+
+The theories of socialism and individualism can never be adequate
+explanations of the great problem of life, for life cannot have a real
+meaning if man cannot strive towards some lofty aim far higher than
+himself, and such a goal the two humanistic theories do not provide for
+him.
+
+Religion, Idealism, Naturalism, Socialism, Individualism, while calling
+attention to important facts in life, all fail in themselves to form
+adequate theories to explain life. We have given the main outlines of
+Eucken's arguments, but such a brief summary cannot do justice to his
+excellent evaluations of these theories--these the reader may find in
+his own works.
+
+
+
+
+CHAPTER III
+
+ANOTHER SEARCH FOR TRUTH
+
+The result of the inquiry into the solutions of the problem offered in
+the past is to show that they are all inadequate to explain and to give
+an ideal to the whole of life. Perplexed as to the truth of the
+existence of a higher world, man looked to the natural world for a firm
+basis to life. Here he failed to find rest--rather, indeed, he found
+less security than he had previously felt, for did not naturalism make
+of him a mere unconscious mechanism, and deny the very existence of his
+soul? Then he turned to humanity, and the opposing tendencies of
+socialism and individualism came into evidence. Each hindered the other,
+each shook his traditional beliefs, and each failed to give him a
+satisfactory goal for life. Socialism concerned itself with external
+social relations, but it gave life no soul. Then individualism confined
+man to his own resources, and there resulted an inner hollowness which
+became painfully evident. Socialism and individualism fail to provide a
+sure footing. Instead of finding certainty, man has fallen into a still
+deeper state of perplexity.
+
+What shall he do? Must he once again leave the realistic systems of
+Naturalism, Socialism, and Individualism, and return to the older
+systems of Religion and Idealism? Was he not wrong in giving up the
+thought of a higher invisible world? Has not the restriction of life to
+the visible world robbed life of its greatness and dignity? This it
+certainly has done, and there is little wonder that the soul of mankind
+is already revolting, and shows a tendency once again to look towards
+religion and idealism for a solution of life.
+
+But the educated mind can never again take up exactly the same position
+as it once did in regard to religion and idealism. The great realistic
+theories have made too great a change in the standard of life, and in
+man himself, to make it possible for him to revert simply to the old
+conditions, and the older orthodox doctrines of religion can never again
+be accepted as a mere matter of course. But the great question has again
+come to the forefront--is there a higher world, or is the fundamental
+truth of religion a mere illusion? This is the question that calls for
+answer to-day, an answer which must be different, as man is different,
+from the answers that were given in the past. A satisfactory answer is
+impossible without understanding clearly the relation between the Old
+and the New, and without taking account of the great, if partial, truths
+that the realistic schemes of life have taught mankind.
+
+To accept unreservedly Naturalism, Socialism, and Individualism is
+impossible, for these rob life of its deeper meaning. To return to the
+older doctrines without reserve is equally impossible.
+
+Shall we ignore the question? This would be a fatal mistake. Some throw
+themselves into the rush of work, and endeavour to forget the deeper
+problems of life--but "the result is a life all froth and shimmer,
+lacking inward sincerity, a life that can never in itself satisfy them,
+but only keep up the appearance of doing so." There must be some
+decision; for is not society being more and more broken up into small
+sections, possessing the most variable standards of life, and
+evaluating things in a diversity of ways? Such an inward schism must
+weaken any effort on the part of humanity to combine for ideal ends.
+Perhaps he of narrow vision, who sees nothing in life but sensuous
+pleasure, is happy--but it is the happiness of the lower world. Perhaps,
+too, he of the superficial mind is happy, who sees no deep
+contradictions in the solutions offered, and is prepared to accept one
+to-day and another tomorrow--but his happiness is that of the feeble
+mind.
+
+What then can be done? Shall we despair? Never! The question is far too
+urgent. To despair is to accept a policy that spells disaster to the
+human race. The immediate environment is powerless to give life any real
+meaning. We must probe deeper into the eternal--and it is from such
+investigations that Eucken outlines a new theory of life.
+
+But before we proceed to deal with Eucken's contribution to the problem,
+it will be profitable to stay awhile to consider how it is that we can
+obtain truth at all, and what are the tests that we can apply to truth
+when we think we have attained it. It is the problem of the possibility
+of knowledge, really, that we have to discuss in brief. Eucken himself
+does not pay much direct attention to this difficult question, for, as
+has been already pointed out, he refuses to be drawn from his main
+problem. It is impossible, however, to appreciate Eucken without
+understanding clearly the position he takes up in this matter.
+
+What is truth? How can we know?--these are entrancing problems for the
+profound thinker, and have been written upon frequently and at great
+length. But we can do little more at present than give the barest
+outline of the positions that have been taken up. Every search for truth
+must assume a certain position in this matter; in studying Eucken's
+philosophy it is of the first importance--more so perhaps than in the
+case of most other philosophers--to keep in mind clearly from the outset
+the position he implicitly assumes.
+
+The simplest theory of knowledge is that of _Empiricism_, which holds
+that all knowledge must be gained through experience of the outside
+world, and of our mental states. We see a blue wall, we obtain through
+our eyes an impression of blueness, and are able to make a statement:
+"This wall is blue." This, of course, is one of the simplest assertions
+that can be made, and consists merely in assigning a term--"blue"--the
+meaning of which has already been agreed upon, to a colour that we
+appear to see on a wall. The test of the truth of this assertion is a
+simple one--it is true if it corresponds with fact. If the same
+assertion is made in regard to a red wall, then it is obviously untrue.
+Our sense impressions give rise to a great variety of such expressions.
+We state "the wall is blue" as a result of an impression obtained
+through the organs of sight; then we speak of a pungent smell, a sweet
+taste, a harsh sound, or a rough stone, on account of impressions
+received respectively through the organs of smell, taste, hearing, and
+touch. But, of course, all such assertions are superficial in
+character--there is little more in them than the application of a
+conventional term to an observed phenomenon, they avail us little in
+solving the mysteries of the universe.
+
+Strictly speaking, this is for the empiricist the limit of possible
+knowledge, but he would be a poor investigator who would be content with
+this and no more. The empiricist tries to go a distinct step in advance
+of this. The scientist observing the path of a planet travelling round
+the sun, finds that its course is that of an ellipse. He studies the
+path of a second planet, and finds that this also travels along an
+elliptical orbit. Later he finds that all planets he is able to observe
+travel in the same kind of path--then he hazards a general statement,
+and says, "All planets travel round their suns in elliptical orbits."
+But now he has left the realm of certainty for that of uncertainty.
+There may be innumerable planets which he cannot observe that take a
+different course. He hazards the general statement, because he assumes
+(sometimes without knowing that he does so) that nature is uniform and
+constant, that it will do to-day as it did yesterday, and does in
+infinite space as it does in the visible universe.
+
+The knowledge that is possible to the empiricist, then, is merely that
+which is derived from direct experience, and simple summations or
+generalisations into a single assertion of a number of similar
+assertions, all of which were individually derived from experience. This
+is the position scientists as such, and believers in the theory of
+naturalism, take up as to the possibility of the knowledge of truth to
+the human mind. They are entirely consistent, therefore, when they
+arrive ultimately at the agnostic position, and contend that our
+knowledge must necessarily be confined to the world of experience, and
+that nothing can be known of the world beyond. But they are
+fundamentally wrong in overestimating the place of the sense organs, and
+forgetting that while these have a part to play in life, they do not
+constitute the whole of life.
+
+A far more satisfactory theory is that of _Rationalism_. It
+is a theory that admits that the human mind has some capacity for
+working upon the data presented to it by the sense organs. Man is
+no longer quite so helpless a creature as empiricism would make
+him. He is able to weigh and consider the facts that are presented
+to the mind. The method rationalism uses to arrive at truth is that
+of logical deduction, and the test of truth is that the steps in the
+process are logically sound. We may start from the data "All dogs
+are animals" and "Carlo is a dog," and arrive very simply at the
+conclusion "Carlo is an animal." The conclusion is correct because
+we have reasoned in accordance with the laws of logic, with the laws
+of valid thought. All logical reasoning is, of course, not so simple
+as the example given, but it may be stated generally that when there
+is no logical fallacy, a correct conclusion may be arrived at,
+provided, too--and herein lies the difficulty--provided that the
+premises are also true. These premises may be in themselves general
+statements--how is their truth established? They may be, and often
+are, the generalisations of the empirical sciences, and must then
+possess the same degree of uncertainty that these generalisations
+possess. Some philosophers have contended that certain general ideas
+are innate, but few would be found nowadays to accept such a
+contention. At other times mere definitions of terms may serve as
+premises. One might state as a premise the definition "A straight
+line is the shortest distance between two points," and the further
+statement that "AB is a straight line between A and B," and conclude
+that the line AB represents the shortest distance between two points A
+and B. In a manner similar to this Euclid built his whole mathematical
+system upon the basis of definitions and postulates, a system the
+complexity and thoroughness of which has caused all students of
+mathematics at one time or another to marvel and admire. But, of
+course, a definition is little more than assigning a definite term to
+a definite thing. It is when we begin to consider the premises that are
+necessary for arriving at the profound truths of the universe that we
+find the weakness of rationalism. How are we going to be provided with
+premises for this end? Shall we begin by saying "There is a God" or
+"There is no God"? How is the pure reasoning faculty to decide upon the
+premises in the matter of the great Beyond? We may weigh the arguments
+for and against a certain position, and we may think that the probability
+lies in a certain direction, but to decide finally and with certainty
+by mere cold logical reasoning is impossible. We may bring out into
+prominence through logical reasoning truths that were previously only
+implicit, but to arrive at absolute truth with regard to the invisible
+world, through intellect alone, has long been admitted to be an
+impossibility. The illusion of those who would believe that truth which
+was not already implied in the premises could ever be obtained by mere
+intellectual reasoning has long since been dispelled.
+
+Perhaps it comes as a shock to the reader who has always insisted upon a
+clear intellectual understanding and a rigid reasoning upon all things,
+to find within what narrow limits, after all, the intellect itself has
+to work--it can do little more than make more or less certain
+generalisations concerning the world of experience, and then to argue
+from these, or from definitions that it itself has framed. Of course
+some of the ancient philosophers did try through a course of rigid
+reasoning to solve the great problems, and for a long time it was
+customary to expect that all philosophers should proceed in the same
+way.
+
+Modern philosophers, of whom William James, Bergson, and Eucken are
+conspicuous examples, have appreciated the futility of such a task, and
+have sought other means of solving the problem. The mistake in the past
+has been to forget that the intelligence is but one aspect of human
+life, and that the experience of mankind is far more complicated a
+matter than that of mere intellect, and not to be solved by intellect
+alone. Intellect has to play a definite part in human life, but it does
+not constitute the whole of life. Life itself is far greater than
+intellect, and to live is a far more important thing than to know. The
+great things are life and action; knowledge is ultimately useful in so
+far as it contributes to the development of life and the perfection of
+action. Philosophers have for too long a period made knowledge an aim in
+itself, and have neglected to take proper account of the experiences of
+mankind. Their intellectual abstractions have tended to leave actual
+life more and more out of consideration, with the result that they have
+been baffled at every turn. The more we think about it, the more we
+become convinced that the mysterious universe in which we live will only
+divulge just enough of its secrets to enable us to act, and this it
+gives us with comparatively little trouble on our part. If we consider
+an ordinary piece of wood, we find it is hard and offers a certain
+resistance, and our knowledge of these elementary facts enables us to
+put it to use, but we shall never really solve the mysteries of its
+formation and growth. These lead of course to very interesting
+speculations, but their solution seems to be as far off as ever. We can
+know little but that which we require for life. The making of life and
+action the basis of truth rather than trusting to the intellect alone,
+is the great new departure in modern philosophy.
+
+One of the theories of knowledge that springs from laying emphasis upon
+life and action is that of _Pragmatism_, of which the late Professor
+William James was one of the greatest exponents. Pragmatists contend
+that the test of truth is its value for life--if the fact obtained is
+the most useful and helpful for life, then it is the true one. Suppose
+we are endeavouring to solve the great question, "Is there a God?" We
+weigh the arguments for and against, but find it difficult to arrive at
+a definite conclusion, because the arguments on both sides seem equally
+plausible. How are we to decide? We cannot postpone the decision
+indefinitely--we are forced to make a choice, for upon our decision
+depends our aim and ideals in life. We are faced with a "forced option,"
+and must choose one or the other. We ask ourselves the question, "Which
+will be of the greatest help to our lives--to believe that there is, or
+that there is not a God?" and we decide or will to believe the option
+that will help life most. It is a striking theory, but space forbids our
+discussing it in detail.
+
+The position Eucken adopts is that of _Activism_. In common with
+pragmatism it makes truth a matter of life and action rather than of
+mere intellect, and considers fruitfulness for action a characteristic
+of truth. He differs from the pragmatic position in that he contends
+that truth is something deeper than mere human decision, that truth is
+truth, not merely because it is useful, that reality is independent of
+our experience of it, and that truth is gained intuitively through a
+life of action.
+
+The riddle of the universe is solved for Eucken through life and action.
+While continual contemplation and thought is apt to paralyse us, "action
+is the best defensive weapon against the dangers and trials of human
+existence." "Doubt is not cured by meditation, but by action." He
+believes that we can attain certainty through action of much that cannot
+be justified on rational grounds. If we wish to understand the vital
+truths of life we must concentrate our souls on a good purpose--the
+activity that follows will bring its revelation. The problems of life
+are solved by the life process itself. By acting in a certain way, man
+comes into intimate relationship with the great reality of life, and
+then he comes to know, not so much _about_ reality, as _within_ reality.
+The ant in whom such complex instincts are developed, knows probably
+nothing at all _about_ its little world, but knows everything necessary
+_within_ its little world. It does not err, it does the right thing at
+the right time, and that because it is in tune with its universe, hence
+acts from pure instinct in the right way. If intellect were to enter
+into the case, its actions might become less reliable, and it would
+blunder far oftener. In the case of man, his thinking capacity often
+militates against successful instinctive and habitual actions--the
+moment we start to consider, we hesitate and are lost. In the same way,
+if the soul of man is brought into tune with the great reality, it has
+but to act, and though it may never know all _about_ reality and be able
+to frame abstract theories of the universe, still it may know _with_ or
+_within_ reality, and be thus enabled to act in the best way under
+various circumstances. This is the theory of activism; it lays great
+stress upon action, and upon intuition through action, and while it does
+not ignore the intellect, it holds that when the intellect fails there
+is a possibility of the practical problem of life being solved through a
+life of action, when life is directed towards the highest ideals. The
+danger of an activistic position, of course, is to undervalue the
+reasoning powers of man. Some critics hold that Eucken does this; the
+reader must judge for himself, but in doing so it will be well to
+remember that before trusting to intuitive revelation, Eucken demands
+the setting of one's face towards the highest and best.
+
+In the next chapter we can follow Eucken in his search for the great
+reality in life.
+
+
+
+
+CHAPTER IV
+
+THE PAST, PRESENT, AND THE ETERNAL
+
+In investigating the problem of human life, Eucken lays great stress
+upon the history of man in past ages--this is one of the special aspects
+of his philosophy. The fact is, of course, not surprising; he who would
+explain the life of man would be unwise to ignore the records of the
+past life of the human race. The thinker who examines the present only,
+is apt to be narrow in his ideas, to fail to look upon events in their
+proper perspective, and to be unduly affected by the spirit of the age
+in which he lives--the student of history avoids these pitfalls.
+
+Moreover, man does not become aware of the depth of his own soul, until
+he has "lived into" the experience of the past. This is what the
+profound investigator of history does; he lives again the life of the
+hero, he feels with him as he felt upon special occasions, and in this
+way there is revealed to him a profundity and greatness of human
+experience, of which he would have been largely unaware if he had
+trusted to his own experience alone, and to the superficial examination
+he is able to make of the experiences of those living men with whom he
+comes into contact. In this way he is able in a sense to appropriate the
+experience of the greatest personalities unto himself, and enrich
+considerably the contents of his own soul.
+
+Through a study of history, too, we become aware of the intimate
+connection that exists between the present and the past. The present
+moment is a very transient thing; its roots are in the past, its hopes
+in the future. "If all depends on the slender thread of the fleeting
+moment of the present, which illumines and endures merely for a
+twinkling of an eye, but to sink into the abyss of nothingness, then all
+life would mean a mere exit into death.... Without connection there is
+no content of life." We are apt to look on the past as something dead,
+but it exists in living evidence in our souls to-day. It oppresses us or
+stimulates us to action, it tyrannises over us or inspires us to higher
+things. It has been customary to look upon the past as irrevocable.
+Recent writers, of whom Maeterlinck and Eucken are striking instances,
+have endeavoured to show how the past can be remoulded and changed. The
+past depends upon what we make of it to-day; if we despise our evil
+conduct in former days, then the past itself is changed and conquered.
+The mistake that is made is to regard the past as a thing complete in
+itself; what appears to be finished is really only completing itself,
+and we must take a view of the whole of a thing, and not merely the
+parts that have already manifested themselves. Through such
+considerations we become more and more aware of the ultimate connection
+between the past and present, and of the part the present can play in
+the remaking of the past.
+
+Our investigations of history leads us, too, to differentiate between
+the temporary and the eternal in the realm of thought. We find at a
+certain period of history a trend of thought that can largely be
+accounted for by the special conditions of life at the time, and which
+disappears at a later age. But in addition to this we become aware of
+truths that have found a place in the thoughts of various ages and
+countries, and we are led to regard these as the eternal
+truths--expressions of an eternal ever-present reality. This eternal
+present we find to be something independent of time, something that
+breaks the barriers between the past, present, and future. "Thought,"
+says Eucken, "does not drift along with time; as certainly as it strives
+to attain truth it must rise above time, and its treatment must be
+timeless." The beliefs of any age are too much coloured by the special
+circumstances of that age to express the whole of truth, yet beneath the
+beliefs of the ages there is often an underlying truth, and this
+underlying truth is the eternal truth, which is not affected by time,
+and at the basis of which is the eternal reality.
+
+This eternal truth persisting through a variety of temporary and more or
+less correct expressions of it is to be observed in a marked manner in
+the moral ideas of mankind. What a variety of ethical doctrines have
+been expounded and believed, yet how striking the similarity that
+becomes apparent when they are further examined! In practice, the
+standard of morality has often been based on mere utility, but it has
+taken a higher and more absolute basis in the mind of man. Ideas
+concerning morality have generally been nobler than can be accounted for
+by environment, and by the subjective life of the individual. Why this
+ultimate consistency in the moral aspirations of the ages, why a
+categorical imperative, and why does conscience exist in the human
+being?--these facts cannot be accounted for if there is no deeper basis
+for life than the life of humanity at any definite period of time.
+
+The unchangeable laws of logic, too, are instances of the eternal truth.
+The principles of the validity of thought are entirely independent of
+individuals, of the passage of time, and of the environment of man. "Our
+thought cannot advance in the definite work of building up science
+without producing and employing a definite logical structure, with fixed
+principles; these principles are immanent in the work of thought, they
+are above all the caprice and all the differences of the individuals."
+Whence again this consistency in a changeable and subjective world?
+
+The marvellous influence that ideas have exerted upon man again points
+to the persistence and power of the eternal. Is it not strange how it is
+that man often serves but as a mere instrument for the realisation of an
+idea, and how he is often carried away by an idea to do things which are
+against his own personal interests and desires? And when he and his
+generation have passed beyond human sight, we often find a new
+generation direct their endeavours in the same way, and we wonder what
+is behind such a continuity in the struggles of mankind.
+
+The history of great personalities in the realms of literature, art, and
+science show in a remarkable way how men have risen above the influences
+of their time, and beyond the cramping tiredness of the mere flesh.
+Could a great thinker like Aristotle be entirely conditioned by flesh
+and environment? And what of the great artists and poets who have
+conquered the chains of mortal finitude and breathed of higher worlds?
+Every one of them is a convincing testimony of the possibility of
+mankind transcending the material, and taking unto itself of the
+resources of a deeper world.
+
+Then the dissatisfaction of the ages with their limited knowledge of
+truth cannot but tell of a great eternal something that stirs at the
+basis of the human soul. The people of to-day find the various systems
+of the day inadequate; they search for something higher, and the mere
+fact that they search beyond matter and the mere subjective human
+qualities is in itself a testimony to the existence of a world higher
+than the material and subjective.
+
+What is it that makes it possible for one human being to "live into" the
+experience of others who lived long ago, and for the present to conquer
+and alter the past? How can we account for the eternal trait in thought,
+for the unchanging laws of logic, for the consistency of moral ideals,
+and their transcendence over flesh and immediate circumstances? What is
+the force behind the idea, and how can we account for the continuous
+struggle of mankind in certain directions? And, finally, what is it that
+makes it possible for men to rise beyond themselves, to shake away the
+shackles of matter and vicinity, and to delve deep into the profounder
+world?
+
+If we can find what it is that makes all this possible, then surely we
+have found the greatest thing in the world--the reality. And Eucken's
+answer is clear and definite. It must be something that persists, is
+eternal and independent of time, and it must extend beyond the
+individual to a universal whole. This must be "the Universal Spiritual
+Life," which, though eternal, reveals itself in time, and though
+universal, reveals itself in the individual man, and forms the source
+from which the spiritual in man "draws its power and credentials."
+
+This, then, is the result of Eucken's search for reality--he has found
+it to exist in a Universal Spiritual Life. Of course he has not arrived
+at his conclusion by a system of rigid proof; it has already been
+pointed out how impossible it is to arrive at the greater truths of life
+in such a manner.
+
+He has done, however, that which can be reasonably expected in such
+cases. To begin with, he has given us a striking analysis of the
+essential characteristics of human life, and he has found there a
+yearning and a void. He has given us a masterly discussion of eternal
+truth as contrasted with the temporary expressions of it. He has taught
+us how the present can overcome the past, and how man can ascend beyond
+the subjective and material. And he has led us to feel that reality must
+lie in the eternal that appears to be at the basis of the highest and
+greatest in man.
+
+Moreover, he has given a fair and thorough treatment of the solutions
+that have been offered in the past. He has shown how inadequate they are
+to explain life. He has shown how the modern solutions "cannot perform
+their own tasks without drawing incessantly upon another kind of
+reality, one richer and more substantial." This in itself shows "beyond
+possibility of refutation that they do not fill the whole of life." He
+has demonstrated how the acceptance of these systems depends upon an
+implicit acceptance of a higher life. "The naturalistic thinker ascribes
+unperceived to nature, which to him can be only a coexistence of
+soulless elements, an inner connection and a living soul. Only thus can
+he revere it as a higher power, as a kind of divinity; only thus can he
+pass from the fact of dependence to a devotional surrender of his
+feelings. The socialist bases human society, with its motives mixed with
+triviality and passion, on an invisible community, an ideal humanity....
+The individualist in his conception exalts the individual to a height
+far more lofty than is justified by the individual as he is found in
+experience." All these assume more or less unconsciously the existence
+of that "something higher" which they attempt to deny.
+
+So far, then, we have seen how Eucken proves the inadequacy of the
+realistic conceptions of life, and how they really depend for their
+acceptance upon the assumption of a Universal Spiritual Life. We have
+still to see how he attempts to prove that basing human life upon an
+eternal spiritual life satisfies the conditions he himself has laid down
+for a satisfactory solution of the problem. He has to show that the
+theory gives a satisfactory explanation of human life, that it gives a
+firm basis for life, that it releases man from being governed by low
+motives, and admits of the possibility of human personality, freedom,
+and creation. We shall see in the chapters that follow that he makes a
+convincing case for accepting the belief in the Universal Spiritual Life
+as the basis of human life and endeavour.
+
+
+
+
+CHAPTER V
+
+THE "HIGH" AND THE "LOW"
+
+Eucken makes the recognition of the existence of a Universal Spiritual
+Life the starting-point of his constructive work. He takes up a position
+which he calls the nöological position. Many theories take up a
+materialistic position; they assert the reality of the material world,
+and endeavour to explain the world of matter as something independent of
+the human mind. Other theories assert the superiority of mind over
+matter, and endeavour to examine the mind as though it were independent
+of the material world. These two types of theories have been in
+continual conflict; the one has attempted to prove that thought is
+entirely conditioned by sense impressions received from the material
+world, the other regards the phenomena of nature as really nothing other
+than processes of the mind.
+
+Eucken finds reality existing in the spiritual life, which while neither
+material nor merely mental, is superior to both, admits the existence
+(in a certain sense) of both, and does away with the opposition between
+the rival types of theories. Eucken does not minimise or ignore the
+existence of the natural world. The question for him is not the
+independent existence of the worlds of nature and mind--this he admits;
+he is concerned rather with the superiority of the spiritual life over
+the merely material and mental.
+
+The natural life of man has been variously viewed in different ages. The
+writer of the Pentateuch described man as made in the image of God, and
+the natural man was exalted on this account. Some of the old Greek
+philosophers, too, found much in nature that was divine. Christianity
+took a different view of the matter--it exalted the spirit, and
+emphasised the baseness of the material. The growth of the sciences made
+man again a mere tool of laws and methods, but it considered matter as
+superior to mind, mind being entirely dependent upon impressions
+received from matter. The question continually recurs--which is the
+high, which is the low? Shall nature triumph over spirit, or spirit over
+nature?
+
+Pantheism replies to the question by denying that there is anything high
+as distinguished from the low. There is but one; and that one--the whole
+universe--is God. There is no evil in the world, says pantheism,
+everything is good--if we could understand things as they really are we
+should find no oppositions in the universe, and no contradictions in the
+nature of things. The world as it is, is the best of all possible
+worlds--there is perfect harmony, though we fail to appreciate it. Other
+optimistic theories, too, deny the existence of evil and pain, and try
+to explain our ideas of sin to be mere "points of view." If we could see
+the whole, they tell us, we should see how the parts harmonise, but now
+we only see some of the parts and fail to appreciate the harmony. In
+this way they try to explain away as unreal the phenomena of evil and
+pain.
+
+But Eucken has no patience with such theories. For him the oppositions
+and contradictions of life are too real and persistent. The antagonisms
+"stir us with disgust and indignation." Evil cannot be considered
+trivial, and must not be glossed over; it is in the world, and the more
+deeply we appreciate the fact the better it will be for the human soul.
+
+Man in his lower stages of development is just a child of nature, and
+his standards of life are those of the lower world. He seeks those
+things that satisfy the senses, he attempts the satiation of the lower
+cravings. In the realm of morals his standard is utility--that is good
+which helps him to obtain more pleasure and to avoid pain. In social
+life his conduct is dictated by custom--this is the highest appeal. The
+development of man along the lines of nature ends at this point--and if
+nothing more is to happen, then he must remain at a low level of
+development. Matter and mind cannot take him beyond--the mind as such
+only helps towards the further satisfaction of the lower demands of man.
+
+But there is something far greater in highly developed manhood than the
+petty and selfish. Man is capable of conceiving and adopting higher
+standards of morality than those of utility and pleasure, and it is the
+spiritual life that enables him to do this. It is the spiritual that
+frees the individual from the slavery of the sense world--from his
+selfishness and superficial interests--that teaches him to care less for
+the things of the flesh, and far more for the beautiful, the good, and
+the true, and that enables him to pursue high aims regardless of the
+fact that they may entail suffering and loss in other directions. This,
+then, is the "High" in the world; the natural life is the "Low."
+
+But what is the relation of the natural to the spiritual life? In the
+first place, the spiritual cannot be derived from the natural, inasmuch
+as the former is immensely superior to the latter, and that not merely
+in degree, but in its very essence. The spiritual is entirely on a
+higher plane of reality, and there cannot be transition from the natural
+to the spiritual world. The natural has its limitations, and beyond
+these cannot go. So far as the natural world is concerned man can never
+rise above seeking for pleasure, and making expediency and social
+approbation the standards of life, hence there is little wonder that
+those ethical teachers who make nature their basis, deny the possibility
+of action that is unselfish and free. "The Spiritual Life," however, as
+Eucken says, "has an independent origin, and evolves new powers and
+standards."
+
+Neither do the two aspects run together in life in parallel lines. On
+the contrary, the spiritual life cannot manifest itself at all until a
+certain stage of development is reached in nature. It would seem
+impossible to conceive of the animal rising above its animal instincts
+and tendencies; its whole life is conditioned by its animal nature and
+its environment. Man stands at the junction of the stages between the
+purely natural and the purely spiritual. On the one hand, he is a member
+of the animal world, he has its instincts, its desires and its
+limitations; on the other hand, he has within him the germ of
+spirituality. He belongs to both worlds, the natural and the spiritual.
+He cannot shake off the natural and remain a man--to separate the two
+means death to man as we know him. But there is a great difference
+between his position in the natural world and his position in the
+spiritual world. He seems to be the last word in the world of nature, he
+has reached heights far beyond those reached by any other flesh and
+blood. He is, so far as we know, the culminating point of natural
+evolution--the final possibility in the natural world. But the stage of
+nature only represents the first stage in the development of the
+universe.
+
+There is an infinitely higher stage of life, the spiritual life. And if
+man is the final point of progress in the world of nature, he is, in his
+primitive state, only at the threshold of the spiritual world. But he
+is not an entire stranger to the spiritual--the germ is in him, and the
+spiritual is consequently not an alien world for him. If the spiritual
+were something entirely foreign it would be vain to expect much progress
+through mere impulses from without. On the contrary, it is the spiritual
+that makes man really great, and is the most fundamental part of his
+nature.
+
+The two stages of life, then, are present in man--the natural and the
+spiritual; the former highly developed, the latter, at first, in an
+undeveloped state.
+
+Now the great aim of the universe is to pass gradually from the natural
+to the spiritual plane of life. This does not mean that the latter is
+the product of the former stage, for this is not the case. It means that
+the deeper reality in life is the spiritual, and that the spiritual
+develops through the natural in its own particular way. And this
+particular way is not a mere development but a _self_-development. The
+aim of the spiritual is to develop its own self through the human being.
+In this way man is given the possibility of developing a self--a
+personality in a very real sense.
+
+Thus we arrive at some idea of the relation there exists between the
+spiritual and the natural, and of the place of the spiritual and the
+natural in man. The spiritual is neither the product nor an attribute of
+the natural. Man is the border creature of the two worlds; he represents
+the ultimate possibility of the one, and possesses potentialities in
+regard to the other. The great object of his life must be to develop,
+through making use of and conquering the life of nature, his higher self
+into a free, spiritual, and immortal personality. The progressive stages
+in this direction must be dealt with in the next chapter.
+
+
+
+
+CHAPTER VI
+
+THE ASCENT TO FREEDOM AND PERSONALITY
+
+
+In the previous chapter we found that man in his primitive stage is
+largely a creature of the lower world. His desires are those of the
+animal kingdom, his ideal is utility, and social approbation his God. At
+this stage he is a mere nothing, no better than a slave to his passions
+and to the opinions of his fellow-beings. He possesses neither freedom
+nor personality--for he is but a tool in the hands of other impulses and
+forces. There is no controlling self--he is not a lord in his own
+kingdom. Some men do not get beyond this very low level, but for ever
+remain mere shuttlecocks driven hither and thither by more or less
+contradictory impulses.
+
+The germ of the higher world that resides within him may sometimes make
+itself felt, but "so long as there is a confused welter of higher and
+lower impulses, ... so long is there an absence of anything essentially
+new and lofty."
+
+Man's aspirations for things that are higher, are at the outset very
+sluggish and vague, for a being that is so much dominated by the natural
+world is apt to concentrate its attention upon it and to remain
+contented with it.
+
+But there comes a time in the lives of perhaps most men when a distinct
+feeling of dissatisfaction is felt with the life of natural impulse and
+of convention. The man feels--perhaps in a vague way at first--that
+there is something too merely animal in the sense world, or that there
+is an intolerable emptiness and hypocrisy in a life of slavish devotion
+to the opinions of society. Perhaps he feels that his passions govern
+him, and not he his passions. The higher life stirs within him, and he
+begins to question the rightness of things. He learns to appreciate for
+the first time that the natural impulses may not be the noblest, and
+that custom may not be an ideal guide. His soul is astir with the
+problem of life--the result very largely depends upon the solutions that
+are presented to him. Perhaps the naturalistic solution is made to
+appeal to him, and he is taught to trust nature and it will lead him
+aright. Or maybe the pantheistic theory is accepted by him, and he is
+led to believe that the world as it is is entirely good, and that he has
+but to live his life from day to day, and not worry himself about the
+ultimate end and purpose of things. Or other optimistic theories of life
+that deny the existence of evil may influence him. All these solutions
+may give him temporary peace of mind, and perhaps indeed form efficient
+stumbling-blocks to any further spiritual progress.
+
+But the spiritual beginnings within us often show remarkable vitality.
+They may under certain conditions lead us to appreciate the existence of
+a distinct opposition in the world--the opposition between the lower
+world and the higher self. Man finds that the natural is often low,
+evil, and sordid, and at this stage the higher spiritual world makes a
+strong appeal to him. By degrees he comes to feel the demands of the
+lower world to be a personal insult to him. What is the lower material
+world that it should govern him, and he a _man_? The claims of pleasure
+and utility to be standards of conduct strike him as arrogant, and he
+revolts against the assumption that higher aims can have no charm for
+him. His previous acceptance without consideration of the moral
+standard of the community he now looks upon as a sign of weakness on his
+part--for is he not himself, a person with the power of independent
+judgment and evaluation? It is the first great awakening of the
+spiritual life in man, when his whole soul is in revolt against the low,
+sordid, and conventional. What shall he do? There is only one course
+that is worthy of his asserting personality--he must break with the
+world. Henceforth he sees two worlds in opposition--the world of the
+flesh on the one hand, the world of the spirit on the other, and he
+arrays himself on the side of the higher in opposition to the lower.
+When he does this the spiritual life in him makes the first substantial
+movement in its onward progress--this movement Eucken calls the
+_negative movement_. It does not mean that the man must leave the world
+of work and retire into the seclusion of a monastery--that means
+shirking the fight, and is a policy of cowardice. Neither does it mean a
+wild impatience with the present condition of the world--it means rather
+that man is appreciating in a profound way the oppositions that exist,
+and is casting his lot on the side of right. He renounces everything
+that hinders him from fighting successfully, then goes forth into the
+thick of the battle. The break must be a definite one and made in a
+determined manner. "Without earnestness of renunciation the new life
+sinks back to the old ... and loses its power to stimulate to new
+endeavour. As human beings are, this negation must always be a sharp
+one."
+
+The negative movement, then, is the first substantial step in the
+progress of the spiritual life. The man's self breaks out into
+discontent with nature, and this is the first step to the union of self
+to the higher reality in life. The break with the world is in itself of
+course but a negative process. This must attain a positive significance.
+If the self breaks away from one aspect of life, it must identify itself
+more intimately with another. This occurs when the individual sets out
+definitely on a course of life in antagonism to the evil in the world.
+
+When this takes place, there arises within him a _new immediacy_ of
+experience. Hitherto the things that were his greatest concern, and that
+appealed to him most, were the pleasures of the natural world. But these
+things appeal to him no longer as urgent and immediate--but as being of
+a distinctly secondary character. A new immediacy has arisen; it is the
+facts of the spiritual world that now appeal to him as urgent and
+immediate. "All that has hitherto been considered most immediate, as the
+world of sense, or even the world of society, now takes a second place,
+and has to make good its claim before this spiritual tribune.... That
+which current conceptions treat as a Beyond ... is now the only world
+which exists in its own right, the only true and genuine world which
+neither asks nor consents to be derived from any outside source."
+
+This new immediacy is the deepest possible immediacy, it is an immediacy
+of experience where the self comes into contact with its own vital
+principle--the Universal Spiritual Life--and brings about a fundamental
+change in the life of the individual. The inner life is no longer
+governed by sense impressions and impulses, but the outward life is
+lived and viewed from the standpoint of the inward life.
+
+But a new immediacy is not all that follows in the train of the negative
+movement--on the contrary, the highest possible rewards are gained, for
+freedom, personality, and immortality are all brought within the range
+of possibility.
+
+Once a human being decides for the highest he is on the highroad to
+complete freedom. The freedom is not going to be won in a moment, but
+must be fought for by the individual through the whole course of his
+life. His body is always with him, and will at times attempt to master
+him--he must fight continually to ensure conquest. Difficulties will
+arise from various quarters, but he is not going to depend only upon his
+own resources. All his activity involves in the first place the
+recognition of the spiritual world, but more than this, he appropriates
+unto himself of the spiritual world--this in itself is an act of
+decision. And the more we appropriate unto ourselves of the Universal
+Spiritual Life, the more we decide for the higher world, the freer we
+become. Indeed, "it is this appropriation ... of the spiritual life that
+first awakens within the soul an inward certitude, and makes possible
+that perfect freedom ... so indispensable for every great creative
+work." By continually choosing and fighting for the progress of the
+Universal Spiritual Life, it comes to be our own in virtue of our deed
+and decision. Hence man has attained freedom--the lower world no longer
+makes successful appeal. He has become a part of the spiritual world,
+and his actions are no longer dictated by anything external, but are the
+direct outcome of his own self. He has freely chosen the highest, and
+continually reaffirms his choice--this is perfect freedom.
+
+Man gains for himself, too, a personality in the true sense of the term.
+Eucken does not mean by personality "mere self-assertion on the part of
+an individual in opposition to others." He means something far deeper
+than this. "A genuine self," says Eucken, "is constituted only by the
+coming to life of the infinite spiritual world in an independent
+concentration in the individual." Following a life of endeavour in the
+highest cause, and continual appropriation of the spiritual life, he
+arrives at a state of at-one-ness with the universal life. "Man does not
+merely enter into some kind of relation with the spiritual life, but
+finds his own being in it." The human being is elevated to a self-life
+of a universal kind, and this frees him from the ties and appeals of the
+world of sense and selfishness. It is a glorious conception of human
+personality, infinitely higher than the undignified conceptions of
+naturalism and determinism.
+
+And if man wins a glorious personality, he may gain immortality too.
+Unfortunately, Eucken has not yet dealt fully with this question, but he
+is evidently of the opinion that the spiritual personalities are
+immortal. As concentration points or foci of the spiritual life, he
+believes that the developed personalities are at present and in prospect
+possessors of a spiritual realm. But there will be no essential or
+sudden change at death. That which is immortal is involved in our
+present experience. Those who have developed into spiritual
+personalities, who have worked in fellowship with the great Universal
+Life, and become centre-points of spirituality, have thus risen supreme
+over time and pass to their inheritance. Those who have not done so, but
+have lived their lives on the plane of nature, will have nothing that
+can persist.
+
+Hence it is that the negative movement leads to freedom, personality,
+and immortality; the neglect to make the movement consigns the
+individual to slavery, makes a real "self" impossible, and at death he
+has nought that a spiritual realm can claim. The choice is an
+all-important one; for, as a recent writer puts it, "In this choice, the
+personality chooses or rejects itself, takes itself for its life-task,
+or dies of inanition and inertia."
+
+
+
+
+CHAPTER VII
+
+THE PERSONAL AND THE UNIVERSAL
+
+
+In the last chapter the ascent of the human being from serfdom to
+freedom and personality was traced. In doing so it was necessary to make
+frequent reference to the Universal Spiritual Life.
+
+When we turn to consider the characteristics of the Universal Spiritual
+Life, many problems present themselves. How can we reconcile freedom and
+personality with the existence of an Absolute? What is the nature of
+this Absolute, and in what way is the human related to it? What place
+should religion play in the life of the spiritual personality? These
+are, of course, some of the greatest and most difficult problems that
+ever perplexed the mind of man, and we can only deal briefly with
+Eucken's contribution to their solution.
+
+Can a man choose the highest? This is the form in which Eucken would
+state the problem of freedom. His answer, as already seen, is an
+affirmative one. The personality chooses the spiritual life, and
+continually reaffirms the decision. This being so, it is now no longer
+possible to consider the human and the divine to be entirely in
+opposition. And the more the spiritual personality develops, so much the
+less does the opposition obtain, until a state of spirituality is
+arrived at when all opposition of will ceases--then we attain perfect
+freedom. "We are most free, when we are most deeply pledged--pledged
+irrevocably to the spiritual presence, with which our own being is so
+radically and so finally implicated." Thus freedom is obtained in a
+sense through self-surrender, but it is through this same self-surrender
+that we realise spiritual absoluteness. Hence it is that perfect freedom
+carries with it the strongest consciousness of dependence, and human
+freedom is only made possible through the absoluteness of the spiritual
+life in whom it finds its being.
+
+English philosophers have dealt at length with the question of the
+possibility of reconciling the independence of personality and the
+existence of an Absolute. From Eucken's point of view the difficulty is
+not so serious. When he speaks of personality he does not mean the mere
+subjective individual in all his selfishness. Eucken has no sympathy
+with the emphasis that is often placed on the individual in the low
+subjective sense, and is averse from the glorification of the individual
+of which some writers are fond. Indeed, he would prefer a naturalistic
+explanation of man rather than one framed as a result of man's
+individualistic egoism. The former explanation admits that man is
+entirely a thing of nature; the latter, from a selfish and proud
+standpoint, claims for man a place in a higher world. There is nothing
+that is worthy and high in the low desires of Mr. Smith--the mere
+subjective Mr. Smith. But if through the mind and body of Mr. Smith the
+Absolute Spirit is realising itself in personality--then there is
+something of eternal worth--there is spiritual personality. There will
+be opposition between the sordidness of the mere individual will and the
+divine will, but that is because the spiritual life has not been gained.
+When the highest state of spiritual personality has been reached, then
+man is an expression--a personal realisation of the Absolute, is in
+entire accord with the absolute, indeed becomes himself divine.
+
+This does not rob the term personality of its meaning, for each
+personality does, in some way, after all, exist for itself. Each
+individual consciousness has a sanctity of its own. But the
+being-for-self develops more and more by coming into direct contact with
+the Universal Spiritual Life.
+
+Here, then, we arrive at something that appears to be a paradox. We have
+the phenomenon of a being that is free and existing for itself, yet in
+some way dependent upon an absolute spiritual life. We have, too, the
+phenomenon of a human being becoming divine. How is it really possible
+that self-activity can arise out of dependence? Eucken does not attempt
+to explain, but contends that an explanation cannot be arrived at
+through reasoning. We are forced to the conclusion, we realise through
+our life and action that this is the real state of affairs, and in this
+case the reality proves the possibility. "This primal phenomenon," he
+says, "overflows all explanation. It has, as the fundamental condition
+of all spiritual life, a universal axiomatic character." Again he says,
+"The wonder of wonders is the human made divine, through God's superior
+power." "The problem surpasses the capacity of the human reason." For
+taking up this position, Eucken is sharply criticised by some writers.
+
+When we approach the problem of the nature of the Absolute in itself,
+the main difficulty that arises is whether God is a personal being. God,
+says Eucken, is "an Absolute Spiritual Life in all its grandeur, above
+all the limitations of man and the world of experience--a Spiritual Life
+that has attained to a complete subsistence in itself, and at the same
+time to an encompassing of all reality." The divine is for Eucken the
+ultimate spirituality that inspires the work of all spiritual
+personalities. When in our life of fight and action we need inspiration,
+we find "in the very depths of our own nature a reawakening, which is
+not a mere product of our activity, but a salvation straight from God."
+God, then, is the ultimate spirituality which inspires the struggling
+personality, and gives to it a sense of unity and confidence. Eucken
+does not admit that God is a personality in the sense that we are, and
+deprecates all anthropomorphic conceptions of God as a personal being.
+Indeed, to avoid the tendency to such conceptions he would prefer the
+term "Godhead" to "God." Further considerations of the nature of God can
+only lead to intellectual speculations. For an activistic philosophy,
+such as Eucken's philosophy is, it would seem sufficient for life and
+action to know that all attempts at the ideal in life, originate in, and
+are inspired by, the Absolute Spiritual Life, that is by God.
+
+We cannot discuss fully the relation of human and divine without, too,
+dealing with the ever urgent problem of religion. This is a problem in
+which Eucken is deeply interested, and concerning which he has written
+one of his greatest works--_The Truth of Religion_--a work that has been
+described as one of the greatest apologies for religion ever written.
+
+What is religion? Most people perhaps would apply the term to a system
+of belief concerning the Eternal, usually resting upon a historical or
+traditional basis. Others would include in the term the reverence felt
+for the Absolute by the contemplative mind, even though that mind did
+not believe in any of the traditional systems. Some would emphasise the
+fact that religion should concern itself with the establishment of a
+relationship between the human and the Divine.
+
+But Eucken does not find religion to consist in belief, nor in a mere
+attitude towards the mysteries of an overworld. In keeping with the
+activistic tone of his whole philosophy he finds religion to be rooted
+in life, and would define religion as an action by which the human being
+appropriates the spiritual life.
+
+The first great concern of religion must be the conservation--not of
+man, as mere man, but of the spiritual life in the human being, and it
+means "a mighty concentration of the spiritual life in man." The
+essential basis that makes religion possible is the presence of a Divine
+life in man--"it unfolds itself through the seizure of this life as
+one's own nature." Religion must be a form of activity, which brings
+about the concentration of the spiritual life in the human soul, and
+sets forth this spiritual life as a shield against unworthy elements
+that attempt to enter and to govern man.
+
+The essential characteristic of religion must be the demand for a new
+world. "Religion is not a communication of overworld secrets, but the
+inauguration of an overworld life." Religion must depend upon the
+contradiction and opposition that exists in human life, and upon the
+clear recognition of the distinction between the "high" and the "low" in
+life. It must point to a means of attaining freedom and redemption from
+the old world of sin and sense, and to the possibility of being elevated
+into a new and higher world. It must, too, fight against the extremes of
+optimism and pessimism, for while it will acknowledge the presence of
+wrong, it will call attention to the possibility of deliverance. It must
+bring about a change of life, without denying the dark side of life; it
+must show "the Divine in the things nearest at hand, without idealising
+falsely the ordinary situation of life."
+
+The great practical effect of religion, then, must be to create a demand
+for a new and higher world in opposition to the world of nature. For
+this new life religion must provide an ultimate standard. "Religion must
+at all times assert its right to prove and to winnow, for it is
+religion--the power which draws upon the deepest source of life--which
+takes to itself the whole of man, and offers a fixed standard for all
+his undertakings." Religion must provide a standard for the whole of
+life, for it places all human life "under the eternity." It is not the
+function of religion to set up a special province over against the other
+aspects of his life--it must transform life in its entirety, and affect
+all the subsidiary aspects.
+
+But religion is not gained, any more than human freedom, once for all
+time--it must be gained continually afresh, and sought ever anew. Thus
+the fact of religion becomes a perpetual task, and leads to the highest
+activity.
+
+Eucken speaks of two types of religion--Universal and Characteristic
+Religion. The line of division between them is not easy to draw, but the
+distinction gives an opportunity for emphasising again the essential
+elements of true religion.
+
+_Universal Religion_ is a more or less vague appreciation of the
+Spiritual, which results in a diffused, indefinite spiritual life. The
+personality has appreciated to some extent the opposition between the
+natural and the spiritual, and has chosen the spiritual. He adopts a new
+attitude or mood, towards the world in consequence, and that is an
+attitude of fight against the world of nature. But everything is vague;
+the individual has not yet appreciated the spiritual world as his own,
+and feels that he is a stranger in the higher world, rather than an
+ordinary fully privileged citizen. He has not yet associated himself
+closely enough with the Universal Spirit, everything is superficial,
+there is hunger and thirst for the higher things in life, but these have
+not yet been satiated.
+
+Some people never get beyond this vague appreciation of the spiritual
+until perhaps some great trial or temptation, a long illness or sad
+bereavement falls to their lot. Then they feel the need for a religion
+that is more satisfying than the Universal Religion with which they have
+in the past been content. They want to get nearer to God; they feel the
+need of a personal God who is interested in their trials and troubles.
+They are no longer satisfied with the conception of a God that is far
+away, they thirst for His presence. This feeling leads the individual to
+search for a more definite form of religion, in which the God is
+regarded as supremely real, and reigns on the throne of love. The
+personality enters into the greater depths of religion, and it becomes a
+much more real and powerful influence in his life. He has no longer a
+mere indefinite conception of a Deity, but he thinks of God as real and
+personal. Instead of adopting a changed attitude towards the world of
+nature, he comes to demand a new world. He is now a denizen of the
+spiritual world, and there results "a life of pure inwardness," which
+draws its power and inspiration from the infinite resources of the
+Universal Spiritual Life in which he finds his being. This type of
+religion Eucken calls _Characteristic Religion_.
+
+The historical religions would seem to represent, to some extent, the
+attempts of humankind to arrive at a religion of this kind. A further
+distinction arises between the historical forms of religion, of which
+one at most, if any, can express the final truth, and the Absolute form
+of religion, which if not yet conceived, must ultimately express the
+truth in the matter of religion.
+
+Eucken is never more brilliant than he is in the examination he makes of
+the historical forms of religion, for the purpose of formulating the
+Absolute and final form; some account of this must be given in the next
+chapter.
+
+
+
+
+CHAPTER VIII
+
+RELIGION: HISTORICAL AND ABSOLUTE
+
+
+In examining the various historical forms of religion, Eucken, as we
+should expect, is governed by the conclusions he has arrived at
+concerning the solution of the great problem of life, and especially of
+the place of religion in life.
+
+A religion which emphasised the need for a break with the world, and of
+fight and action for spiritual progress, the possibility of a new higher
+life of freedom and of personality, and the superiority of the spiritual
+over the material, and which presented God as the ultimate spiritual
+life, in which the human personality found its real self, would thus
+meet with highest favour, while a form of religion that failed to do so
+would necessarily fail to satisfy the tests that he would apply.
+
+He does not spend time discussing various religions in detail, but deals
+with them briefly in general, in order to show that the Christian
+religion is far superior to all other religions, then he makes a
+critical and very able examination of the Christian position. He
+considers it necessary to discuss in detail only that form of religion
+that is undoubtedly the highest.
+
+The historical religions he finds to be of two types--religions of law
+and religions of redemption. The religions of law portray God as a being
+outside the world, and distinct from man, One who rules the world by
+law, and who decrees that man shall obey certain laws of conduct that
+He lays down. Failure to obey these laws brings its punishment in the
+present or in a future life, while implicit obedience brings the highest
+rewards. To such a God is often attributed all the weaknesses of the
+human being, sometimes in a much exaggerated form--hence His reign
+becomes one of fear to His subjects.
+
+A religion of law assumes that man is capable of himself of obeying the
+law, and is responsible for his mode of life; it assumes that man is
+capable through his own energy of conquering the world of sin, and of
+leading the higher life.
+
+Religions of this type possess of course the merit of simplicity,
+transparency, and finality. The decrees, the punishments and rewards are
+given with some clearness and are easily understood; there is no appeal
+and little equivocation. They served a useful purpose in the earlier
+ages of civilisation, but cannot solve the problem for the complex
+civilisation and advanced culture of the present age. They place God too
+far from man, and attribute to man powers which he cannot of himself
+possess. The conceptions of the Deity involved in them are too
+anthropomorphic in character--too much coloured by human frailties.
+
+The religions of law have had to give place to those of a superior
+type--the religions of redemption. These religions appreciate the
+difficulty there exists for humankind of itself to transcend the world
+of sin, and are of two types--one type expressing a merely negative
+element, the other a negative and positive element.
+
+The typical negative redemptive religion is that of Buddhism. Buddhism
+teaches us that the world is a sham and an evil; and the duty of man is
+to appreciate this fact, and to deny the world, but here the matter
+ends--it ends with world-renunciation and self-renunciation. There is
+only a negative element in such a religion, no inspiration to live and
+fight for gaining a higher world. This, of course, cannot provide a
+satisfactory solution to the problem, for no new life with new values is
+presented to us. It is a religion devoid of hope, for it does not point
+to a higher life. "A wisdom of world-denial, a calm composure of the
+nature, an entire serenity in the midst of the changing scenes of life,
+constitute the summit of life."
+
+Christianity teaches us that the world is full of misery and suffering,
+but the world in itself is really a perfect work of Divine wisdom and
+goodness. "The root of evil is not in the nature of the world, but in
+moral wrong--in a desertion from God." Sin and wickedness arise from the
+misuse and perversion of things which are not in themselves evil.
+Christianity calls for a break from the wickedness of the world. It
+calls upon man to give up his sin, to deny, or break with, the evil of
+which he is guilty. But it does not expect man to do this in his own
+strength alone--God Himself comes to his rescue. Unlike Buddhism, it
+does not stay at the denial of the world, but calls upon man to become a
+citizen of a higher world. This gives a new impetus to the higher life;
+man finds a great task--he has to build a kingdom of God upon the earth.
+This demands the highest efforts--he must fight to gain the new world,
+and must keep up the struggle to retain what he has gained. The
+inferiority of Buddhism as contrasted with Christianity is well
+described by Eucken in the following words: "In the former an
+emancipation from semblance becomes necessary; in the latter an
+overcoming of evil is the one thing needful. In the former the very
+basis of the world seems evil; in the latter it is the perversion of
+this basis which seems evil. In the former, the impulses of life are to
+be entirely eradicated; in the latter, on the contrary, they are to be
+ennobled, or rather to be transformed. In the former, no higher world of
+a positive kind dawns on man, so that life finally reaches a seemingly
+valid point of rest, whilst upon Christian ground life ever anew ascends
+beyond itself."
+
+From such considerations as these, Eucken comes to the conclusion that
+of the redemptive religions, which are themselves the highest type,
+Christianity is the highest and noblest form, hence his main criticism
+is concerned with the Christian religion. This does not mean that he
+finds neither value nor truth in any other form of religion. His general
+conclusion with regard to the historical religions is that they "contain
+too much that is merely human to be valued as a pure work of God, and
+yet too much that is spiritual and divine to be considered as a mere
+product of man." He finds in them all some kernel of truth, or at least
+a pathway to some part of truth, but contends that no religion contains
+the whole truth and nothing but the truth. "As certainly," he says, "as
+there is only one sole truth, there can be only one absolute religion,
+and this religion coincides entirely in no way with any one of the
+historical religions."
+
+Eucken's great endeavour in his discussion of the Christian religion is
+to bring out the distinction between the eternal substance that resides
+in it and the human additions that have been made to it in different
+ages, between the elements in Christianity that are essentially divine
+and those essentially human. Divested of its human colourings and
+accretions, Christianity presents a basis of Divine and eternal truth,
+and this regarded in itself, can well claim to be the final and absolute
+religion.
+
+The conclusion he has come to with regard to the eternal truth as
+contrasted with the temporary colourings of Christianity, with the
+essential as contrasted with the inessential, can best be outlined by
+taking in turn some of the main tenets and characteristics of the
+Christian faith.
+
+Eucken's conception of the negative movement is very much akin to the
+Christian idea of _conversion_. The first stage is merely a movement
+away from the world, but after a time, in the continuous process of
+negation, the negative movement attains a positive significance; when
+this stage is arrived at Eucken would apply the term conversion. He
+would not limit the negative movement to one act or to one point in
+time; the movement towards a higher world must be maintained--the
+sustaining of the negative movement being a test of the reality of
+conversion. The process of conversion is not a process to be passively
+undergone, or to originate from without, but is a movement starting in
+the depths of one's own being.
+
+As already pointed out, Eucken believes in _redemption_. The past is
+capable of reinterpretation and transformation, because we can view our
+past actions in a new light and so change the whole, since the past is
+not a closed thing, definite in itself, but a part of an incomplete
+whole. He considers, however, that the Christian doctrine of redemption
+makes it too much a matter of God's mercy, instead of placing stress
+upon the part that man himself must play. The possibility of redemption
+in his view follows from the presence and movement of the spiritual life
+in man, not merely from an act of the founder of Christianity, and he
+avers that while traditional Christianity emphasises the need for
+redemption from evil, it does not emphasise sufficiently the necessary
+elevation to the good life that must result.
+
+Closely bound up with the Christian doctrine of redemption is that of
+_mediation_. Eucken believes that the Christian conception of mediation
+resulted from the feeling of worthlessness and impotence of man, and the
+aspirations which yet burned within him after union with the Divine. The
+idea of mediation bridges the gulf, "a mid-link is forged between the
+Divine and the human, and half of it belongs to each side; both sides
+are brought into a definite connection which could be found in no other
+way." Eucken acknowledges that such a mediation seems to make access to
+the Divine easier, gives intimacy to the idea of redemption, and offers
+support for human frailty. But he points out that there is an
+intolerable anthropomorphism involved in the idea, that it removes the
+Divine farther away from man, and that the union of Divine and human is
+held to obtain in one special case only--that of Christ. He urges that
+in a religion of mediation, one or other, God or Christ, must be chosen
+as the centre. "Concerning the decision there cannot be the least doubt;
+the fact is clear in the soul-struggles of the great religious
+personalities, that in a decisive act of the soul the doctrinal idea of
+mediation recedes into the background, and a direct relationship with
+God becomes a fact of immediacy and intimacy."
+
+So Eucken will have nothing to do with the idea of mediation in its
+doctrinal significance--pointing out that "the idea of mediation glides
+easily into a further mediation." "Has not the figure of Christ receded
+in Catholicism, and does not the figure of Mary constitute the centre of
+the religious emotional life?"
+
+He does, however, lay great store by the help that a man may be to other
+men in their upward path: "The human, personality who first and foremost
+brought eternal truth to the plane of time, and through this
+inaugurated a new epoch, remains permanently present in the picture of
+the spiritual world, and is able permanently to exercise a mighty power
+upon the soul ... but all this is far removed from any idea of
+mediation."
+
+Eucken believes in _revelation_, but through action, and not through
+contemplation. To the personality struggling upward, with its aims set
+towards the highest in life, the spiritual life reveals itself. He does
+not confine revelation to certain periods in time, and believes that
+such revelation comes to all spiritual personalities.
+
+He holds, too, that the spiritual personalities are themselves
+revelations of the Universal Spiritual Life, and that the Spiritual Life
+does reveal itself most clearly in personalities.
+
+How the revelation comes he does not discuss in any detail, but he is
+very certain that it comes through action and fight for the highest.
+
+It is perhaps largely due to his activistic standpoint that Eucken does
+not deal with _prayer_. In the _Truth of Religion_, which deals very
+fully with most aspects of religion, and purports to be a complete
+discussion of religion, no treatment of prayer is given. He speaks of
+the developing personality as drawing upon the resources of the
+Universal Spiritual Life, but this appears to be in action, and not in
+prayer or communion.
+
+He is ever suspicious of intellectual contemplation, and this leads him
+to attribute less importance than perhaps he should to _mysticism_, to
+prayer, adoration, and worship. He admits that mysticism contains a
+truth that is vital to religion, but complains that it becomes for many
+the whole of religion. Its proper function is to liberate the human mind
+from the narrowly human, and to emphasise a total-life, the great Whole.
+It fails, however, "because it turns this necessary portion of religion
+into the sole content. To it, religion is nothing other than an
+absorption into the infinite and eternal Being--an extinguishing of all
+particularity, and the gaining of a complete calm through the suspension
+of all the wear and tear of life."
+
+Eucken's discussion of _faith and doubt_ is very illuminating. He
+protests against the conception of faith which concerns itself merely
+with the intellectual acceptance of this or that doctrine. This narrows
+and weakens its power, confining it to one department of life; whereas
+faith is concerned with the whole of life.
+
+Faith is for Eucken "a conviction of an axiomatic character, which
+refuses to be analysed into reasons, and which, indeed, precedes all
+reasons ... the recognition of the inner presence of an infinite
+energy."
+
+If faith concerns itself with, and proceeds from the whole of life, it
+will then take account of the work of thought, and will not set itself
+in opposition to reason. But it will lead where reason fails. It is not
+limited by intellectual limitations, though it does not underrate or
+neglect the achievements of the intellect. Faith enables life to
+"maintain itself against a hostile or indifferent world; ... it holds
+itself fast to invisible facts against the hard opposition of visible
+existence."
+
+The vital importance of such faith to religion is clearly evident; and
+bound up with this is the significance of doubt. Doubt, too, becomes
+now, not an intellectual matter, but a matter for the whole of life. "If
+faith carries within itself so much movement and struggle, it is not
+surprising ... if faith and doubt set themselves against each other, and
+if the soul is set in a painful dilemma." Eucken considers it to be an
+inevitable, and indeed a necessary accompaniment of religious
+experience, and his own words on the point are forcible and clear.
+"Doubt ... does not appear as something monstrous and atrocious, though
+it would appear so if a perfect circle of ideas presented itself to man
+and demanded his assent as a bounden duty. For where it is necessary to
+lay hold on a new life, and to bring to consummation an inward
+transformation, then a personal experience and testing are needed. But
+no proof is definite which clings from the beginning to the final
+result, and places on one side all possibility of an antithesis. The
+opposite possibility must be thought out and lived through if the Yea is
+to possess full energy and genuineness. Thus doubt becomes a necessary,
+if also an uncomfortable, companion of religion; it is indispensable for
+the conservation of the full freshness and originality of religion--for
+the freeing of religion from conventional forms and phrases."
+
+Eucken's views on _immortality_ have already been dealt with. He does
+not accept the Christian conception of it, for he seems to limit the
+possibility to those in whom spiritual personalities have been
+developed, and he evidently does not believe that the "natural
+individuality with all its egoism and limitations" is going to persist.
+
+In discussing the question of _miracle_, Eucken weighs the fact that a
+conviction of the possibility of miracle has been held by millions in
+various religions, and particularly in Christianity. He considers that
+the question of miracle is of more importance in the Christian religion
+than in any other, one miracle--the Resurrection--having been taken
+right into the heart of Christian doctrine. He finds, however, that the
+miracle is entirely inconsistent with an exact scientific conception of
+nature, and means "an overthrow of the total order of nature as this
+has been set forth through the fundamental work of modern
+investigation." He does not consider such a position can be held without
+overwhelming evidence, and does not feel the traditional fact to have
+this degree of certainty, or to be inexplicable in another way. He
+considers that the explanation of the miracle probably lies in the
+psychic state of the witnesses.
+
+Eucken shows in general extreme reluctance to make a historical event a
+foundation of belief, and this no doubt accounts to some extent for his
+attitude with regard to miracles. He points out that "the founders of
+religion have themselves protested against a craving after sensuous
+signs," and that this protest "is no other than the sign of spiritual
+power and of a Divine message and greatness." He considers that the
+belief in, and craving for, sensuous miracle is an outcome of a
+"mid-level of religion," where belief is waning and spirituality
+declining. While, thus, he does not believe in sensuous miracle, he
+acknowledges and lays the greatest stress on one miracle--the presence
+of the Spiritual Life in man. It is, indeed, this miracle that renders
+others unnecessary.
+
+In discussing the doctrine of the _Incarnation_, Eucken attempts to get
+at the inner meaning--the truth which the doctrine endeavours to
+express, and he finds this to consist in the fact of the ultimate union
+of the human and Divine, and this truth is one that we dare not
+renounce. He criticises the attempt that is made in Christianity to show
+that such union only obtained once in the course of history. Incarnation
+is not one historical event, but a spiritual process; not an article of
+belief, but a living experience of each spiritual personality.
+
+He considers as injurious to religion in general the Christian
+conception of the _Atonement_. He believes that the idea that is to be
+expressed is that of the nearness of God to man in guilt and in
+suffering. In endeavouring to express this close intimacy the idea of
+suffering was transferred to God himself. The anthropomorphic idea of
+reconciliation and substitution thus arose, and this Eucken considers to
+have done harm. "The notion that God does not help us through His own
+will and power, but requires first of all His own feeling of pity to be
+roused, is an outrage on God and a darkening of the foundation of
+religion." So Eucken objects to the attempt to formulate the mystery
+into dogma. "All dogmatic formulation of such fundamental truths of
+religion becomes inevitably a rationalism and a treatment of the problem
+by means of human relationships, and according to human standards." "It
+is sufficient for the religious conviction to experience the nearness of
+God in human suffering, and His help in the raising of life out of
+suffering into a new life beyond all the insufficiency of reason.
+Indeed, the more intuitively this necessary truth is grasped, the less
+does it combine into a dogmatic speculation and the purer and more
+energetically is it able to work."
+
+The conception of the _Trinity_ is again an attempt to express the union
+of Divine and human, "the inauguration of the Divine Nature within human
+life." The dogma, however, involves ideas of a particular generation,
+and so threatens to become, and has indeed become, burdensome to a later
+age which no longer holds these ideas. Further, the doctrine of the
+Trinity has mixed up a fundamental truth of religion with abstruse
+philosophical speculations, and this has provided a stumbling-block
+rather than a help.
+
+At the same time, Eucken lays the greatest stress on the _personality of
+Jesus_. He considers the personality of Jesus to be of more importance
+to Christianity than is the personality of its founder to any other
+religion. "Such a personality as Jesus is not the mere bearer of
+doctrines, or of a special frame of mind, but is a convincing fact, and
+proof of the Divine life, a proof at which new life can be kindled over
+anew." And again: "It is from this source that a great yearning has been
+implanted within the human breast ... a longing for a new life of love
+and peace, of purity and simplicity. Such a life, with its incomparable
+nature and its mysterious depths, does not exhaust itself through
+historical effects, but humanity can from hence ever return afresh to
+its inmost essence, and can strengthen itself ever anew through the
+certainty of a new, pure, and spiritual world over against the
+meaningless aspects of nature and over against the vulgar mechanism of a
+culture merely human." But while he would appreciate the depth and
+richness of the personality of Jesus, he protests against the worship of
+Jesus as divine, and the making of Him the centre of religion. The
+greatness of Christ is confined to the realm of humanity, and there is
+in all men a possibility of attaining similar heights.
+
+Christianity is, in Eucken's view, much more closely bound up with
+historical events than any other religion, and it thus suffers more
+severe treatment at the hands of historical criticism than any other
+religion. Eucken considers such historical criticism to be of great
+value. In Christianity as in other religions we find the eternal not in
+its pure form, but mixed with the temporal and variable, and historical
+criticism will help in the separation of the temporal from the eternal
+elements. In so doing it does an immense service, for it frees religion
+from fixation to one special point of time, and enables us to regard it
+as ever developing and progressing to greater depths.
+
+Eucken emphasises that the _historical basis_ of Christianity is not
+Christianity itself, is not essentially religious; and he quotes
+Lessing, Kant, and Fichte to support him in his contention that a belief
+in such a historical basis is not necessary to religion, and may even
+prove harmful to it. The historical basis is, of course, useful as
+bringing out into clear relief the personality of Jesus, and the other
+great spiritual personalities associated in His work, and Eucken lays
+stress upon the use that history can be to Christianity in giving
+records of the experiences of great spiritual personalities in all ages,
+but it is important that the history is here a means to an end, and not
+an end in itself, and that the importance lies in the spiritual
+experience and not in the historical facts.
+
+When one considers how little Eucken has to say concerning worship, and
+how little emphasis he places upon historical and doctrinal forms in
+religion, one wonders how it is he attaches so much importance to the
+functions of the _Church_. He points out that a Church is necessary to
+religion, that it seems to be the only way of making religion real and
+effective for man. "The Church seems indispensable in order to introduce
+and to hold at hand the new world and the new life to man in the midst
+of his ordinary existence; it is indispensable in order to fortify the
+conviction and to strengthen the energy in the midst of all the opposite
+collisions; it is indispensable in order to uphold an eternal truth and
+a universal problem in the midst of the fleetingness of the moment." In
+the past, however, much harm has been done to religion by the Church.
+This has arisen from several reasons. To begin with, it tends to narrow
+religion, which is concerned with life, to the realm of ideas, and to
+tie down religion by connecting it with a thought-system of a particular
+age. Further, the necessary mechanical routine, and the appointment of
+special persons to carry out this routine, tends to elevate the routine
+and these special persons to a far higher place than they should occupy.
+Again, spiritual things have been dragged into the service of personal
+ambition, and bound up with human interests. The most serious danger,
+however, is that religion, from being an inward matter, tends to become
+externalised.
+
+Despite this, an organised Church cannot be dispensed with, and Eucken
+points out what changes are necessary to make the Church effective. One
+important point he makes clear, namely, that as the Church must speak to
+all, and every day, and not only to spiritually distinguished souls, and
+in moments of elevated feeling, then the teaching of the Church will
+always lag behind religion itself, and must be considered as an
+inadequate expression of it.
+
+It is necessary that there should be no coercion with regard to men's
+attitude towards the Church, and men should be free to join this or that
+Church, or no Church at all.
+
+Then there must be more freedom, movement, and individuality within the
+Church. What the Church holds as a final result of the experience of
+life cannot be expected as the confession of all, especially of the
+young. "How can every man and every child feel what such a mightily
+contrasted nature as Luther's with all its convulsive experiences felt?"
+
+Then the Church must not so much teach this or that doctrine as point to
+the Spiritual Life, set forth the conditions of its development, and be
+the representative of the higher world. Thus, and thus only, Eucken
+thinks that the Church can fulfil its proper function, and avoid being a
+danger to religion.
+
+Eucken's _appreciation of Christianity_ is sincere. Viewing it from the
+standpoint of the Spiritual Life, he finds that it fulfils the
+conditions that religion should fulfil. It is based on freedom, and on
+the presence of the Divine in humanity, even to the extent of a complete
+union between them. The ideal of the Christian life is a personal life
+of pure inwardness, and of an ethical character. He speaks of the "flow
+of inner life by means of which Christianity far surpasses all other
+religions," and of the "unfathomable depth and immeasurable hope which
+are contained in the Christian faith."
+
+In Christianity the life of Christ has a value transcending all time,
+and is a standard by which to judge all other lives. There is, too, in
+Christianity a complete transformation or break, which must take place
+before any progress or development can take place.
+
+"There is no need of a breach with Christianity; it can be to us what a
+historical religion pre-eminently is meant to be--a sure pathway to
+truth, an awakener of immediate and intimate life, a vivid
+representation and realisation of an Eternal Order which all the changes
+of time cannot possess or destroy."
+
+At the same time, there are changes necessary in the form of
+Christianity, if it is to answer to the demands of the age, and be the
+Absolute Religion. It must be shorn of temporary accretions, and must
+cast aside the ideas of any one particular age which have now been
+superseded. No longer can it retain the primitive view of nature and the
+world which formerly obtained, no longer must it take up a somewhat
+negative and passive attitude, but, realising that religion is a matter
+of the whole life, must energetically work itself out through all
+departments of life. It must remedy wrong, not merely endure it. It must
+proceed from a narrow and subjective point of view to a cosmic one,
+without at the same time losing sight of the fact that religion is an
+inward and personal matter. It must take account to the full of the
+value of man as man, and of the possibilities latent in him, and take
+account of his own activity in his salvation.
+
+The Christian ideal of life must be a more joyous one, of greater
+spiritual power, and the idea of redemption must not stop short at
+redemption from evil, but must progress to a restoration to free and
+self-determining activity. Since an absolute religion is based on the
+spiritual life, the form in which it is clothed must not be too
+rigid--life cannot be bound within a rigid creed. With its form modified
+in this way, Eucken considers that Christianity may well be the Absolute
+Religion, and that not only we can be, but we _must_ be Christians if
+life is to have for us the highest meaning and value.
+
+
+
+
+CHAPTER IX
+
+CONCLUSION: CRITICISM AND APPRECIATION
+
+
+We have attempted to enunciate the special problem with which Eucken
+deals, and to follow him in his masterly criticisms of the solutions
+that have been offered, in his further search for the reality in life,
+in his arguments and statement of the philosophy of the spiritual life,
+and finally in his profound and able investigation into the eternal
+truth that is to be found in religion. In doing so, we have only been
+able in a few cases to suggest points of criticism, and sometimes to
+emphasise the special merits of the work. It was necessary to choose
+between making a critical examination of a few points, and setting forth
+in outline his philosophy as a whole. It was felt that it would be more
+profitable for the average reader if the latter course were adopted.
+Thousands who have heard the name of Eucken and have read frequent
+references to him are asking, "What has Eucken really to say?" and we
+have attempted to give a systematic, if brief, answer to the question.
+Having done this it will be well to mention some of the main points of
+criticism that have been made, and to call attention again to some of
+the remarkable aspects of the contributions he has made to philosophy
+and religion.
+
+Several critics complain of the obscurity of his writings, of his loose
+use of terms, and of his tendency to use freely such indefinite and
+abstruse terms as "The Whole," "The All," &c., and of his tendency to
+repeat himself. Of course, if he is guilty of these faults, and he
+certainly is to some extent, they are merely faults of style, and do not
+necessarily affect the truth or otherwise of his opinions. In the matter
+of clarity he is very variable; occasional sentences are brilliantly
+clear, others present considerable difficulty to the practised student.
+His more popular works, however, are much clearer and easier to
+understand than the two standard treatises on _The Truth of Religion_
+and _Life's Basis and Life's Ideal_. His tendency to repetition is by no
+means an unmixed evil, for even when he appears to be repeating himself,
+he is very often in reality expressing new shades of meaning, which help
+towards the better understanding of the first statements.
+
+The slight looseness in the use of terms, and a certain inexactness of
+expression that is sometimes apparent, must of course not be
+exaggerated; it is by no means serious enough to invalidate his main
+argument. It gives an opportunity for a great deal of superficial
+criticism on the part of unsympathetic writers, which, however, can do
+little harm to Eucken's position. One has to remember that it is
+difficult to combine the fervour of a prophet with pedantic exactness,
+and that an inspired and profound philosopher cannot be expected to
+spend much time over verbal niceties.
+
+Of course one would prefer absolute clarity and exactness, but we must
+guard against allowing the absence of these things to prejudice us
+against the profound truths of a philosophical position, which are not
+vitally affected by that absence.
+
+Frequent criticism is directed towards the incompleteness of Eucken's
+philosophy. He does not introduce his philosophy with a systematic
+discussion of the great epistemological and ontological problems.
+Philosophers have often introduced their work in this way, and it has
+been customary to expect an introduction of the kind. To do so, however,
+would be quite out of keeping with Eucken's activistic position, as it
+would necessarily involve much intellectual speculation, and he does not
+believe that the problem of life can be solved by such speculation. It
+is unfortunate that he has so little to say concerning the world of
+matter. Beyond insisting upon the superiority of the spiritual life,
+which he calls the "substantial," over matter, which he calls the merely
+"existential," he tells us very little about the material world. Rightly
+or wrongly, thinkers are deeply interested in the merely existential, in
+the periphery of life, in the material world, but for the solution of
+this problem Eucken contributes little or nothing. His sole concern is
+the spiritual world, and although we should like an elaboration of his
+views on the mere periphery of life, we must not let the fact that he
+does not give it, lead us to undervalue his real contributions. Another
+serious incompleteness lies in the fact that he pays little attention to
+the psychological implications of his theories. Until he does this, his
+philosophy cannot be regarded as complete. Eucken, however, would be the
+last to claim that his solution is a finished or final one; he is
+content if his work is a substantial contribution to the final solution.
+
+Objection has been taken to the fact that he starts upon his task with a
+definite bias in a certain direction. He candidly admits from the outset
+that his aim is to find a meaning for life, and in doing this he of
+course tacitly assumes that life has a deep and profound meaning. Strict
+scientists aver that the investigator must set out without prejudice, to
+examine the phenomena he observes; and Eucken's initial bias may form a
+fatal stumbling-block to the acceptance of his philosophy by these, or
+indeed, by any who are not disposed to accept this fundamental position.
+If we deny that life has a meaning, then Eucken has little for us; but
+if we are merely doubtful on the matter, the reading of Eucken will
+probably bring conviction.
+
+Many critics point to the far-reaching assumptions he makes. He assumes
+as axiomatic certainties and insoluble mysteries the existence of the
+spiritual life in man, the union of the human and divine, and the
+freedom of the spiritual personalities, though in a sense dependent upon
+the Universal Spiritual Life. This of course does not mean that he is in
+the habit of making unjustifiable assumptions. This is far from being
+the case; on the contrary, he takes the greatest care in the matter of
+his speculative bases. There are some fundamental facts of life,
+however, which according to Eucken are proved to us by life itself; we
+feel they must be true, but they are not truths that can be reasoned
+about, nor proved by the intellect alone. These are the three great
+facts mentioned above, which, while not admitting of proof, must be
+regarded as certainties.
+
+His contention that they cannot be reasoned about has led to the further
+charge of irrationalism. The question that has to be decided is, whether
+Eucken in emphasising the fact that great truths must be solved by life
+and action, is underestimating the part that intellect must play in
+life. The decision must be largely one of individual opinion. Many
+critics are of the opinion that he does lay too little stress upon the
+intellectual factor in life. In actual fact, however, the fault is more
+apparent than real, for Eucken does in fact reason and argue closely
+concerning the facts of life. The charge, too, is to some extent due to
+the fact that he continually attacks the over-emphasis on the
+intellectual that the people of his own race--the Germans--are apt to
+place. With the glorification of the intellect he has no sympathy, for
+he feels there is something higher and more valuable in life than
+thought--and that is action.
+
+These are the main points of criticism that have been raised--the reader
+must judge for himself how seriously they should be regarded. But before
+arriving at a final opinion he must think again of the contributions
+Eucken has indubitably made to philosophy and religion, of which we
+shall again in brief remind him.
+
+He has given us a striking examination of the various theories of life,
+and has ably demonstrated their inadequacy. He has displayed great
+scholarship in his search for the ultimate reality. He has found this
+reality in the universal life, and has urged the need for a break with
+the natural world in order to enter upon a higher life. He has traced
+the progress of the spiritual life, and has given us ultimately a bold
+vindication of human personality and of the freedom of the spiritual
+being.
+
+He has raised philosophy from being mere discussions concerning abstract
+theories to a discussion of life itself. In this way philosophy becomes
+not merely a theory concerning the universe, nor merely a theory of
+life, but a real factor in life itself--indeed it becomes itself a life.
+Thus has he given to philosophy a higher ideal, a new urgency--by his
+continued emphasis upon the spiritual he has given to philosophy a
+nobler and a higher mission. He has placed the emphasis in general upon
+life, and has pointed out the inability of the intellect to solve all
+life's problems. He has given to idealistic philosophies a possible
+rallying-point, where theories differing in detail can meet on common
+ground. As one eminent writer says: "The depth and inclusiveness of
+Eucken's philosophy, the comprehensiveness of its substructure and its
+stimulating personal quality, mark it out as the right rallying-point
+for the idealistic endeavour of to-day."
+
+And what does he give to religion? Many will reply that he has given us
+nothing that is not already in the Christian religion. Therein lies the
+value and strength of Eucken's contributions. He has given a striking
+vindication of the spiritual content of Christianity as against the
+effects of time changes. He has attempted to bring out the contrast
+between what is really vital, and what are merely temporary colourings
+and accretions. He makes many of the main elements of Christianity
+acceptable without the need of a historical basis or proof. Not only
+does he present the Christian position as a reasonable view of the
+problem of life, but as the only solution that can really solve the
+final problem. He has cleared the decks of all superfluous baggage, and
+has laid bare a firm basis for a practical, constructive endeavour.
+
+He has given us in himself a profound believer in the inward and higher
+nature of man, and in the existence of the spiritual life. As one critic
+says: "The earnestness, depth and grandeur, humility and conscious
+choice of high ideals, have raised his work far above mere intellectual
+acuteness and minuteness."
+
+In Eucken we have one of the greatest thinkers of the age--some would
+say _the_ greatest--setting his life upon emphasising the spiritual at a
+time when the tendency is strongly in materialistic directions. He has
+gathered around him a number of able and whole-hearted disciples in
+various countries, and future ages may find in Eucken the greatest
+force in the revulsion of the twentieth century (that is already making
+itself felt) from the extreme materialistic position, to take religion
+up again, and particularly the Christian religion, as the only
+satisfying solution of humanity's most urgent problem.
+
+
+
+
+BIBLIOGRAPHY
+
+
+The English reader should first read:
+
+_The Meaning and Value of Life_ (A. & C. Black), which is a good
+    introduction to Eucken's philosophy; and
+_The Life of the Spirit_ (Williams & Norgate).
+
+He can then proceed to study Eucken's three comprehensive and important
+works:
+
+_Life's Basis and Life's Ideal_, in which he gives a detailed presentation
+    of his philosophy (A. & C. Black).
+_The Truth of Religion_, in which he gives his ideas on religion (Williams
+    & Norgate).
+_The Problem of Human Life_, in which he makes a searching analysis of the
+    philosophies of the past (Fisher Unwin).
+
+The student will be much helped in his study by the following books:
+
+_Eucken and Bergson_, by E. Hermann (James Clark & Co.).
+_Rudolf Eucken's Philosophy of Life_, by Professor W.R. Boyce Gibson
+    (A. & C. Black).
+
+When he has studied these he will probably be anxious to read other
+works of Eucken's, of which translations have already appeared, or are
+soon to appear.
+
+
+
+
+INDEX
+
+
+Absolute, the, 63
+---- Freedom and the, 61, 62
+---- Personality and the, 62, 63
+---- and historical religion, chap. viii.
+---- religion, Christianity as the, 72
+
+Activism, 41, 42
+
+Atonement, the, 79
+
+
+Bergson, 39
+
+Buddhism, 70, 71
+
+
+Characteristic Religion, 66, 67
+
+Characteristics of a satisfactory solution of life, 16
+
+Christ, as mediator, 74
+---- Personality of, 80
+---- Value of life of, 83
+
+Christian Church, 81, 82
+
+Christianity, and historical bases, 80, 81
+---- Appreciation of, 83
+---- as absolute religion, 72
+---- highest form of religion, 71, 72
+
+Conversion, 57, 73
+
+
+Doubt, 76
+
+
+Empiricism, 36, 37
+
+Eternal and transient in religion and Christianity, 72, 73
+---- truth contrasted with its temporary expression, 44, 45
+
+Eucken, assumptions made by, 88
+---- bias, 87
+---- charge of irrationalism, 88, 89
+---- contributions to philosophy and religion, 90, 91
+---- faults of style, 86
+---- Incompleteness of philosophy of, 87
+---- Special excellences of philosophy of, 89
+
+Evil, 51
+
+
+Faith, 76
+
+Freedom, ascent to, 59
+---- and the absolute, 61, 62
+---- and naturalism, 26
+
+
+God, is God a person? 63, 64
+---- Nature of, 63, 64
+
+
+Historical and absolute religion, chap. viii.
+---- bases of Christianity, 80, 81
+
+History and philosophy, 43-49
+---- and religion, 17, 18
+
+
+Idealistic presuppositions of socialism and individualism, 31, 48
+
+Ideas, power of, 46
+
+Immanent idealism as a solution of the problem of life, 19-22
+
+Immediacy, the new, 58
+
+Immortality, 60, 77
+
+Incarnation, 78
+
+Independence of the spiritual life, 52, 53
+
+Individualism, and personality, 59, 62
+---- as a solution of the problem of life, 26-32
+---- idealistic presuppositions of, 31, 48
+
+Irrationalism, charge of, 88, 89
+
+
+James, William, 39, 40
+
+
+Law, religions of, 69, 70
+
+Life, independence of the spiritual, 52
+---- spiritual, relation of, to natural life, 52-54
+---- ---- superiority over natural life, 52-54
+---- The spiritual, 14
+---- The universal spiritual, 44, 49, chaps. v., vi., vii. (vii.
+       especially).
+
+
+Maeterlinck, 44
+
+Man, natural and spiritual, 53, 54
+---- transcending the material, 46
+
+Mediation, 74
+
+Mediator, Christ as, 74
+
+Methods of Eucken, 14, 15
+
+Mind, limits of, 52
+
+Miracle, 77
+
+Mysticism, 75
+
+
+Naturalism and freedom, 26
+---- as a solution of the problem of life, 22-26
+---- its own disproof, 25
+
+Natural life, relation to spiritual life, 52-54
+---- ---- Superiority of spiritual over, 52-54
+---- man and spiritual man, 53, 54
+
+Nature, limits of, 52
+---- of God, 63, 64
+
+Negative movement, the, 57, 73
+
+New immediacy, the, 58
+
+Nöological position, the, 50
+
+
+Pantheism, 20, 51, 56
+
+Past, the, not irrevocable, 44, 73
+
+Personality and individualism, 59, 62
+---- and the absolute, 62, 63
+---- gaining of, 54, 59
+---- of Christ, 80
+---- of God, 63, 64
+
+Philosophy and history, 43-49
+---- of life, 13
+---- problems of, 10, 11
+
+Pragmatism, 40, 41
+
+Prayer, 75
+
+Problem, Eucken's special, 12-14
+
+Problems of philosophy, 10, 11
+
+Purpose of Eucken's investigation, 13
+---- of religion, 65, 66
+
+
+Rationalism, 37-39
+
+Redemption, 73
+
+Religion and history, 17, 18
+---- and human activity, 18
+---- and science, 19
+---- as solution of problem of life, 16, 19
+---- Characteristic, 66, 67
+---- Christianity as highest form of, 71, 72
+---- Christianity as the absolute, 72
+---- Essential characteristics of, 65, 66
+---- Eternal and transient in, 72, 73
+---- Eucken's contributions to, 90, 91
+---- Historical and absolute, chap. viii.
+---- of law, 69, 70
+---- of redemption, 69, 70
+---- Purpose of, 65, 66
+---- Universal, 66
+---- what is it? 64, 65
+
+Resurrection, the, 77
+
+Revelation, 75
+
+
+Science, and religion, 17
+
+Socialism, as a solution of the problem of life, 26-32
+---- idealistic presuppositions of, 31, 48
+
+Spiritual life, 14
+---- ---- Independence of the, 52
+---- ---- Relation of, to natural life, 52-54
+---- ---- Superiority of, over material and mental, 52-54
+---- ---- The universal, 47-49, and chaps. v., vi., and vii. (vii.
+            especially)
+
+Spiritual man and natural man, 53, 54
+
+
+Trinity, the, 79
+
+Truth, 44, 45
+---- another search for, chap. iii.
+
+
+Universal Religion, 66
+---- spiritual life, 47-49, and chaps, v., vi., and vii. (vii. especially)
+
+
+
+
+
+Printed by BALLANTYNE, HANSON & CO.
+Edinburgh & London
+
+
+
+
+THE PEOPLE'S BOOKS
+
+THE FIRST HUNDRED VOLUMES
+
+The volumes issued (Spring 1913) are marked with an asterisk
+
+SCIENCE
+
+-------------------------------------------------------------------------
+
+  *1. The Foundations of Science         By W.C.D. Whetham, F.R.S.
+
+  *2. Embryology--The Beginnings of Life By Prof. Gerald Leighton, M.D.
+
+  3. Biology--The Science of Life        By Prof. W.D. Henderson, M.A.
+
+  *4. Zoology: The Study of Animal Life  By Prof. E.W. MacBride, F.R.S.
+
+  *5. Botany; The Modern Study of Plants By M.C. Stopes, D. Sc., Ph. D.
+
+  6. Bacteriology                        By W.E. Carnegie Dickson, M.D.
+
+  *7. The Structure of the Earth         By the Rev. T.G. Bonney, F.R.S.
+
+  *8. Evolution                          By E.S. Goodrich, M.A., F.R.S.
+
+  9. Darwin                              By Prof. W. Garstang, M.A., D. Sc.
+
+  *10. Heredity                          By J.A.S. Watson, B. Sc.
+
+  *11. Inorganic Chemistry               By Prof. E.C.C. Baly, F.R.S.
+
+  *12. Organic Chemistry                 By Prof. J.B. Cohen, B. Sc.,
+                                         F.R.S.
+
+  *13. The Principles of Electricity     By Norman R. Campbell, M.A.
+
+  *14. Radiation                         By P. Phillips, D. Sc.
+
+  *15. The Science of the Stars          By E.W. Maunder, F.R.A.S.
+
+  16. Light, according to Modern Science By P. Phillips. D. Sc.
+
+  *17. Weather-Science                   By R.G.K. Lempfert, M.A.
+
+  *18. Hypnotism                         By Alice Hutchison, M.D.
+
+  *19. The Baby: A Mother's Book         By a University Woman.
+
+  20. Youth and Sex--Dangers and         By Mary Scharlieb, M.D., M.S.,
+      Safeguards for Boys and Girls      and G.E.C. Pritchard, M.A., M.D.
+
+  *21. Motherhood--A Wife's Handbook     By H.S. Davidson, F.R.C.S.E.
+
+  *22. Lord Kelvin                       By A. Russell, M.A., D. Sc.
+
+  *23. Huxley                            By Professor G. Leighton, M.D.
+
+  24. Sir W. Huggins and Spectroscopic   By E.W. Maunder, F.R.A.S., of
+      Astronomy                          the Royal Observatory, Greenwich.
+
+  *62. Practical Astronomy               By H. Macpherson, Jr., F.R.A.S.
+
+  *63. Aviation                          By Sydney F. Walker, R.N.,
+                                         M.I.E.E.
+
+  *64. Navigation                        By W. Hall, R.N., B.A.
+
+  *65. Pond Life                         By E.C. Ash, M.R.A.C.
+
+  *66. Dietetics                         By Alex. Bryce, M.D., D.P.H.
+
+  *94. The Nature of Mathematics         By P.G.B. Jourdain, M.A.
+
+  95. Applications of Electricity        By Alex. Ogilvie, B. Sc.
+
+  96. The Small Garden                   By A. Cecil Bartlett.
+
+  97. The Care of the Teeth              By J.A. Young, L.D.S.
+
+  *98. Atlas of the World                By J. Bartholomew, F.R.G.S
+
+
+  PHILOSOPHY AND RELIGION
+
+  25. The Meaning of Philosophy          By T. Loveday, M.A.
+
+  *26. Henri Bergson                     By H. Wildon Carr.
+
+  *27. Psychology                        By H.J. Watt, M.A., Ph. D.
+
+  28. Ethics                             By Canon Rashdall, D. Litt.,
+                                         F.B.A.
+
+  29. Kant's Philosophy                  By A.D. Lindsay, M.A.
+
+  30. The Teaching of Plato              By A.D. Lindsay, M.A.
+
+  *67. Aristotle                         By Prof. A.E. Taylor, M.A., F.B.A.
+
+  *68. Nietzsche                         By M.A. Mügge, Ph. D.
+
+  *69. Eucken                            By A.J. Jones, M.A., B. Sc.,
+                                         Ph. D.
+
+  70. The Experimental Psychology        By C.W. Valentine, B.A.
+      of Beauty
+
+  71. The Problem of Truth               By H. Wildon Carr.
+
+  99. George Berkeley: the Philosophy    By G Dawes Hicks; Litt.D.
+      of Idealism
+
+  31. Buddhism                           By Prof. T.W. Rhys Davids, F.B.A.
+
+  *32. Roman Catholicism                 By H.B. Coxon.
+
+  33. The Oxford Movement                By Wilfrid P. Ward.
+
+  *34. The Bible in the Light            By Rev. W.F. Adeney, M.A., and
+       of the Higher Criticism           Rev. Prof. W.H. Bennett, Litt.D.
+
+  35. Cardinal Newman                    By Wilfrid Meynell.
+
+  *72. The Church of England             By Rev. Canon Masterman.
+
+  73. Anglo-Catholicism                  By A.E. Manning Foster.
+
+  *74. The Free Churches                 By Rev. Edward Shillito, M.A.
+
+  75. Judaism                            By Ephraim Levine, B.A.
+
+  *76. Theosophy                         By Annie Besant.
+
+
+  HISTORY
+
+  *36. The Growth of Freedom             By H.W. Nevinson.
+
+  37. Bismarck                           By Prof. F.M. Powicke, M.A.
+
+  *38. Oliver Cromwell                   By Hilda Johnstone, M.A.
+
+  *39. Mary Queen of Scots               By E. O'Neill, M.A.
+
+  *40. Cecil Rhodes                      By Ian Colvin.
+
+  *41. Julius Cæsar                      By Hilary Hardinge.
+
+  History of England--
+
+  42. England in the Making              By Prof. F.J.C. Hearnshaw, LL.D.
+
+  *43. England in the Middle Ages        By E. O'Neill, M.A.
+
+  44. The Monarchy and the People        By W.T. Waugh, M.A.
+
+  45. The Industrial Revolution          By A. Jones, M.A.
+
+  46. Empire and Democracy               By G.S. Veitch, M.A.
+
+  *61. Home Rule                         By L.G. Redmond Howard.
+
+  77. Nelson                             By H.W. Wilson.
+
+  *78. Wellington and Waterloo           By Major G.W. Redway.
+
+  100. A History of Greece               By E. Fearenside, B.A.
+
+  101. Luther and the Reformation        By L.D. Agate, M.A.
+
+  102. The Discovery of the New World    By F.B. Kirkman, B.A.
+
+  *103. Turkey and the Eastern Question  By John Macdonald.
+
+  104. A History of Architecture         By Mrs. Arthur Bell.
+
+
+  SOCIAL AND ECONOMIC
+
+  *47. Women's Suffrage                  By M.G. Fawcett, LL.D.
+
+  48. The Working of the British System  By Prof. Ramsay Muir, M.A.
+      of Government to-day
+
+  49. An Introduction to Economic        By Prof. H.O. Meredith, M.A.
+      Science
+
+  50. Socialism                          By F.B. Kirkman, B.A.
+
+  79. Socialist Theories in the          By Rev. B. Jarrett, O.P., M.A.
+      Middle Ages
+
+  *80. Syndicalism                       By J.H. Harley, M.A.
+
+  81. Labour and Wages                   By H.M. Hallsworth, M.A., B. Sc.
+
+  *82. Co-operation                      By Joseph Clayton.
+
+  *83. Insurance as Investment           By W.A. Robertson, F.F.A.
+
+  *92. The Training of the Child         By G. Spiller.
+
+  105. Trade Unions                      By Joseph Clayton.
+
+  *106. Everyday Law                     By J.J. Adams.
+
+
+  LETTERS
+
+  *51. Shakespeare                       By Prof. C.H. Herford, Litt.D.
+
+  *52. Wordsworth                        By Rosaline Masson.
+
+  *53. Pure Gold--A Choice of Lyrics     By H.C. O'Neill.
+       and Sonnets
+
+  *54. Francis Bacon                     By Prof. A.R. Skemp, M.A.
+
+  *55. The Brontës                       By Flora Masson.
+
+  *56. Carlyle                           By the Rev. L. MacLean Watt.
+
+  *57. Dante                             By A.G. Ferrers Howell.
+
+  58. Ruskin                             By A. Blyth Webster, M.A.
+
+  59. Common Faults in Writing English   By Prof. A.R. Skemp, M.A.
+
+  *60. A Dictionary of Synonyms          By Austin K. Gray, B.A.
+
+  84. Classical Dictionary               By A.E. Stirling.
+
+  *85. History of English Literature     By A. Compton-Rickett.
+
+  86. Browning                           By Prof. A.R. Skemp, M.A.
+
+  87. Charles Lamb                       By Flora Masson.
+
+  88. Goethe                             By Prof. C.H. Herford, Litt.D.
+
+  89. Balzac                             By Frank Harris.
+
+  90. Rousseau                           By H. Sacher.
+
+  91. Ibsen                              By Hilary Hardinge.
+
+  *93. Tennyson                          By Aaron Watson.
+
+  107. R.L. Stevenson                    By Rosaline Masson.
+
+  108. Shelley                           By Sydney Waterlow.
+
+  109. William Morris                    By A. Blyth Webster, M.A.
+
+
+
+***END OF THE PROJECT GUTENBERG EBOOK RUDOLPH EUCKEN***
+
+
+******* This file should be named 14357-8.txt or 14357-8.zip *******
+
+
+This and all associated files of various formats will be found in:
+http://www.gutenberg.org/dirs/1/4/3/5/14357
+
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.net/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.net),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS', WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.gutenberg.net/fundraising/pglaf.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://www.gutenberg.net/about/contact
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://www.gutenberg.net/fundraising/donate
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including including checks, online payments and credit card
+donations.  To donate, please visit:
+http://www.gutenberg.net/fundraising/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.net
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
+

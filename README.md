@@ -1,2 +1,1 @@
-# ACS-TT
-ACS:  The Trace of Theory
+# [ACS: The Trace of Theory](https://wiki.htrc.illinois.edu/display/ACSTT)
