@@ -175,7 +175,7 @@ finally:
 print("Volume files read: {}".format(len(relfrequencies)))
 print("Writing output.csv")
 
-with open('output.csv', 'w') as csvfile:
+with open('output.csv', 'w', encoding='utf8') as csvfile:
     outputcsv = csv.writer(csvfile)
     outputcsv.writerow(["Filename", "VolID", "Title", "Author", "Year", "WordCount", "RelFreqSum"] + keywords)
 
