@@ -10,7 +10,7 @@ from pairtree import pairtree_path
 
 import sys, os, argparse, time, csv, re, json
 
-SOLR_QUERY_TPL = "http://chinkapin.pti.indiana.edu:9994/solr/meta/select?q=id:{}&fl=title,author,publishDate&wt=json"
+SOLR_QUERY_TPL = "http://chinkapin.pti.indiana.edu:9994/solr/meta/select?q=id:{}&fl=title,author,publishDate&wt=json&omitHeader=true"
 PAIRTREE_REGEX = re.compile(r"(?P<libid>[^/]+)/pairtree_root/(?P<ppath>.+)/(?P<cleanid>[^/]+)\.[^.]+$")
 
 def findrelativefrequencies(text, keywords):
@@ -64,12 +64,18 @@ def get_meta(htrc_id):
     except URLError as e:
         print("{}: Failed to contact SOLR. Reason: {}".format(htrc_id, e.reason))
     else:
-        response = json.loads(url.read())
+        response = json.loads(url.read())["response"]
         url.close()
-        doc = response["response"]["docs"][0]
-        meta["Title"] = "\n".join(doc["title"])
-        meta["Author"] = "\n".join(doc["author"])
-        meta["Year"] = "\n".join(doc["publishDate"])
+        numFound = response["numFound"]
+        if numFound == 0:
+            print("{}: No metadata found in SOLR.".format(htrc_id))
+        else:
+            if numFound > 1:
+                print("{}: {} metadata records were found - using the first result.".format(htrc_id, numFound))
+            doc = response["docs"][0]
+            meta["Title"] = "\n".join(doc["title"])
+            meta["Author"] = "\n".join(doc["author"])
+            meta["Year"] = "\n".join(doc["publishDate"])
 
     return meta
 
