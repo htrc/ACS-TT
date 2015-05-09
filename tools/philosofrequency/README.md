@@ -8,12 +8,16 @@ Philosophy Keyword Frequency Analyzer
 This script attempts to find philosophical texts based on the frequency of a list of keywords. Depending on the keywords, it could potentially be used for other texts. The script outputs the frequency of each word, and the sum of relative frequencies of all keywords per text, to a .csv file.
 
 Author(s)
--------------
+---------
 Kevin Schenk, University of Alberta
+
+Requirements
+------------
+* https://pypi.python.org/pypi/Pairtree
 
 Running it
 ----------
-You have two options: you can put everything in the same directory as philosofrequency.py, or you can pass the destinations as command line arguments. 
+You have two options: you can put everything in the same directory as philosofrequency.py, or you can pass the destinations as command line arguments.
 
 1. If you want everything in the same directoy, add your texts to a folder called *texts* in the same directory. Place your keywords file, with each word separated by a line break, and name it *keywords.txt*. This script only works with single word keywords.
 
