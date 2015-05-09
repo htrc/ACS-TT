@@ -50,7 +50,7 @@ def get_htrc_id(zippath):
     libid = pt_parts.group("libid")
     cleanid = pt_parts.group("cleanid")
     htrc_id = pairtree_path.id_decode("{}.{}".format(libid, cleanid))
-    
+
     return htrc_id
 
 def get_meta(htrc_id):
@@ -79,7 +79,7 @@ def processzipvolume(zippath, keywords):
     htrc_id = get_htrc_id(zippath)
     meta = get_meta(htrc_id)
 
-    print("Finding frequencies for " + file)
+    print("Finding frequencies for: " + htrc_id)
 
     text = ""
 
@@ -89,6 +89,7 @@ def processzipvolume(zippath, keywords):
 
     relfreqs = findrelativefrequencies(text, keywords)
     relfreqs.update(meta)
+    relfreqs["VolID"] = htrc_id
 
     return relfreqs
 
@@ -107,6 +108,7 @@ def processtxtvolume(textpath, keywords):
     relfreqs["Title"] = "temp"
     relfreqs["Author"] = "temp"
     relfreqs["Year"] = "temp"
+    relfreqs["VolID"] = file
 
     return relfreqs
 
@@ -169,7 +171,7 @@ print("Writing output.csv")
 
 with open('output.csv', 'w') as csvfile:
     outputcsv = csv.writer(csvfile)
-    outputcsv.writerow(["Filename", "Title", "Author", "Year", "WordCount", "RelFreqSum"] + keywords)
+    outputcsv.writerow(["Filename", "VolID", "Title", "Author", "Year", "WordCount", "RelFreqSum"] + keywords)
 
     # TODO: Sort by relfreq first
     for filepath, relfrequency in relfrequencies.items():
@@ -180,6 +182,7 @@ with open('output.csv', 'w') as csvfile:
 
         outputcsv.writerow(
             [filepath,
+             relfrequency["VolID"],
              relfrequency["Title"],
              relfrequency["Author"],
              relfrequency["Year"],
