@@ -4,14 +4,14 @@ from multiprocessing import Pool
 from functools import partial
 from contextlib import closing
 from zipfile import ZipFile
-from xml.etree.ElementTree import ElementTree
 from urllib import quote
 from urllib2 import Request, urlopen, URLError, HTTPError
+from pairtree import pairtree_path
 
 import sys, os, argparse, time, csv, re, json
 
-METS_NS = { "METS": "http://www.loc.gov/METS/", "PREMIS": "info:lc/xmlns/premis-v2" }
 SOLR_QUERY_TPL = "http://chinkapin.pti.indiana.edu:9994/solr/meta/select?q=id:{}&fl=title,author,publishDate&wt=json"
+PAIRTREE_REGEX = re.compile(r"(?P<libid>[^/]+)/pairtree_root/(?P<ppath>.+)/(?P<cleanid>[^/]+)\.[^.]+$")
 
 def findrelativefrequencies(text, keywords):
     textfreqs = {}
@@ -46,14 +46,11 @@ def log_freqs(result, file, ):
     relfrequencies[file] = result
 
 def get_htrc_id(zippath):
-    folder, zipfile = os.path.split(zippath)
-    metsfile = os.path.splitext(zipfile)[0] + ".mets.xml"
-    metspath = os.path.join(folder, metsfile)
-    if not os.path.exists(metspath):
-        raise IOError("{} does not exist".format(metspath))
-    metsxml = ElementTree(file=metspath)
-    htrc_id = metsxml.find(".//PREMIS:objectIdentifierValue", METS_NS).text
-
+    pt_parts = PAIRTREE_REGEX.search(zippath)
+    libid = pt_parts.group("libid")
+    cleanid = pt_parts.group("cleanid")
+    htrc_id = pairtree_path.id_decode("{}.{}".format(libid, cleanid))
+    
     return htrc_id
 
 def get_meta(htrc_id):
