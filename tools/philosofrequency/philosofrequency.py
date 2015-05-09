@@ -6,8 +6,9 @@ from contextlib import closing
 from zipfile import ZipFile
 from xml.etree.ElementTree import ElementTree
 from urllib import quote
+from urllib2 import Request, urlopen, URLError, HTTPError
 
-import sys, os, argparse, time, csv, re, urllib2, json
+import sys, os, argparse, time, csv, re, json
 
 METS_NS = { "METS": "http://www.loc.gov/METS/", "PREMIS": "info:lc/xmlns/premis-v2" }
 SOLR_QUERY_TPL = "http://chinkapin.pti.indiana.edu:9994/solr/meta/select?q=id:{}&fl=title,author,publishDate&wt=json"
@@ -48,6 +49,8 @@ def get_htrc_id(zippath):
     folder, zipfile = os.path.split(zippath)
     metsfile = os.path.splitext(zipfile)[0] + ".mets.xml"
     metspath = os.path.join(folder, metsfile)
+    if not os.path.exists(metspath):
+        raise IOError("{} does not exist".format(metspath))
     metsxml = ElementTree(file=metspath)
     htrc_id = metsxml.find(".//PREMIS:objectIdentifierValue", METS_NS).text
 
@@ -56,15 +59,20 @@ def get_htrc_id(zippath):
 def get_meta(htrc_id):
     meta = {}
     query = SOLR_QUERY_TPL.format(quote(htrc_id))
-    url = urllib2.urlopen(query)
+    req = Request(query)
     try:
+        url = urlopen(req)
+    except HTTPError as e:
+        print("{}: get_meta({}): The server couldn't fulfill the request.".format(htrc_id, e.code))
+    except URLError as e:
+        print("{}: Failed to contact SOLR. Reason: {}".format(htrc_id, e.reason))
+    else:
         response = json.loads(url.read())
+        url.close()
         doc = response["response"]["docs"][0]
         meta["Title"] = "\n".join(doc["title"])
         meta["Author"] = "\n".join(doc["author"])
         meta["Year"] = "\n".join(doc["publishDate"])
-    finally:
-        url.close()
 
     return meta
 
