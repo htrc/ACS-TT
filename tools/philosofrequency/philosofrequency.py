@@ -112,9 +112,9 @@ def processtxtvolume(textpath, keywords):
 
     relfreqs = findrelativefrequencies(text, keywords)
 
-    relfreqs["Title"] = "temp"
-    relfreqs["Author"] = "temp"
-    relfreqs["Year"] = "temp"
+    # relfreqs["Title"] =
+    # relfreqs["Author"] =
+    # relfreqs["Year"] =
     relfreqs["VolID"] = file
 
     return relfreqs
@@ -187,6 +187,10 @@ with open('output.csv', 'wb') as csvfile:
         for keyword in keywords:
             sortedfreqs.append(relfrequency["Frequencies"][keyword])
 
+        # add default values for missing attributes
+        for attr in ["VolID", "Title", "Author", "Year"]:
+            relfrequency.setdefault(attr, "")
+            
         outputcsv.writerow(
             [filepath.encode('utf-8'),
              relfrequency["VolID"].encode('utf-8'),
