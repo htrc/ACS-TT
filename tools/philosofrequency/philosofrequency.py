@@ -90,7 +90,7 @@ def processzipvolume(zippath, keywords):
 
     text = ""
 
-    with ZipFile(zippath, 'rU') as zipfile:
+    with ZipFile(zippath, 'r') as zipfile:
         for filename in [zipentry.filename for zipentry in zipfile.infolist() if zipentry.filename.lower().endswith(".txt")]:
             text += "\n" + zipfile.read(filename).decode("utf-8")
 
