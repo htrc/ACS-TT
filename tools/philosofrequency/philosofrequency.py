@@ -65,7 +65,7 @@ def get_meta(htrc_id):
     except URLError as e:
         print("{}: Failed to contact SOLR. Reason: {}".format(htrc_id, e.reason))
     else:
-        response = json.loads(url.read().decode("UTF-8"))["response"]
+        response = json.loads(url.read().decode("utf-8"))["response"]
         url.close()
         numFound = response["numFound"]
         if numFound == 0:
@@ -90,9 +90,9 @@ def processzipvolume(zippath, keywords):
 
     text = ""
 
-    with ZipFile(zippath) as zipfile:
+    with ZipFile(zippath, 'rU') as zipfile:
         for filename in [zipentry.filename for zipentry in zipfile.infolist() if zipentry.filename.lower().endswith(".txt")]:
-            text += "\n" + zipfile.read(filename).decode("UTF-8")
+            text += "\n" + zipfile.read(filename).decode("utf-8")
 
     relfreqs = findrelativefrequencies(text, keywords)
     relfreqs.update(meta)
@@ -107,7 +107,7 @@ def processtxtvolume(textpath, keywords):
     #single core functionality commented out
     #log_freqs(findrelativefrequencies(textpath), textpath)
 
-    with open(textpath) as textfile:
+    with open(textpath, encoding='utf-8') as textfile:
         text = textfile.read().lower()
 
     relfreqs = findrelativefrequencies(text, keywords)
@@ -152,7 +152,7 @@ keywords = []
 relfrequencies = {}
 
 print("Reading keywords.")
-with open(keywordfilename) as keywordfile:
+with open(keywordfilename, encoding='utf-8') as keywordfile:
     for line in keywordfile.readlines():
         keywords.append(line.strip(' \t\n\r').lower())
 print("Keywords read: {}".format(len(keywords)))
@@ -176,9 +176,9 @@ finally:
 print("Volume files read: {}".format(len(relfrequencies)))
 print("Writing output.csv")
 
-with open('output.csv', 'w', encoding='UTF-8') as csvfile:
+with open('output.csv', 'wb') as csvfile:
     outputcsv = csv.writer(csvfile)
-    outputcsv.writerow(["Filename", "VolID", "Title", "Author", "Year", "WordCount", "RelFreqSum"] + keywords)
+    outputcsv.writerow(["Filename", "VolID", "Title", "Author", "Year", "WordCount", "RelFreqSum"] + [k.encode('utf-8') for k in keywords])
 
     # TODO: Sort by relfreq first
     for filepath, relfrequency in relfrequencies.items():
@@ -188,11 +188,11 @@ with open('output.csv', 'w', encoding='UTF-8') as csvfile:
             sortedfreqs.append(relfrequency["Frequencies"][keyword])
 
         outputcsv.writerow(
-            [filepath,
-             relfrequency["VolID"],
-             relfrequency["Title"],
-             relfrequency["Author"],
-             relfrequency["Year"],
+            [filepath.encode('utf-8'),
+             relfrequency["VolID"].encode('utf-8'),
+             relfrequency["Title"].encode('utf-8'),
+             relfrequency["Author"].encode('utf-8'),
+             relfrequency["Year"].encode('utf-8'),
              relfrequency["WordCount"],
              relfrequency["RelFreqSum"]
             ] + sortedfreqs)
