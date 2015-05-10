@@ -65,7 +65,7 @@ def get_meta(htrc_id):
     except URLError as e:
         print("{}: Failed to contact SOLR. Reason: {}".format(htrc_id, e.reason))
     else:
-        response = json.loads(url.read())["response"]
+        response = json.loads(url.read().decode("UTF-8"))["response"]
         url.close()
         numFound = response["numFound"]
         if numFound == 0:
@@ -92,7 +92,7 @@ def processzipvolume(zippath, keywords):
 
     with ZipFile(zippath) as zipfile:
         for filename in [zipentry.filename for zipentry in zipfile.infolist() if zipentry.filename.lower().endswith(".txt")]:
-            text += "\n" + zipfile.read(filename)
+            text += "\n" + zipfile.read(filename).decode("UTF-8")
 
     relfreqs = findrelativefrequencies(text, keywords)
     relfreqs.update(meta)
