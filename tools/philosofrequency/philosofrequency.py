@@ -7,6 +7,7 @@ from zipfile import ZipFile
 from urllib import quote
 from urllib2 import Request, urlopen, URLError, HTTPError
 from pairtree import pairtree_path
+from io import open
 
 import sys, os, argparse, time, csv, re, json
 
@@ -175,7 +176,7 @@ finally:
 print("Volume files read: {}".format(len(relfrequencies)))
 print("Writing output.csv")
 
-with open('output.csv', 'w', encoding='utf8') as csvfile:
+with open('output.csv', 'w', encoding='UTF-8') as csvfile:
     outputcsv = csv.writer(csvfile)
     outputcsv.writerow(["Filename", "VolID", "Title", "Author", "Year", "WordCount", "RelFreqSum"] + keywords)
 
