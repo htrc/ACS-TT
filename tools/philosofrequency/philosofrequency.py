@@ -74,9 +74,9 @@ def get_meta(htrc_id):
             if numFound > 1:
                 print("{}: {} metadata records were found - using the first result.".format(htrc_id, numFound))
             doc = response["docs"][0]
-            meta["Title"] = "\n".join(doc["title"])
-            meta["Author"] = "\n".join(doc["author"])
-            meta["Year"] = "\n".join(doc["publishDate"])
+            meta["Title"] = "; ".join(doc["title"])
+            meta["Author"] = "; ".join(doc["author"])
+            meta["Year"] = "; ".join(doc["publishDate"])
 
     return meta
 
@@ -190,7 +190,7 @@ with open('output.csv', 'wb') as csvfile:
         # add default values for missing attributes
         for attr in ["VolID", "Title", "Author", "Year"]:
             relfrequency.setdefault(attr, "")
-            
+
         outputcsv.writerow(
             [filepath.encode('utf-8'),
              relfrequency["VolID"].encode('utf-8'),
