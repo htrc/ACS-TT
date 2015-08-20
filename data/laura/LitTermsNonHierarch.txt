@@ -1,0 +1,419 @@
+Adumbration
+Allegory
+Alliteration
+Allusion
+Ambiguity
+Anaphora
+Anthropomorphism
+Assonance
+Connotation
+Chiasmus
+Consonance
+Dialogue
+Epigraph
+Foreshadowing
+Hypotaxis
+Irony
+Metaphor
+Metonymy
+Mythification
+Parataxis
+Repetition
+Style
+Theme
+Tropes
+Zeugma
+Character
+Diction
+Drama
+Form
+Narrative discourse
+Narrative plot
+Narrative point of view
+Setting
+Environmental literature
+Epic
+Fiction
+Gray literature
+High literature
+Inspirational literature
+Nonfiction
+Oral literature
+Poetry
+Popular literature
+Religious literature
+Wisdom literature
+Chapbook
+Collections
+Commonplace Book
+Paratext
+Periodical Essay
+Triple Decker
+Comedy
+Historical realism
+formalism
+naturalism
+postmodernism
+realism
+romance
+Sentimentalism
+Satire
+Stream of consciousness
+Surrealism
+Tragedy
+Comparative literature
+Antagonist
+Character development
+Character foil
+Protagonist
+Soliloquy
+Tragic Flaw
+Frame Narrative
+Sjuzhet
+Anticlimax
+Climax
+Denouement
+Fabula
+Prologue
+Story
+Synopsis
+First person narrative
+Focalization
+Omniscient narrator
+Second person narrative
+Third person narrative
+Unreliable narrator
+Narrative voice
+Narrative Diegesis
+Heroic epic
+Historical epic
+Homeric epic
+epic
+Mock epic
+Oral epic
+Adventure fiction
+Children's literature
+Comic book
+Dystopian fiction
+Ecotopian fiction
+Epistolary literature
+Erotic literature
+Escape fiction
+Fabliaux
+Fan fiction
+Folk literature
+Gothic fiction
+Graphic novel
+Historical fiction
+Mystery fiction
+Novel
+Short story
+Speculative fiction
+Utopian fiction
+Western
+Young adult literature
+Alternative publication
+Little magazine
+Zine
+Biography
+Do-it yourself literature
+Essays
+Philosophical texts
+Self-help literature
+Travel literature
+Joke
+Riddle
+Speech
+Storytelling
+Children's poetry
+Computer poetry
+Cowboy poetry
+Epic Poetry
+Folk poetry
+Jewish poetry
+Love poetry
+Lyric poetry
+Narrative poetry
+Occasional poetry
+Oral poetry
+Poetic
+forms
+meter
+movements
+themes
+Praise poetry
+Prose poetry
+Protest poetry
+Religious poetry
+Versification
+Visual poetry
+Devotional literature
+Anthology
+Festschrift
+Miscellany
+Advertisement
+Dedication
+Frontispiece
+Index
+Table of Contents
+Islamic literature
+Jewish literature
+World literature
+Aesthetic Distance
+Beautiful (with Sublime)
+Catharsis
+Delight (with Instruct)
+Explication
+Fancy (with Imagination)
+Feminist Literary Criticism
+General Nature
+Genius
+Imagination (with Fancy)
+Instruct (with Delight)
+Literary analysis
+Literary merit
+Literary warrant
+Mimesis
+Picturesque
+Pleasure (with Imagination)
+Sublime (with Beautifu)
+Tragic Flaw (Hamartia)
+Taste
+Unities
+African-American literature
+Augustan literature
+Baroque literature
+Classical literature
+Colonial literature
+Early Modern literature
+Eighteenth-century literature
+Fifteenth-century literature
+Medieval literature
+Modern literature
+Neoclassical literature
+Nineteenth-century literature
+Postmodern literature
+Renaissance literature
+Romantic literature
+Seventeenth-century literature
+Sixteenth-century literature
+Twentieth-century literature
+Victorian literature
+Aestheticism
+Deconstruction
+Dialogism
+Digital Humanities
+Literary
+Feminist Theory
+formalism
+Marxist theory
+New criticism
+Objective correlatives
+Poetics
+Poststructuralist theory
+Psychoanalytic theory
+Reader response theory
+Structuralism
+Narratee
+Narrative
+discourse
+empathy
+Narrativity
+Narremes
+Archeology
+Genealogy
+Énoncé
+Énonciation
+Icon
+Illocutionary
+Index
+Performative
+Sign
+Signified
+Signifier
+Speech Act
+Symbol
+Hypertextuality
+Intertextuality
+Textual criticism
+Villain
+Literary characterization
+Round character
+Antihero
+Hero
+Heroine
+Byliny
+Chanson de geste
+Duma
+Folk poetry
+Photonovel
+Crime fiction
+Detective fiction
+Spy fiction
+Thrillers
+Novella
+Romance novels
+Picaresque
+Alternate history fiction
+Fantasy fiction
+Horror fiction
+Science fiction
+Superhero
+Autobiography
+Memoir
+Reminiscences
+Action rhymes
+Game rhymes
+Mnemonic rhymes
+Nonsense verse
+Nursery rhymes
+Epithalamiums
+Nursery rhymes
+Ballad poetry
+Blank verse
+Blason Poetry
+Couplets
+Doggerel
+Dub poetry
+Elegies
+Free verse
+Ghazals
+Haiku
+Heroic Couplets
+Lais
+Limericks
+Macaronic verse
+Pastoral
+Odes
+Song lyrics
+Sonnets
+Stanzas
+Villanelles
+Caesurae
+Dimeter
+Falling Meter
+Heptameter
+Hexameter
+Monometer
+Octameter
+Pentameter
+Poetic feet
+Rising Meter
+Tetrameter
+Trimeter
+Acmeism
+Beat poetry
+Black Mountain poets
+Classical poetry
+Confessional poetry
+Elizabethan poetry
+Fugitive poets
+Harlem Renaissance poetry
+Imagist poetry
+Language poetry
+Metaphysical poetry
+Modernist poetry
+Negritude poetry
+Neoclassical poetry
+New Formalism
+New York School poets
+Pastoral poetry
+Romantic poetry
+Slam poetry
+Surrealist poetry
+Symbolist poetry
+Concrete poetry
+Jewish poetry
+Kabbalistic literature
+Medieval Jewish literature
+African literature
+American literature
+British literature
+Central Asian literature
+Chinese literature
+East Asian literature
+French literature
+German literature
+Indian literature
+Irish literature
+Japanese literature
+Korean literature
+Latin American literature
+Polynesian literature
+Russian literature
+Slavic literature
+Southeast Asian literature
+Gynocriticism
+Stylistic analysis
+Thematic analysis
+Harlem Renaissance literature
+Medieval Jewish literature
+Aporia
+Difference
+Grammatology
+Logocentrism
+Algorithmic criticism
+Text mining
+Distant reading
+Macroanalysis
+Écriture feminine
+Essentialism
+Phallocentrism
+Defamiliarization
+Alienation
+Class
+Consumption
+Hegemony
+Ideological State Apparatus (ISA)
+Political Unconscious
+Reification
+Affective fallacy
+Close reading
+Pathetic fallacy
+Archeology
+Genealogy
+Contingency
+Abject
+Archetype
+Desire
+Imaginary
+Real
+Reparation
+Repression
+Symbolic
+Uncanny
+Unconscious
+Interpretive Communities
+Reader Reception
+Diachrony
+Écriture
+Langue (with Parole)
+Parole (with Langue)
+Readerly
+Synchrony
+Writerly
+Reception History
+Social Text
+criticism
+Literary history
+influence
+theory
+Narratology
+New historicism
+Poetics
+Semiotics
+Textuality
+Counting out rhymes
+Jump rope rhymes
+Alphabet rhymes
+Amphibrach
+Anapest
+Dactyl
+Iamb
+Phyrric
+Spondee
+Trochee
+African American literature
+Formulaic analysis
+Oral formulaic analysis
+Literary
