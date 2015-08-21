@@ -119,6 +119,21 @@ def processtxtvolume(textpath, keywords):
 
     return relfreqs
 
+def pretty_time(seconds):
+    sign_string = '-' if seconds < 0 else ''
+    seconds = abs(int(seconds))
+    days, seconds = divmod(seconds, 86400)
+    hours, seconds = divmod(seconds, 3600)
+    minutes, seconds = divmod(seconds, 60)
+    if days > 0:
+        return '%s%dd%dh%dm%ds' % (sign_string, days, hours, minutes, seconds)
+    elif hours > 0:
+        return '%s%dh%dm%ds' % (sign_string, hours, minutes, seconds)
+    elif minutes > 0:
+        return '%s%dm%ds' % (sign_string, minutes, seconds)
+    else:
+        return '%s%ds' % (sign_string, seconds)
+
 ######## main() ##############
 
 starttime = time.time()
@@ -159,12 +174,14 @@ print("Keywords read: {}".format(len(keywords)))
 
 print("Reading volume files.")
 index = 0
+filecount = 0
 
 pool = Pool()
 try:
     for root, dirs, files in os.walk(textdir):
         for volume in [file for file in files if file.lower().endswith("." + fileformat)]:
             volumepath = os.path.join(root, volume)
+            filecount += 1
             if bool(re.search("\.zip$", volume, re.I)):
                 pool.apply_async(processzipvolume, (volumepath, keywords,), callback=partial(log_freqs, file=volumepath))
             elif bool(re.search("\.txt$", volume, re.I)):
@@ -173,6 +190,7 @@ finally:
     pool.close()
     pool.join()
 
+print("Files found: {}".format(filecount))
 print("Volume files read: {}".format(len(relfrequencies)))
 print("Writing output.csv")
 
@@ -201,4 +219,5 @@ with open('output.csv', 'wb') as csvfile:
              relfrequency["RelFreqSum"]
             ] + sortedfreqs)
 
-print("Time elapsed: {} seconds".format(time.time() - starttime))
+elapsed = int(time.time() - starttime)
+print("Time elapsed: {}".format(pretty_time(elapsed)))
