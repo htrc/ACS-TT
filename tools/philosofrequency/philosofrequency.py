@@ -56,7 +56,7 @@ def get_htrc_id(zippath):
 
 def get_meta(htrc_id):
     meta = {}
-    query = SOLR_QUERY_TPL.format(quote(htrc_id))
+    query = SOLR_QUERY_TPL.format(htrc_id.replace(":", "\\:"))
     req = Request(query)
     try:
         url = urlopen(req)
