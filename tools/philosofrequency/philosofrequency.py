@@ -44,7 +44,24 @@ def findrelativefrequencies(text, keywords):
     return relfreqs
 
 def log_freqs(result, file, ):
-    relfrequencies[file] = result
+    # TODO: Title, Author, etc.
+    sortedfreqs = []
+    for keyword in keywords:
+        sortedfreqs.append(result["Frequencies"][keyword])
+
+    # add default values for missing attributes
+    for attr in ["VolID", "Title", "Author", "Year"]:
+        result.setdefault(attr, "")
+
+    outputcsv.writerow(
+        [file.encode('utf-8'),
+         result["VolID"].encode('utf-8'),
+         result["Title"].encode('utf-8'),
+         result["Author"].encode('utf-8'),
+         result["Year"].encode('utf-8'),
+         result["WordCount"],
+         result["RelFreqSum"]
+        ] + sortedfreqs)
 
 def get_htrc_id(zippath):
     pt_parts = PAIRTREE_REGEX.search(zippath)
@@ -80,7 +97,7 @@ def get_meta(htrc_id):
 
     return meta
 
-def processzipvolume(zippath, keywords):
+def processzipvolume(zippath):
     root, file = os.path.split(zippath)
 
     htrc_id = get_htrc_id(zippath)
@@ -100,7 +117,7 @@ def processzipvolume(zippath, keywords):
 
     return relfreqs
 
-def processtxtvolume(textpath, keywords):
+def processtxtvolume(textpath):
     root, file = os.path.split(textpath)
     print("Finding frequencies for " + file)
 
@@ -164,7 +181,6 @@ elif not os.path.exists(textdir):
     sys.exit("Invalid volumes folder path. Aborting.")
 
 keywords = []
-relfrequencies = {}
 
 print("Reading keywords.")
 with open(keywordfilename, encoding='utf-8') as keywordfile:
@@ -177,47 +193,24 @@ index = 0
 filecount = 0
 
 pool = Pool()
-try:
-    for root, dirs, files in os.walk(textdir):
-        for volume in [file for file in files if file.lower().endswith("." + fileformat)]:
-            volumepath = os.path.join(root, volume)
-            filecount += 1
-            if bool(re.search("\.zip$", volume, re.I)):
-                pool.apply_async(processzipvolume, (volumepath, keywords,), callback=partial(log_freqs, file=volumepath))
-            elif bool(re.search("\.txt$", volume, re.I)):
-                pool.apply_async(processtxtvolume, (volumepath, keywords,), callback=partial(log_freqs, file=volumepath))
-finally:
-    pool.close()
-    pool.join()
-
-print("Files found: {}".format(filecount))
-print("Volume files read: {}".format(len(relfrequencies)))
-print("Writing output.csv")
-
 with open('output.csv', 'wb') as csvfile:
     outputcsv = csv.writer(csvfile)
     outputcsv.writerow(["Filename", "VolID", "Title", "Author", "Year", "WordCount", "RelFreqSum"] + [k.encode('utf-8') for k in keywords])
 
-    # TODO: Sort by relfreq first
-    for filepath, relfrequency in relfrequencies.items():
-        # TODO: Title, Author, etc.
-        sortedfreqs = []
-        for keyword in keywords:
-            sortedfreqs.append(relfrequency["Frequencies"][keyword])
+    try:
+        for root, dirs, files in os.walk(textdir):
+            for volume in [file for file in files if file.lower().endswith("." + fileformat)]:
+                volumepath = os.path.join(root, volume)
+                filecount += 1
+                if bool(re.search("\.zip$", volume, re.I)):
+                    pool.apply_async(processzipvolume, (volumepath,), callback=partial(log_freqs, file=volumepath))
+                elif bool(re.search("\.txt$", volume, re.I)):
+                    pool.apply_async(processtxtvolume, (volumepath,), callback=partial(log_freqs, file=volumepath))
+    finally:
+        pool.close()
+        pool.join()
 
-        # add default values for missing attributes
-        for attr in ["VolID", "Title", "Author", "Year"]:
-            relfrequency.setdefault(attr, "")
-
-        outputcsv.writerow(
-            [filepath.encode('utf-8'),
-             relfrequency["VolID"].encode('utf-8'),
-             relfrequency["Title"].encode('utf-8'),
-             relfrequency["Author"].encode('utf-8'),
-             relfrequency["Year"].encode('utf-8'),
-             relfrequency["WordCount"],
-             relfrequency["RelFreqSum"]
-            ] + sortedfreqs)
+print("Files processed: {}".format(filecount))
 
 elapsed = int(time.time() - starttime)
 print("Time elapsed: {}".format(pretty_time(elapsed)))
