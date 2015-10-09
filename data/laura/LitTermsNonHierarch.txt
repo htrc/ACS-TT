@@ -23,14 +23,11 @@ Style
 Theme
 Tropes
 Zeugma
-Character
 Diction
 Drama
-Form
 Narrative discourse
 Narrative plot
 Narrative point of view
-Setting
 Environmental literature
 Epic
 Fiction
@@ -110,7 +107,6 @@ Novel
 Short story
 Speculative fiction
 Utopian fiction
-Western
 Young adult literature
 Alternative publication
 Little magazine
@@ -137,7 +133,6 @@ Narrative poetry
 Occasional poetry
 Oral poetry
 Poetic
-forms
 meter
 movements
 themes
@@ -154,7 +149,6 @@ Miscellany
 Advertisement
 Dedication
 Frontispiece
-Index
 Table of Contents
 Islamic literature
 Jewish literature
@@ -226,9 +220,7 @@ Genealogy
 Énonciation
 Icon
 Illocutionary
-Index
 Performative
-Sign
 Signified
 Signifier
 Speech Act
@@ -349,7 +341,6 @@ Thematic analysis
 Harlem Renaissance literature
 Medieval Jewish literature
 Aporia
-Difference
 Grammatology
 Logocentrism
 Algorithmic criticism
@@ -361,8 +352,6 @@ Essentialism
 Phallocentrism
 Defamiliarization
 Alienation
-Class
-Consumption
 Hegemony
 Ideological State Apparatus (ISA)
 Political Unconscious
@@ -375,9 +364,7 @@ Genealogy
 Contingency
 Abject
 Archetype
-Desire
 Imaginary
-Real
 Reparation
 Repression
 Symbolic
@@ -396,7 +383,6 @@ Reception History
 Social Text
 criticism
 Literary history
-influence
 theory
 Narratology
 New historicism
