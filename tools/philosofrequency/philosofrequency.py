@@ -115,10 +115,14 @@ def get_meta(htrc_id):
     else:
         respdata = url.read()
         try:
-            response = json.loads(respdata.decode("utf-8"))["response"]
+            response = respdata.decode("utf-8")
         except UnicodeDecodeError as e:
-            print("{}: {}".format(htrc_id, e))
-            return meta
+            try:
+                response = respdata.decode("cp1252")
+            except:
+                print("{}: Cannot decode response from SOLR".format(htrc_id))
+                return meta
+        response = json.loads(response)["response"]
         url.close()
         numFound = response["numFound"]
         if numFound == 0:
