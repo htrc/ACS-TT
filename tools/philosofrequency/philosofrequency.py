@@ -7,8 +7,7 @@ from zipfile import ZipFile
 from urllib import quote
 from urllib2 import Request, urlopen, URLError, HTTPError
 from pairtree import pairtree_path
-from io import open
-from cStringIO import StringIO
+from io import open, StringIO
 from itertools import islice
 from collections import Counter
 from datetime import timedelta
@@ -114,7 +113,12 @@ def get_meta(htrc_id):
     except URLError as e:
         print("{}: Failed to contact SOLR. Reason: {}".format(htrc_id, e.reason))
     else:
-        response = json.loads(url.read().decode("utf-8"))["response"]
+        respdata = url.read()
+        try:
+            response = json.loads(respdata.decode("utf-8"))["response"]
+        except UnicodeDecodeError as e:
+            print("{}: {}".format(htrc_id, e))
+            return meta
         url.close()
         numFound = response["numFound"]
         if numFound == 0:
@@ -123,9 +127,12 @@ def get_meta(htrc_id):
             if numFound > 1:
                 print("{}: {} metadata records were found - using the first result.".format(htrc_id, numFound))
             doc = response["docs"][0]
-            meta["Title"] = "; ".join(doc["title"])
-            meta["Author"] = "; ".join(doc["author"])
-            meta["Year"] = "; ".join(doc["publishDate"])
+            if "title" in doc:
+                meta["Title"] = "; ".join(doc["title"])
+            if "author" in doc:
+                meta["Author"] = "; ".join(doc["author"])
+            if "publishDate" in doc:
+                meta["Year"] = "; ".join(doc["publishDate"])
 
     return meta
 
@@ -133,16 +140,16 @@ def processzipvolume(zippath):
     root, file = os.path.split(zippath)
 
     htrc_id = get_htrc_id(zippath)
+
+    print("Finding frequencies for: {}".format(htrc_id))
+
     meta = get_meta(htrc_id)
-
-    print("Finding frequencies for: " + htrc_id)
-
     text = StringIO()
 
     with ZipFile(zippath, 'r') as zipfile:
         page_files = [zipentry.filename for zipentry in zipfile.infolist() if zipentry.filename.lower().endswith(".txt")]
         for filename in sorted(page_files):
-            text.write(' ')
+            text.write(u' ')
             text.write(zipfile.read(filename).decode('utf-8'))
     
     text = text.getvalue()
@@ -153,7 +160,7 @@ def processzipvolume(zippath):
 
     return relfreqs
 
-def processtxtvolume(textpath):
+def processtxtvolume(textpath, keywords):
     root, file = os.path.split(textpath)
     print("Finding frequencies for " + file)
 
@@ -201,6 +208,7 @@ def main():
     elif not os.path.exists(textdir):
         sys.exit("Invalid volumes folder path. Aborting.")
 
+    global keywords
     keywords = set()
 
     print("Reading keywords.")
@@ -211,6 +219,7 @@ def main():
             keywords.add(tuple(words))
     print("Keywords read: {}".format(len(keywords)))
 
+    global tokens
     tokens = set(token for keyword in keywords for token in keyword)
 
     print("Reading volume files.")
@@ -219,6 +228,7 @@ def main():
 
     pool = Pool()
     with open('output.csv', 'wb') as csvfile:
+        global outputcsv
         outputcsv = csv.writer(csvfile)
         outputcsv.writerow(["Filename", "VolID", "Title", "Author", "Year", "WordCount", "RelFreqSum"] + [" ".join(k).encode('utf-8') for k in keywords])
 
