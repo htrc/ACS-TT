@@ -1,0 +1,333 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: black;
+    font-family: Trebuchet, Verdana, "Sans Serif";
+    font-size: 15px;
+    overflow: hidden;
+}
+
+img.ajax {
+    position: absolute;
+    width: auto;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Headers */
+header {
+    display: flex;
+    padding-left: 3em;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+img.header, select, h1 {
+    height: 30px;
+    display: block;
+    position: relative;
+    padding: 0 0.5em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header input {
+    height: 30px;
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+img {
+    cursor: pointer;
+}
+
+select {
+    font-size: 20px;
+    padding: 0;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+/* Lists */
+ol {
+    counter-reset: item;
+}
+
+ol li {
+    display: block;
+}
+
+ol li:before {
+    display: inline-block;
+    content: counter(item) ") ";
+    counter-increment: item;
+    width: 2em;
+}
+
+.link {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* main svg */
+main header {
+    position: absolute;
+}
+
+
+#graph text {
+    fill: darkgrey;
+}
+
+#graph circle {
+    stroke-width: 0;
+}
+
+#graph circle.pin {
+    stroke-width: 9px;
+}
+
+/* Help and Context */
+#context h1,
+#help h1 {
+    padding: 0;
+}
+
+#context header,
+#help header {
+    padding-left: 5.5em;
+}
+
+#context,
+#help {
+    position: absolute;
+    top: 25%;
+    right: 2px;
+    height: calc(25% - 3px);
+    width: 600px;
+    background-color: #e6e7e8;
+    visibility: hidden;
+}
+
+#help {
+    top: 2px;
+    overflow: auto;
+}
+
+#help img,
+#context header .link {
+    position: absolute;
+    top: 1em;
+    left: 1.5em;
+    transform: none;
+    padding: 0;
+}
+
+#context header .link {
+    top: 2em;
+    left: 2em;
+    font-size: 12px;
+}
+
+#context input {
+    width: 150px;
+    font-size: 20px;
+    margin-left: 0.5em;
+}
+
+#context section {
+    height: calc(100% - 60px);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#context ol {
+    height: calc(100% - 1em);
+    padding-left: 1.5em;
+    padding-bottom: 1.5em;
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+    -moz-column-rule: 1px solid black;
+    -webkit-column-rule: 1px solid black;
+    column-rule: 1px solid black;
+    white-space: nowrap;
+}
+
+#context li {
+    padding-bottom: 2px;
+}
+
+#context div.tokenbar {
+    width: 100%;
+    height: 5px;
+}
+
+#context div.tokendata {
+    background-color: blue;
+    height: 100%;
+}
+
+#context .pin {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+#help p {
+    padding: 0 5.5em 1.5em 5.5em;
+}
+
+/* tooltip */
+#tooltip {
+    display: none;
+    position: absolute;
+    padding: .5em;
+    background-color: #e6e7e8;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#tooltip h2 {
+    font-size: inherit;
+}
+
+/* Bottom bar */
+#bottombar {
+    position: absolute;
+    background-color: #E6e7e8;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+}
+
+#bottombar > header {
+    height: 40px;
+    border-bottom: 1px solid black;
+    background-color: #c2b59b
+}
+
+#bottombar > section {
+    height: calc(100% - 40px);
+    display: flex;
+}
+
+/* viz boxes */
+section.viz {
+    max-width: 40%;
+    height: 100%;
+    flex: 1 0 40%;
+    border-right: 1px solid black;
+}
+
+section.viz > div {
+    overflow: auto;
+    padding-left: 3em;
+    padding-right: 3em;
+    height: calc(100% - 60px);
+}
+
+.time {
+    height: calc(100% - 60px - 2em);
+}
+
+/* Pins bar */
+#pins {
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#pins section.top {
+    overflow: auto;
+    border-bottom: 1px solid black;
+    background-color: #fcb340;
+}
+
+#pins section.bottom {
+    flex: 1 0 60%;
+    overflow: auto;
+    background-color: #FDCB68;
+}
+
+#pins ol {
+    padding-left: .5em;
+    overflow: auto;
+    margin-bottom: 0.5em;
+}
+
+#pins ol li:last-child span.legend {
+    border-bottom: 1px solid black;
+}
+
+#pins span.label {
+    padding-left: 0.5em;
+}
+
+#pins span.legend {
+    border: 1px solid black;
+    border-bottom: 0;
+    vertical-align: middle;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#pins button {
+    width: 20px;
+    height: 20px;
+    line-height: 0px;
+    float: right;
+    margin-right: 0.5em;
+}
+
+/* Documents visualization */
+div.documentviz {
+    overflow: auto;
+}
+
+div.documentviz div.documentbar {
+    height: 10px;
+    border: 1px solid black;
+}
+
+div.documentviz div.documentdata {
+    height: 100%;
+    float: left;
+}
+
+div.documentviz section {
+    padding-bottom: .5em;
+}
+
+div.documentviz section:last-child {
+    padding-bottom: 2em;
+}
+
+/* Time graphs */
+svg.timeGraph {
+    background-color: #E6e7e8;
+    width: 100%;
+    height: 90%;
+}
+
+svg.timeGraph .axis path,
+svg.timeGraph .axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
