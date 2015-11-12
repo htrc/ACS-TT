@@ -9,7 +9,7 @@ This script calculates the relative frequencies of a list of keywords. The resul
 
 Author(s)
 ---------
-Kevin Schenk, University of Alberta
+Kevin Schenk, University of Alberta  
 Boris Capitanu, HathiTrust Research Center / Illinois Informatics Institute
 
 Requirements
