@@ -41,7 +41,6 @@ Popular literature
 Religious literature
 Wisdom literature
 Chapbook
-Collections
 Commonplace Book
 Paratext
 Periodical Essay
@@ -72,7 +71,6 @@ Climax
 Denouement
 Fabula
 Prologue
-Story
 Synopsis
 First person narrative
 Focalization
@@ -113,7 +111,6 @@ Little magazine
 Zine
 Biography
 Do-it yourself literature
-Essays
 Philosophical texts
 Self-help literature
 Travel literature
@@ -383,7 +380,6 @@ Reception History
 Social Text
 criticism
 Literary history
-theory
 Narratology
 New historicism
 Poetics
