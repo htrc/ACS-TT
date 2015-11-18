@@ -152,8 +152,8 @@ def get_corpus_doc_counts_by_year(dataset_id, mongodb):
     return jsonp(doc_counts_by_year)
 
 
-@app.route('/datasets/<dataset_id>/topics/<topic_id:int>/word_prominence', method='GET')
-def get_topic_word_prominence(dataset_id, topic_id, mongodb):
+@app.route('/datasets/<dataset_id>/topics/<topic_id:int>/token_counts', method='GET')
+def get_topic_token_counts(dataset_id, topic_id, mongodb):
     q = mongodb['datasets'].find_one({'_id': ObjectId(dataset_id)},
                                      {'_id': False, 'tokens': 1})
     if q is None:
@@ -175,10 +175,9 @@ def get_topic_word_prominence(dataset_id, topic_id, mongodb):
         doc_token_counts = Counter(dict(zip(tokens, doc['counts'])))
         token_counts.update(doc_token_counts)
 
-    ref_count = token_counts.most_common(1)[0][1]
-    word_prominence = {word: token_counts[word]/ref_count for word in topic_keywords}
+    token_counts = {word: token_counts[word] for word in topic_keywords}
 
-    return jsonp(word_prominence)
+    return jsonp(token_counts)
 
 
 @app.route('/datasets/<dataset_id>/topics/<topic_id:int>/doc_prominence', method='GET')
