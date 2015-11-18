@@ -6,6 +6,7 @@ import sys
 
 import dateutil.parser
 import pymongo
+from pymongo import IndexModel, ASCENDING
 
 
 def parse_number(x):
@@ -108,10 +109,8 @@ def run(dataset_name, dist_file, docs_file, state_file, tokens_file, topics_file
     for topic in topics:
         topic_id = topic['id']
         t = {
-            '_id': {
-                'datasetId': dataset_id,
-                'topicId': topic_id
-            },
+            'datasetId': dataset_id,
+            'topicId': topic_id,
             'alpha': topic['alpha'],
             'trend': topic['trend'],
             'mean': topic['mean'],
@@ -125,6 +124,13 @@ def run(dataset_name, dist_file, docs_file, state_file, tokens_file, topics_file
         }
 
         db.topics.insert_one(t)
+
+    composite_idx = IndexModel([
+        ('datasetId', ASCENDING),
+        ('topicId', ASCENDING)
+    ], name='dataset_topic', unique=True)
+
+    db.topics.create_indexes([composite_idx])
 
     print("All done.")
 

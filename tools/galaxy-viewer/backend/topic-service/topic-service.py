@@ -22,7 +22,7 @@ def jsonp(dictionary):
 @app.route('/datasets', method='GET')
 def get_datasets(mongodb):
     datasets = []
-    for dataset in mongodb['datasets'].find({}, {'_id': 1, 'name': 1}):
+    for dataset in mongodb['datasets'].find({}, {'name': 1}):
         dataset['id'] = str(dataset.pop('_id'))
         datasets.append(dataset)
 
@@ -53,8 +53,7 @@ def get_topics_data(dataset_id, mongodb):
 
     if len(projection) > 0:
         projection['_id'] = False
-        q = mongodb['topics'].find({'$query': {'_id.datasetId': ObjectId(dataset_id)}, '$orderby': {'_id.topicId': 1}},
-                                   projection)
+        q = mongodb['topics'].find({'datasetId': ObjectId(dataset_id)}, projection)
         for row in q:
             for var in meta_vars:
                 if var == 'mean': data['mean'].append(row['mean'])
@@ -113,7 +112,7 @@ def get_corpus_token_counts_by_year(dataset_id, mongodb):
 
     documents = q['documents']
 
-    q = mongodb['topics'].find({'_id.datasetId': ObjectId(dataset_id)},
+    q = mongodb['topics'].find({'datasetId': ObjectId(dataset_id)},
                                {'_id': False, 'documents': 1})
     if q is None:
         abort(404, "Unknown dataset id: {}".format(dataset_id))
@@ -161,7 +160,7 @@ def get_topic_token_counts(dataset_id, topic_id, mongodb):
 
     token_map = {t['id']: t['token'] for t in q['tokens']}
 
-    q = mongodb['topics'].find_one({'_id': {'datasetId': ObjectId(dataset_id), 'topicId': topic_id}},
+    q = mongodb['topics'].find_one({'datasetId': ObjectId(dataset_id), 'topicId': topic_id},
                                    {'_id': False, 'documents': 1, 'keywords': 1})
     if q is None:
         abort(404, "Unknown topic id: {}".format(topic_id))
@@ -189,13 +188,15 @@ def get_topic_doc_prominence(dataset_id, topic_id, mongodb):
 
     documents = q['documents']
 
-    q = mongodb['topics'].find_one({'_id': {'datasetId': ObjectId(dataset_id), 'topicId': topic_id}},
+    q = mongodb['topics'].find_one({'datasetId': ObjectId(dataset_id), 'topicId': topic_id},
                                    {'_id': False, 'docAllocation': 1})
     if q is None:
         abort(404, "Unknown topic id: {}".format(topic_id))
 
     topic_alloc_per_doc = list(enumerate(q['docAllocation']))
-    max_results = int(request.query.limit) or None
+    max_results = request.query.limit or None
+    if max_results is not None:
+        max_results = int(max_results)
 
     counter = Counter(dict(topic_alloc_per_doc))
 
@@ -220,7 +221,7 @@ def get_topic_token_counts_by_year(dataset_id, topic_id, mongodb):
     documents = q['documents']
     token_map = {t['id']: t['token'] for t in q['tokens']}
 
-    q = mongodb['topics'].find_one({'_id': {'datasetId': ObjectId(dataset_id), 'topicId': topic_id}},
+    q = mongodb['topics'].find_one({'datasetId': ObjectId(dataset_id), 'topicId': topic_id},
                                    {'_id': False, 'documents': 1, 'keywords': 1})
     if q is None:
         abort(404, "Unknown topic id: {}".format(topic_id))
@@ -236,9 +237,6 @@ def get_topic_token_counts_by_year(dataset_id, topic_id, mongodb):
         topic_token_counts = Counter({t: c for t, c in doc_token_counts if t in topic_keywords})
         years[year].update(topic_token_counts)
 
-    # token_counts_by_year = OrderedDict(sorted([(y, sum(c.values())) for y, c in years.items()], key=itemgetter(0)))
-
-    # return jsonp(token_counts_by_year)
     return jsonp(years)
 
 
