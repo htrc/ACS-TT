@@ -1,14 +1,34 @@
-from bottle import Bottle, request, abort
+from bottle import Bottle, request, response, abort
 from bottle_mongo import MongoPlugin
 from bson import ObjectId
 from collections import defaultdict, Counter, OrderedDict
 from operator import itemgetter
 
 
-plugin = MongoPlugin(uri='mongodb://127.0.0.1', db='galaxyviewer', json_mongo=True)
+class EnableCors(object):
+    name = 'enable_cors'
+    api = 2
+
+    def apply(self, fn, context):
+        def _enable_cors(*args, **kwargs):
+            # set CORS headers
+            response.headers['Access-Control-Allow-Origin'] = '*'
+            response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, OPTIONS'
+            response.headers['Access-Control-Allow-Headers'] = 'Origin, Accept, Content-Type, ' \
+                                                               'X-Requested-With, X-CSRF-Token'
+
+            if request.method != 'OPTIONS':
+                # actual request; reply with the actual response
+                return fn(*args, **kwargs)
+
+        return _enable_cors
+
+
+mongo_plugin = MongoPlugin(uri='mongodb://127.0.0.1', db='galaxyviewer', json_mongo=True)
 
 app = Bottle()
-app.install(plugin)
+app.install(mongo_plugin)
+app.install(EnableCors())
 
 
 def jsonp(dictionary):
@@ -239,7 +259,17 @@ def get_topic_token_counts_by_year(dataset_id, topic_id, mongodb):
 
     return jsonp(years)
 
+if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--host',  metavar='host', dest='host', default='localhost',
+                        help="hostname or ip address")
+    parser.add_argument('--port', metavar='port', dest='port', type=int, default=8080,
+                        help="port number")
+    parser.add_argument('--debug', dest='debug', action='store_true',
+                        help="enable debug mode")
+    args = parser.parse_args()
 
-app.run(host='localhost', port=8080, debug=True)
+    app.run(host=args.host, port=args.port, debug=args.debug)
 
 
