@@ -196,7 +196,7 @@ def get_topic_token_counts(dataset_id, topic_id, mongodb):
 
     token_counts = [[word, token_counts[word]] for word in topic_keywords]
 
-    return jsonp(token_counts)
+    return jsonp({'token_counts': token_counts})
 
 
 @app.route('/datasets/<dataset_id>/topics/<topic_id:int>/doc_prominence', method='GET')
