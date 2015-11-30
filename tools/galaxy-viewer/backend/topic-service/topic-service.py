@@ -194,7 +194,7 @@ def get_topic_token_counts(dataset_id, topic_id, mongodb):
         doc_token_counts = Counter(dict(zip(tokens, doc['counts'])))
         token_counts.update(doc_token_counts)
 
-    token_counts = {word: token_counts[word] for word in topic_keywords}
+    token_counts = [[word, token_counts[word]] for word in topic_keywords]
 
     return jsonp(token_counts)
 
@@ -225,6 +225,8 @@ def get_topic_doc_prominence(dataset_id, topic_id, mongodb):
         doc = documents[doc_id]
         doc['prominence'] = prominence
         doc['date'] = doc['date'].isoformat()
+        if 'id' not in doc:
+            doc['id'] = str(doc_id)
         del doc['source']
         result.append(doc)
 
