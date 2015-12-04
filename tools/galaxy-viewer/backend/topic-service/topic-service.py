@@ -226,7 +226,8 @@ def get_topic_doc_prominence(dataset_id, topic_id, mongodb):
     for doc_id, prominence in counter.most_common(n=max_results):
         doc = documents[doc_id]
         doc['prominence'] = prominence
-        doc['publishDate'] = doc['publishDate'].isoformat()
+        publish_date = doc['publishDate']
+        doc['publishDate'] = publish_date.isoformat() if publish_date is not None else None
         if 'volid' not in doc:
             doc['volid'] = str(doc_id)
         result.append(doc)
