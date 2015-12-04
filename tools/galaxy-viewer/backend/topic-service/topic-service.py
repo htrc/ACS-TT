@@ -229,7 +229,6 @@ def get_topic_doc_prominence(dataset_id, topic_id, mongodb):
         doc['publishDate'] = doc['publishDate'].isoformat()
         if 'volid' not in doc:
             doc['volid'] = str(doc_id)
-        del doc['source']
         result.append(doc)
 
     return jsonp({'doc_prominence': result})
