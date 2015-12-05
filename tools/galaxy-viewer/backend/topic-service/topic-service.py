@@ -142,7 +142,7 @@ def get_corpus_token_counts_by_year(dataset_id, mongodb):
     for topic in q:
         for doc in topic['documents']:
             publish_date = documents[doc['id']]['publishDate']
-            year = publish_date.year if publish_date is not None else None
+            year = publish_date.year if publish_date is not None else -1  # a bit ugly, but None breaks sorted(...)
             doc_token_counts = zip(doc['tokens'], doc['counts'])
             topic_token_counts = Counter(dict(doc_token_counts))
             years[year].update(topic_token_counts)
@@ -165,7 +165,7 @@ def get_corpus_doc_counts_by_year(dataset_id, mongodb):
 
     for doc in documents:
         publish_date = doc['publishDate']
-        year = publish_date.year if publish_date is not None else None
+        year = publish_date.year if publish_date is not None else -1  # a bit ugly, but None breaks sorted(...)
         years[year] += 1
 
     doc_counts_by_year = OrderedDict(sorted([(y, c) for y, c in years.items()], key=itemgetter(0)))
