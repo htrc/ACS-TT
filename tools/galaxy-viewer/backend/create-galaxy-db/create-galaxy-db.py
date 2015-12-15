@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+"""Tool for loading the processed Mallet topic modeling output into a MongoDB database"""
+
 import argparse
 import collections
 import csv
@@ -5,11 +8,21 @@ import os
 import sys
 
 import dateutil.parser
+import datetime
 import pymongo
 from pymongo import IndexModel, ASCENDING
+from numbers import Number
+
+__author__ = "Boris Capitanu"
+__version__ = "1.0.0"
 
 
-def parse_number(x):
+def try_parse_number(x):
+    """Helper method for identifying and returning numbers, where possible.
+
+    :param x: The potential number
+    :return: The number representation of the argument, or the original argument if not a number
+    """
     try:
         return int(x)
     except ValueError:
@@ -20,13 +33,18 @@ def parse_number(x):
 
 
 def load_distances(filename):
+    """Read the file containing the calculated inter-topic distances
+
+    :param filename: The file containing the calculated inter-topic distances
+    :return: An upper-triangular matrix encoded as a vector
+    """
     data = []
     with open(filename, encoding='utf-8') as f:
         reader = csv.reader(f, quoting=csv.QUOTE_NONE)
         next(reader)  # skip header
         skip = 0
         for line in reader:
-            data.append([parse_number(col) for col in line[2 + skip:]])
+            data.append([try_parse_number(col) for col in line[2 + skip:]])
             skip += 1
 
     # only keep the upper triangular matrix (less diagonal) to prevent redundancy
@@ -34,16 +52,32 @@ def load_distances(filename):
 
 
 def load_csv(filename):
+    """Generic method for loading a CSV file
+
+    :param filename: The CSV file path
+    :return: Array of dicts, one for each row or None if filename is None
+    """
+    if filename is None:
+        return None
+
     data = []
     with open(filename, encoding='utf-8') as f:
         reader = csv.DictReader(f)
         for row in reader:
-            data.append({k: parse_number(v) for k, v in row.items()})
+            data.append({k: try_parse_number(v) for k, v in row.items()})
 
     return data
 
 
 def get_distance(num_topics, distances, topic_x, topic_y):
+    """Indexing method into the upper-triangular matrix representing inter-topic distances
+
+    :param num_topics: The number of topics
+    :param distances: The upper-triangular matrix representing inter-topic distances
+    :param topic_x: The id of the first topic
+    :param topic_y: The id of the second topic
+    :return: The distance between topic_x and topic_y
+    """
     if topic_x == topic_y:
         return 0
 
@@ -57,6 +91,11 @@ def get_distance(num_topics, distances, topic_x, topic_y):
 
 
 def parse_state(data):
+    """Reads the topic modeling state data
+
+    :param data: An iterable over the state data rows
+    :return: A dictionary mapping (topic_id, doc_id) to (token_id, count)
+    """
     state = collections.defaultdict(lambda: collections.defaultdict(list))
 
     for row in data:
@@ -66,17 +105,58 @@ def parse_state(data):
     return state
 
 
-def run(dataset_name, dist_file, docs_file, state_file, tokens_file, topics_file, dbname, mongo_uri):
+def get_docs_meta(doc_meta, doc_topics):
+    """Parses metadata for each document into an appropriate format for use with the Galaxy Viewer
+
+    :param doc_meta: The document metadata
+    :param doc_topics: The topic allocation for each document
+    :return: An array of document metadata, with one entry per document
+    :raises ValueError: if 'doc_meta' does not contain metadata for all documents referenced in 'doc_topics'
+    """
+    if doc_meta is None:
+        documents = [{
+                         'title': doc['title'],
+                         'source': doc['source'],
+                         'publishDate': dateutil.parser.parse(str(doc['publishDate']))
+                     } for doc in doc_topics]
+    else:
+        docs = {meta['source']: meta for meta in doc_meta}
+        documents = []
+        for doc in doc_topics:
+            source = doc['source']
+            meta = docs.get(source)
+            if meta is None:
+                raise ValueError("Missing metadata for: %s" % source)
+            if 'id' in meta:
+                meta['volid'] = meta.pop('id')  # rename the field (GV expects 'volid')
+            doc_date = meta['publishDate']
+            if isinstance(doc_date, Number):
+                if doc_date > 0:
+                    doc_date = datetime.datetime(doc_date, 1, 1)
+                else:
+                    doc_date = None
+            else:
+                doc_date = dateutil.parser.parse(str(doc_date))
+            meta['publishDate'] = doc_date
+            documents.append(meta)
+
+    return documents
+
+
+def run(dataset_name, dist_file, docs_file, meta_file, state_file, tokens_file, topics_file, dbname, mongo_uri):
     distances = load_distances(dist_file)
     doc_topics = load_csv(docs_file)
+    doc_meta = load_csv(meta_file)
     state = parse_state(load_csv(state_file))
     tokens = load_csv(tokens_file)
     topics = load_csv(topics_file)
 
+    documents = get_docs_meta(doc_meta, doc_topics)
+
     mongo = pymongo.MongoClient(mongo_uri)
     db = mongo[dbname]
 
-    num_docs = len(doc_topics)
+    num_docs = len(documents)
     num_tokens = len(tokens)
     num_topics = len(topics)
 
@@ -96,11 +176,7 @@ def run(dataset_name, dist_file, docs_file, state_file, tokens_file, topics_file
         'tokens': tokens,
         'distances': distances,
         'centerDist': list(map(lambda topic: topic['dist'], topics)),
-        'documents': [{
-            'name': doc['name'],
-            'source': doc['source'],
-            'date': dateutil.parser.parse(doc['date'])
-        } for doc in doc_topics]
+        'documents': documents
     }
 
     dataset_id = db.datasets.insert_one(dataset).inserted_id
@@ -157,6 +233,8 @@ if __name__ == '__main__':
                         help="The URI of the MongoDB instance to use")
     parser.add_argument('--dbname', dest='dbname', default='galaxyviewer',
                         help="The name of the database to use")
+    parser.add_argument('--meta', dest='meta_filename', default='docmeta.csv',
+                        help="The metadata file containing info about each document")
 
     args = parser.parse_args()
     dist_file = args.distance_filename
@@ -167,9 +245,13 @@ if __name__ == '__main__':
     dataset_name = args.dataset_name
     dbname = args.dbname
     mongo_uri = args.mongo_uri
+    meta_file = args.meta_filename
+
+    if meta_file is not None and not os.path.exists(meta_file):
+        sys.exit("File not found: " + meta_file)
 
     for f in [dist_file, docs_file, state_file, tokens_file, topics_file]:
         if not os.path.exists(f):
             sys.exit("File not found: " + f)
 
-    run(dataset_name, dist_file, docs_file, state_file, tokens_file, topics_file, dbname, mongo_uri)
+    run(dataset_name, dist_file, docs_file, meta_file, state_file, tokens_file, topics_file, dbname, mongo_uri)
