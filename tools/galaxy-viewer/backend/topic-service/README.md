@@ -3,6 +3,11 @@ This is the backend web service exposing an API used by the GalaxyViewer front e
 The web service retrieves the data from a 'linked' MongoDB database.
 
 ## Available API calls
+**Note:** All the API calls below support [JSONP](https://en.wikipedia.org/wiki/JSONP) via a `callback=...` query string
+(useful for clients not supporting [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)).
+CORS support is already enabled, and currently allows requests from anywhere (but see *Security Note* below).
+
+
 * `GET /datasets`
   * Retrieves metadata about each dataset available in the linked MongoDB database
 * `GET /datasets/<dataset_id>/topics/data?content=...`
@@ -52,7 +57,7 @@ For deployment options, and switching to a different server backend, please see 
 [BottlePy deployment documentation](http://bottlepy.org/docs/dev/deployment.html).
 
 **Security note:** The code is currently running in development mode, and as such the CORS permissions are set to allow
-cross-domain API requests from anywhere. In production it is *highly advised* to restrict access to only the specific
+cross-origin API requests from anywhere. In production it is *highly advised* to restrict access to only the specific
 hosts from where the requests are expected to come from. This can be done by customizing the response headers defined
 in `topic-service.py` in the `EnableCors` plugin class.
 
