@@ -99,7 +99,7 @@ def parse_state(data):
     state = collections.defaultdict(lambda: collections.defaultdict(list))
 
     for row in data:
-        doc_id, token_id, topic_id, count = row['doc'], row['token'], row['topic'], row['count']
+        doc_id, token_id, topic_id, count = row['docid'], row['tokenid'], row['topic'], row['count']
         state[topic_id][doc_id].append((token_id, count))
 
     return state
