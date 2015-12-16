@@ -51,6 +51,11 @@ The service is using the default BottlePy web server which is not meant to be us
 For deployment options, and switching to a different server backend, please see the
 [BottlePy deployment documentation](http://bottlepy.org/docs/dev/deployment.html).
 
+**Security note:** The code is currently running in development mode, and as such the CORS permissions are set to allow
+cross-domain API requests from anywhere. In production it is *highly advised* to restrict access to only the specific
+hosts from where the requests are expected to come from. This can be done by customizing the response headers defined
+in `topic-service.py` in the `EnableCors` plugin class.
+
 To start the Galaxy Viewer web service:
 ```
 usage: topic-service.py [-h] [--host host] [--port port] [--db-host host]
