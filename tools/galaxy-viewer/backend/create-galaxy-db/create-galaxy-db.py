@@ -191,22 +191,31 @@ def run(dataset_name, dist_file, docs_file, meta_file, state_file, tokens_file, 
             'trend': topic['trend'],
             'mean': topic['mean'],
             'keywords': [topic[key] for key in map(lambda x: 'key.{}'.format(x), range(num_kw_per_topic))],
-            'docAllocation': [topic_alloc['topic.{}'.format(topic_id)] for topic_alloc in doc_topics],
-            'documents': [{
-                'id': doc_id,
-                'tokens': [token_id for token_id, _ in token_counts],
-                'counts': [count for _, count in token_counts]
-            } for doc_id, token_counts in state[topic_id].items()]
+            'docAllocation': [topic_alloc['topic.{}'.format(topic_id)] for topic_alloc in doc_topics]
         }
-
         db.topics.insert_one(t)
+        db.state.insert_many([{
+                                  'datasetId': dataset_id,
+                                  'topicId': topic_id,
+                                  'docId': doc_id,
+                                  'tokens': [token_id for token_id, _ in token_counts],
+                                  'counts': [count for _, count in token_counts]
+                              } for doc_id, token_counts in state[topic_id].items()])
 
-    composite_idx = IndexModel([
+    topic_composite_idx = IndexModel([
         ('datasetId', ASCENDING),
         ('topicId', ASCENDING)
     ], name='dataset_topic', unique=True)
 
-    db.topics.create_indexes([composite_idx])
+    db.topics.create_indexes([topic_composite_idx])
+
+    state_composite_idx = IndexModel([
+        ('datasetId', ASCENDING),
+        ('topicId', ASCENDING),
+        ('docId', ASCENDING)
+    ], name='dataset_topic', unique=True)
+
+    db.state.create_indexes([state_composite_idx])
 
     print("All done.")
 

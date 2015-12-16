@@ -222,8 +222,13 @@ def retrieve_meta(doc_topics, solr_url):
 
         if len(ht_meta) > 0:
             ht_meta = ht_meta[0]
-            meta.loc[i] = [htid, str(ht_meta['title']), str(ht_meta['author']),
-                           try_parse_number(ht_meta['publishDate']), source]
+            title = ht_meta.get('title')
+            if title is not None: title = str(title)
+            author = ht_meta.get('author')
+            if author is not None: author = str(author)
+            publish_date = ht_meta['publishDate']
+            if publish_date is None: publish_date = -1
+            meta.loc[i] = [htid, title, author, try_parse_number(publish_date), source]
         else:
             print("WARN: Error retrieving (or missing) metadata for {}".format(htid))
             meta.loc[i] = [htid, None, None, -1, source]
