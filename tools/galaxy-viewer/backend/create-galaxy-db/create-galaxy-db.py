@@ -222,8 +222,7 @@ def run(dataset_name, dist_file, docs_file, meta_file, state_file, tokens_file, 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description="Converts data created by the GalaxyViewer backend R scripts to "
-                    "Javascript files for ingestion into MongoDB",
+        description="Loads data produced by compute-galaxy.py into a MongoDB database",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
     parser.add_argument('--dist', dest='distance_filename', default='distance.csv',
