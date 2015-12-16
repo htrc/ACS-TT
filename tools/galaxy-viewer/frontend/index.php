@@ -11,24 +11,12 @@
     <body onLoad='eventLoad()'>
         <main>
             <header>
-                <select>
+                <select class="color">
                     <option value='dist' selected>Distance</option>
                     <option value='trend'>Trend</option>
                 </select>
+
                 <select class="data">
-                    <?php
-                    $data = array("1800", "1900", "mind", "mind-singles");
-                    foreach ($data as $i) {
-                        $selected = '';
-                        if ($_GET['data'] == $i) {
-                            $selected = " selected";
-                        }
-                        echo "<option$selected>$i</option>\n";
-                    }
-                    if ($_GET['data'] == "jeremie") {
-                        echo "<option selected>jeremie</option>\n";
-                    }
-                    ?>
                 </select>
 
                 <img src="static/white_help.png" class="button help header" alt="main">
@@ -38,13 +26,16 @@
             </svg>
         </main>
 
-         <aside id="context">
+        <img src="static/ajax-loader.gif" class="ajax">
+
+        <aside id="context">
             <header>
                 <p class="link edit">Edit Title</p>
                 <h1></h1>
                 <input autocomplete="off">
                 <img src="static/pin_topic.png" class="pin button">
             </header>
+
             <section>
                 <ol>
                 </ol>
@@ -59,7 +50,6 @@
                 <img src="static/name.png" class="button names header" alt="Toggles display names.">
             </header>
             <section>
-
                 <section class="viz" id="viz1">
                     <header>
                         <select>

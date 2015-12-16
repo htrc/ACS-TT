@@ -1,154 +1,30 @@
-function updatePlugins() {
-    d3.select("#viz1 div.inner").html("");
-    d3.select("#viz2 div.inner").html("");
-    d3.select("#viz1 h1").text("");
-    d3.select("#viz2 h1").text("");
-    ["viz1", "viz2"].forEach(function (area) {
-        var type = d3.select("#" + area).select("select").property("value");
-
-        d3.select("#" + area + " header img").attr("alt", type);
-
-        if (type === "documents") {
-            updateDocuments(area);
-        } else if (type === "tokens") {
-            updateTokens(area);
-        } else if (type === "corpus_documents") {
-            updateDocumentTotals(area);
-        } else if (type === "corpus_tokens") {
-            updateTokenTotals(area);
-        }
-    });
-}
-
+// Utility functions
 function setClass(area, string) {
+    "use strict";
     return d3.select("#" + area).select("div.inner")
         .attr("class", "inner " + string);
 }
 
-d3.selection.prototype.createSingle = function(select, node, attr) {
+d3.selection.prototype.createSingle = function (select, node, attr) {
+    "use strict";
     if (!attr) {
         attr = {};
     }
 
     var viz = this.selectAll(select)
-            .data([''])
+        .data(['']);
 
     viz.enter()
         .append(node)
         .attr(attr);
 
     return viz;
-}
-
-function updateDocuments(area) {
-    "use strict";
-    var documents,
-        viz,
-        enter;
-
-    //data
-    documents = app.documents.map(function (doc) {
-        var total;
-
-        if (app.selection) {
-            total = doc.data[app.selection.id];
-        } else {
-            total = app.pins.reduce(function (total, current) {
-                if (doc.data[current.id] === undefined) {
-                    return total;
-                }
-                return total + doc.data[current.id];
-            }, 0)
-        }
-
-
-
-        return {
-            id: doc.id,
-            title: doc.name,
-            values: app.pins.map(function (topic) {
-                return {
-                    value: doc.data[topic.id],
-                    color: topic.color
-                };
-            }),
-            total: total
-        };
-    });
-
-    documents.sort(function (x, y) {
-        return y.total - x.total;
-    });
-    documents = documents.slice(0, 30);
-
-    //Visualization
-    viz = setClass(area, "documentviz")
-        .selectAll("section")
-        .data(documents);
-
-    enter = viz.enter()
-        .append("section");
-
-    enter.append("p");
-
-    enter.append("div")
-        .attr("class", "documentbar");
-
-    viz.exit().remove();
-    viz.select("p")
-        .text(function (d) {return d.title; });
-
-    viz
-        .on("mouseover", function (d) {
-            var mouse = d3.mouse(this),
-                rect = this.getBoundingClientRect(),
-                tooltip = d3.select("#tooltip")
-                    .text('')
-                    .style({
-                        "display": "block",
-                        "bottom": (window.innerHeight - rect.top) + "px",
-                        "left": rect.left + "px"
-                    });
-
-            tooltip.append("h2").text(d.title);
-            Object.keys(app.documents[d.id]).forEach(function (key) {
-                if (key != "data" && key != "id" && key != "name") {
-                    tooltip.append("p").text(key +": " + app.documents[d.id][key]);
-                }
-            });
-        })
-        .on("mouseout", function (node) {
-            d3.select("#tooltip").style("display", "none");
-        });
-
-    viz.select("div.documentbar")
-        .each(function (data) {
-            var node = d3.select(this),
-                width = parseInt(node.style("width"), 10);
-
-
-            node = node.selectAll("div.documentdata")
-                .data(data.values);
-
-            node.enter()
-                .append("div")
-                .attr("class", "documentdata");
-
-            node.exit().remove();
-
-            node
-                .style("width", function (d) {
-                    return (d.value * width).toString() + "px";
-                })
-                .style("background-color", function (d) {
-                    return d.color;
-                });
-        });
-}
+};
 
 function dateFormat(date) {
-    console.log(date)
-    return date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
+    "use strict";
+    // return date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
+    return date.getUTCFullYear();
 }
 
 function timeGraph(svg, data) {
@@ -162,14 +38,14 @@ function timeGraph(svg, data) {
 
     svg.attr("class", "timeGraph");
 
-    d3.set(data.map(function (d) {return d.id; }))
+    d3.set(data.map(function (d) { return d.id;}))
         .values()
         .forEach(function (title) {
             title = parseInt(title, 10);
             var line = data.filter(function (d) {
                     return title === d.id;
                 })
-                .sort(function (x, y) {return x.date - y.date; });
+                .sort(function (x, y) { return x.date - y.date; });
 
             lines.push(line);
         });
@@ -231,15 +107,15 @@ function timeGraph(svg, data) {
                     .text('')
                     .style({
                         "display": "block",
-                        "bottom": (window.innerHeight - rect.top).toString() + "px",
-                        "left": rect.right.toString() + "px"
+                        "bottom": (window.innerHeight - rect.top) + "px",
+                        "left": rect.right + "px"
                     });
 
             tooltip.append("h2").text(d.title);
-            tooltip.append("p").text("date: " + dateFormat(d.date));
+            tooltip.append("p").text("year: " + dateFormat(d.date));
             tooltip.append("p").text("count: " + d.count);
         })
-        .on("mouseout", function (node) {
+        .on("mouseout", function () {
             d3.select("#tooltip").style("display", "none");
         });
 
@@ -260,32 +136,219 @@ function timeGraph(svg, data) {
         .style("stroke", function (d) {return d[0].color; });
 }
 
-function updateTokens(area) {
+// Main update function.
+function updatePlugins() {
     "use strict";
-    // Setup container
-    var svg = setClass(area, "tokenviz time")
-        .createSingle("svg", "svg");
+    ["viz1", "viz2"].forEach(function (area) {
+        var type = d3.select("#" + area).select("select").property("value");
 
-    if (!app.tokenViz) {
-        svg.text("Tokens not available for this dataset.");
+        d3.select("#" + area + " header img").attr("alt", type);
+
+        if (type === "documents") {
+            updateDocuments(area);
+        } else if (type === "tokens") {
+            updateTokens(area);
+        } else if (type === "corpus_documents") {
+            updateDocumentTotals(area);
+        } else if (type === "corpus_tokens") {
+            updateTokenTotals(area);
+        }
+    });
+}
+
+// Plugins
+function complexGraph(get_value, name, callback) {
+    "use strict";
+    var data = {
+        id: false,
+        value: {},
+    };
+
+    function update(area) {
+
+        // If dataset not selected yet don't do anything.
+        var id = d3.select("main select.data").property("value");
+        if (!id) {
+            return;
+        }
+
+        // Reset database if dataset changes.
+        if (data.id !== id) {
+            data.value = {};
+            data.id = id;
+            data.index = {};
+        }
+
+        // Create our data.
+        app.pins.forEach(function (pin) {
+            if (data.value[pin.id] === undefined) {
+                data.value[pin.id] = "in progress";
+                d3.json(app.url + "/datasets/" + id + "/topics/" + pin.id + get_value, function (json) {
+                    data.value[pin.id] = json;
+                    data.value[pin.id].self = pin;
+                    update(area);
+                });
+            }
+        });
+
+        // reset container
+        d3.select("#" + area + " div.inner").html("");
+        d3.select("#" + area + " h1").text("");
+
+        var svg = setClass(area, name);
+
+        callback(svg, data.value);
+    }
+
+    return update;
+}
+
+var updateDocuments = complexGraph("/doc_prominence", "documentviz", function (svg, data) {
+    "use strict";
+    var documents,
+        viz,
+        enter;
+
+    if (!app.selection.id || !data[app.selection.id].doc_prominence) {
         return;
     }
 
-    //Create data
-    var data = [];
-    app.pins.forEach(function (pin) {
-        var words = pin.data.filter(function (d) {return d.selected; });
+    // create index
+    if (data.index === undefined) {
+        data.index = {};
+    }
 
-        Object.keys(pin.tokens).forEach(function (date) {
-            // Align axis
-            data.push({
-                id: pin.id,
+    if (data.index[app.selection.id] === undefined) {
+        data.index[app.selection.id] = {}
+        data[app.selection.id].doc_prominence
+            .map(function (d) {
+                return d;
+            })
+            .forEach(function (d) {
+                data.index[app.selection.id][d.volid] = d
+            });
+    }
+
+    documents = data[app.selection.id].doc_prominence
+        .slice(0, 30)
+        .map(function (doc) {
+            return {
+                id: doc.volid,
+                date: new Date(doc.publishDate),
+                title: doc.title,
+                author: doc.author,
+                values: app.pins.map(function (pin) {
+                    return {
+                        value: data.index[pin.id][doc.volid].prominence,
+                        color: data[pin.id].self.color
+                    };
+                })
+            };
+        });
+
+    //Visualization
+    viz = svg.createSingle("div", "div")
+        .selectAll("section")
+        .data(documents);
+
+    enter = viz.enter()
+        .append("section");
+
+    enter.append("p");
+
+    enter.append("div")
+        .attr("class", "documentbar");
+
+    viz.exit().remove();
+    viz.select("p")
+        .text(function (d) {return d.title; });
+
+    viz.on("mouseover", function (d) {
+            var rect = this.getBoundingClientRect(),
+                tooltip = d3.select("#tooltip")
+                    .text('')
+                    .style({
+                        "display": "block",
+                        "bottom": (window.innerHeight - rect.top) + "px",
+                        "left": rect.left + "px"
+                    });
+
+            tooltip.append("h2").text(d.title);
+            if (d.author) {
+                tooltip.append("p").text("Author: " + d.author);
+            }
+            tooltip.append("p").text("Year: " + dateFormat(d.date));
+        })
+        .on("mouseout", function () {
+            d3.select("#tooltip").style("display", "none");
+        });
+
+    viz.on("click", function (d) {
+        if (d.id.indexOf(".") === 3) {
+            window.open("http://babel.hathitrust.org/cgi/pt?id=" + d.id, '_blank');
+        }
+    });
+
+    viz.select("div.documentbar")
+        .each(function (data) {
+            var node = d3.select(this),
+                width = parseInt(node.style("width"), 10);
+
+
+            node = node.selectAll("div.documentdata")
+                .data(data.values);
+
+            node.enter()
+                .append("div")
+                .attr("class", "documentdata");
+
+            node.exit().remove();
+
+            node
+                .style("width", function (d) {
+                    return (d.value * width) + "px";
+                })
+                .style("background-color", function (d) {
+                    return d.color;
+                });
+        });
+
+});
+
+var updateTokens = complexGraph("/token_counts_by_year", "tokenviz time", function (svg, data) {
+    "use strict";
+    //Create visualization data.
+    svg = svg.createSingle("svg", "svg");
+
+    var graphData = [];
+
+    app.pins.forEach(function(pin) {
+
+        // Skip in progress data.
+        if (data[pin.id] === "in progress") {
+            return;
+        }
+
+        // Create selection object.
+        var selection = {};
+        app.topics[pin.id].data.forEach(function (word) {
+            selection[word.word] = word.selected;
+        });
+
+        // Loop over dates
+        keyValueLoop(data[pin.id], function (date, words) {
+            if (date === "self" || date === "null") {
+                return;
+            }
+
+            graphData.push({
+                id: parseInt(pin.id, 10),
                 date: new Date(date),
-                color: pin.color,
-                title: pin.title,
-                count: words.reduce(function (total, word) {
-                    if (pin.tokens[date][word.word]) {
-                        return total + pin.tokens[date][word.word];
+                color: data[pin.id].self.color,
+                title: data[pin.id].self.title,
+                count: Object.keys(words).reduce(function (total, word) {
+                    if (selection[word]) {
+                        return total + words[word];
                     }
                     return total;
                 }, 0)
@@ -293,70 +356,57 @@ function updateTokens(area) {
         });
     });
 
-    // Create Graph
-    timeGraph(svg, data);
-}
+    timeGraph(svg, graphData);
+});
 
-function updateDocumentTotals(area) {
-    svg = setClass(area, "doctotviz time")
-        .createSingle("svg", "svg");
+function simpleGraph(get_value, name) {
+    "use strict";
+    var data = {
+        id: false,
+        value: false
+    };
 
-    var counts = {};
-    app.documents.forEach(function (doc) {
-        if (counts[doc.date] === undefined) {
-            counts[doc.date] = 0;
-        }
-        counts[doc.date] += 1;
-    });
+    return function (area) {
 
-    var data = [];
-    Object.keys(counts).forEach(function (date) {
-        data.push({
-            date: new Date(date),
-            color: "green",
-            title: "totals",
-            id: 0,
-            count: counts[date]
-        });
-    });
-
-    // Create Graph
-    timeGraph(svg, data);
-}
-
-function updateTokenTotals(area) {
-    svg = setClass(area, "toktotviz time")
-        .createSingle("svg", "svg");
-
-    var counts = {};
-    app.topics.forEach(function (topic) {
-        if (topic.tokens === undefined) {
+        // Abort because of race conditions.
+        var id = d3.select("main select.data").property("value");
+        if (!id || data.value === "in progress") {
             return;
         }
 
-        Object.keys(topic.tokens).forEach(function (date) {
-            var count = Object.keys(topic.tokens[date]).reduce(function (x, y) {
-                return x + topic.tokens[date][y];
-            }, 0);
+        // Prepare div
+        d3.select("#" + area + " div.inner").html("");
+        d3.select("#" + area + " h1").text("");
 
-            if (counts[date] === undefined) {
-                counts[date] = 0;
-            }
-            counts[date] += count;
-        });
-    });
+        var svg = setClass(area, name + " time")
+            .createSingle("svg", "svg");
 
-    var data = [];
-    Object.keys(counts).forEach(function (date) {
-        data.push({
-            date: new Date(date),
-            color: "green",
-            id: 0,
-            title: "totals",
-            count: counts[date]
-        });
-    });
+        // Get currently selected dataset.
+        if (data.value === false || data.id !== id) {
+            data.value = "in progress";
+            data.id = id;
 
-    // Create Graph
-    timeGraph(svg, data);
+            d3.json(app.url + "/datasets/" + id + get_value, function (json) {
+                data.value = Object.keys(json)
+                    .filter(function (d) {
+                        return d > 0;
+                    })
+                    .map(function (key) {
+                        return {
+                            date: new Date(key),
+                            color: "green",
+                            id: 0,
+                            title: "totals",
+                            count: json[key]
+                        };
+                    });
+                timeGraph(svg, data.value);
+            });
+        } else {
+            timeGraph(svg, data.value);
+        }
+    };
 }
+
+var updateTokenTotals = simpleGraph("/token_counts_by_year", "toktotviz"),
+    updateDocumentTotals = simpleGraph("/doc_counts_by_year", "doctotviz");

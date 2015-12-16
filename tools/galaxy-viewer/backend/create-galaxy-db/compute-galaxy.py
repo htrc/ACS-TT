@@ -13,8 +13,9 @@ import os
 import itertools
 import numpy as np
 import pandas as pd
+from scipy import stats
 from time import time
-from datetime import timedelta
+from datetime import timedelta, datetime
 from handythread import parallel_map, parallel_for
 from solr_meta import get_meta
 
@@ -237,7 +238,7 @@ def retrieve_meta(doc_topics, solr_url):
     return meta
 
 
-def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta_filename, solr_url, output_dir):
+def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta_filename, solr_url, output_dir, date_format):
     if not os.path.exists(doc_topics_filename):
         raise FileNotFoundError(doc_topics_filename)
 
@@ -309,6 +310,25 @@ def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta
         return Topic(vector)
 
     topics = list(parallel_map(create_topic, topicids))
+    print("done")
+
+    # calculate trend
+    print("Calculating topic trend...", end='', flush=True)
+    doc_topics_complete = pd.merge(doc_meta, doc_topics, on="source")
+
+    state_trend = pd.merge(state[["docid", "topic"]], doc_topics_complete[["id", "publishDate"]],
+        left_on="docid", right_on="id")[["topic", "publishDate"]]
+
+    def slope(topic):
+        state_small = state_trend[state_trend["topic"] == topic].groupby(["topic", "publishDate"]).size().reset_index()
+        state_small.columns = ["topic", "publishDate", "count"]
+
+        dates = [datetime.strptime(x, date_format).year for x in state_small["publishDate"]]
+
+        test = stats.linregress(dates, list(state_small["count"]))
+        return test[0]
+
+    topic_keys['trend'] = [slope(x) for x in topicids]
     print("done")
 
     # Insert dists
@@ -384,6 +404,9 @@ if __name__ == '__main__':
     meta_group.add_argument('--solr', dest='solr_url',
                             help="The SOLR base URL to use for looking up document metadata")
 
+    meta_group.add_argument('--date-format', dest='date_format', default='%Y-%m-%dT%H:%M:%SZ',
+                            help="Date format to interpret metadata publishDate")
+
     args = parser.parse_args()
     doc_topics_filename = args.doc_topics_filename
     topic_keys_filename = args.topic_keys_filename
@@ -392,5 +415,6 @@ if __name__ == '__main__':
     output_dir = args.output_dir
     meta_filename = args.meta_filename
     solr_url = args.solr_url
+    date_format = args.date_format
 
-    run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta_filename, solr_url, output_dir)
+    run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta_filename, solr_url, output_dir, date_format)

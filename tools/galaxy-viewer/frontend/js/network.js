@@ -1,87 +1,102 @@
 var app = {
+    // Database api
+    url: "http://sandbox.htrc.illinois.edu:6001",
+
     //d3 static scales.
     force: d3.layout.force(),
 
     //Current zoom.
     scale: 1,
     translate: [0, 0],
-    dist_extent: [0,0],
 
     //Binary states.
     node: false,
     names: false,
-    tokenViz: true,
 
     //Context menu.
     context: false,
     selection: false,
 
-    //Graph data.
+    // Distance matrix.
     matrix: undefined,
-    documents: [],
+
+    // Force data.
     topics: [],
     distance: [],
-    tokens: [],
-    tokeni: {},
 
     //Bottombar data
-    pins: []
+    pins: [],
+
+    documents: []
 };
 
+// Utilities
+function get_distance(topic_x, topic_y, n) {
+    "use strict";
+    if (topic_x === topic_y) {
+        return 0;
+    }
+
+    var x = Math.min(topic_x, topic_y),
+        y = Math.max(topic_x, topic_y),
+        i = parseInt((2 * x * n - Math.pow(x, 2) + 2 * y - 3 * x - 2) / 2);
+
+    return app.matrix[i];
+}
+
+function keyValueLoop(obj, callback) {
+    "use strict";
+    Object.keys(obj).forEach(function (key) {
+        callback(key, obj[key]);
+    });
+}
+
+// Updates the main graph.
 function updateGraph() {
     "use strict";
     var type = d3.select("main select").property("value"),
         nodes,
         enter,
-        data,
-        range,
         color;
 
-    if (type === "dist") {
-        color = ["yellow", "blue"];
-    } else if (type === "trend") {
-        color = ["red", "green"];
-    }
-
     //Create color distribution.
-    range = app.topics.map(function (d) {
+    color = app.topics.map(function (d) {
         if (d.zero) {
             return 0;
         }
 
-        if (type == "dist" && app.context) {
-            return app.matrix[app.context.id][d.id];
+        if (type === "dist" && app.context) {
+            return get_distance(app.context.id, d.id, app.topics.length);
         }
 
         return d[type];
-    });
-
-    range.sort(d3.ascending);
+    }).sort(d3.ascending);
 
     color = d3.scale.linear()
         .domain([
-            d3.quantile(range,0.05),
-            d3.quantile(range, 0.95)
+            d3.quantile(color, 0.05),
+            d3.quantile(color, 0.95)
         ])
-//        .domain(app.dist_extent)
-        .range(color);
+        .range(
+            type === "dist"
+                ? ["yellow", "blue"]
+                : ["red", "green"]
+        );
 
-    // Create and sort data.
-    data = app.topics.slice(0)
-        .sort(function (a, b) {
-            return b.mean - a.mean;
-        });
-
+    // Create nodes
     nodes = d3.select("#graph g")
         .selectAll("g.node")
-        .data(data, function (d) {
-            return d.id;
-        });
+        .data(app.topics.slice(0)
+            .sort(function (a, b) {
+                return b.mean - a.mean;
+            })
+        );
 
+    // Enter
     enter = nodes.enter()
         .append("g")
         .attr("class", "node")
-        .on("click", eventContext);
+        .on("click", eventGraphClick);
 
     enter.append("circle")
         .attr("class", "point");
@@ -89,9 +104,11 @@ function updateGraph() {
     enter.append("text")
         .attr("class", "text");
 
+    // Exit
     nodes.exit().remove();
 
-    nodes.selectAll(".point")
+    // Update
+    nodes.select(".point")
         .attr("r", function (node) {
             return node.mean * 700;
         })
@@ -99,8 +116,8 @@ function updateGraph() {
             if (node.zero) {
                 return "white";
             }
-            if (type == "dist" && app.context) {
-                return color(app.matrix[app.context.id][node.id]);
+            if (type === "dist" && app.context) {
+                return color(get_distance(app.context.id, node.id, app.topics.length));
             }
             return color(node[type]);
         })
@@ -114,7 +131,7 @@ function updateGraph() {
             return app.pins.indexOf(d) > -1;
         });
 
-    nodes.selectAll("text.text")
+    nodes.select("text.text")
         .text(function (d) {
             return d.title;
         })
@@ -183,6 +200,7 @@ function updateHelp() {
         .html(info);
 }
 
+// Update selection in bottom right of toolbar.
 function updateSelection() {
     "use strict";
     var context,
@@ -219,9 +237,9 @@ function updateSelection() {
 
     context.select("input")
         .style("visibility", function (d) {
-            return d.pruned
-                ? "hidden"
-                : "visible";
+            return d.count
+                ? "visible"
+                : "hidden";
         })
         .property("checked", function (d) {
             return d.selected;
@@ -234,75 +252,88 @@ function updateSelection() {
 
     context.select("span")
         .text(function (d) {
-            var word = app.tokens[d.word];
-            if (word) {
-                return word;
-            }
             return d.word;
         });
 }
 
+// Turns the topic context menu on.
 function updateContext() {
     "use strict";
-    var context,
-        x = app.translate[0] + (app.context.x * app.scale),
-        y = app.translate[1] + (app.context.y * app.scale),
-        enter,
-        top;
+    function update() {
+        var context,
+            enter,
+            maximum;
 
-    //Change static nodes.
-    context = d3.select('#context')
-        .style('visibility', 'visible');
+        //Change static nodes.
+        context = d3.select('#context')
+            .style('visibility', 'visible');
 
-    context.select("h1")
-        .text(app.context.title);
+        context.select("h1")
+            .text(app.context.title);
 
-    context.select(".edit")
-        .text("Edit Title")
-        .on("click", editContext);
+        context.select(".edit")
+            .text("Edit Title")
+            .on("click", editContext);
 
-    //Edit fluid nodes
-    context = context.select("ol")
-        .selectAll("li")
-        .data(app.context.data);
+        //Edit fluid nodes
+        context = context.select("ol")
+            .selectAll("li")
+            .data(app.context.data);
 
-    enter = context.enter()
-        .append("li");
+        enter = context.enter()
+            .append("li");
 
-    enter.append("span");
-    enter.append("div")
-        .attr("class", "tokenbar")
-        .append("div")
-        .attr("class", "tokendata");
+        enter.append("span");
+        enter.append("div")
+            .attr("class", "tokenbar")
+            .append("div")
+            .attr("class", "tokendata");
 
-    context.exit().remove();
+        context.exit().remove();
 
-    context.select("span")
-        .text(function (d) {
-            var word = app.tokens[d.word];
-            if (word) {
-                return word;
+        context.select("span")
+            .text(function (d) {
+                return d.word;
+            });
+
+        // Blue bars
+        maximum = app.context.data.reduce(function (prev, current) {
+            if (current.selected && current.count > prev) {
+                return current.count;
             }
-            return d.word;
-        });
+            return prev;
+        }, 0);
 
-    // Blue bars
-    app.context.data.some(function (e) {
-        if (e.selected) {
-            top = e.count;
-            return true;
-        }
-    });
+        context.select("div.tokendata")
+            .style("width", function (d) {
+                if (d.selected) {
+                    return ((d.count / maximum) * 100) + "%";
+                }
+                return 0;
+            });
+    }
 
-    context.select("div.tokendata")
-        .style("width", function (d) {
-            if (d.selected) {
-                return ((d.count / top) * 100) + "%";
-            }
-            return 0;
+    // Only update if data is not already pulled.
+    if (app.context.data === undefined) {
+        var id = d3.select("main select.data").property("value"),
+            url = app.url + "/datasets/" + id + "/topics/" + app.context.id + "/token_counts";
+
+        d3.json(url, function (keywords) {
+            app.context.data = keywords.token_counts.map(function (d) {
+                return {
+                    word: d[0],
+                    count: d[1],
+                    selected: true
+                };
+            });
+            update();
         });
+    } else {
+        update();
+    }
 }
 
+// Changes size of page.
 function updateSize() {
     "use strict";
     var w = window.innerWidth,
@@ -319,6 +350,7 @@ function updateSize() {
     }
 }
 
+// Updates the pins menu.
 function updatePins() {
     "use strict";
     var topics,
@@ -371,6 +403,7 @@ function updatePins() {
         });
 }
 
+// Runs whenever edit is clicked.
 function editContext() {
     "use strict";
     var context = d3.select("#context"),
@@ -378,12 +411,15 @@ function editContext() {
         link = context.select(".edit"),
         value;
 
+
     if (input.style("visibility") === "hidden") {
+        // "Edit title" clicked. Reveal controls.
         input.style("visibility", "visible");
         link.text("save");
         input[0][0].focus();
+
     } else {
-        //Change node title.
+        // "Save" clicked. Save changes.
         value = input.property("value").trim();
 
         if (value !== "") {
@@ -395,8 +431,7 @@ function editContext() {
 
         //Edit html
         link.text("Edit Title");
-        input
-            .style("visibility", "hidden")
+        input.style("visibility", "hidden")
             .property("value", "");
 
         updateGraph();
@@ -405,6 +440,7 @@ function editContext() {
     }
 }
 
+// This event triggers whenever the bottom bar changes size.
 function eventExpand(expand) {
     "use strict";
     var height = window.innerHeight / 2,
@@ -446,8 +482,15 @@ function eventExpand(expand) {
         .style("transform", "translateY(-50%) " + orient);
 }
 
-function eventContext(node) {
+// This function activates every time the graph is clicked.
+function eventGraphClick(node) {
     "use strict";
+
+    // if zero is clicked do nothing.
+    if (node && node.id === -1) {
+        return;
+    }
+
     //A hack to overwrite stupid complex interaction.
     if (!app.node) {
         eventRemoveContext();
@@ -461,12 +504,11 @@ function eventContext(node) {
     //endhack
 
     app.context = node;
-    updateGraph();
     updateContext();
-    updateSelection();
     updateGraph();
 }
 
+// This function removes the context box.
 function eventRemoveContext() {
     "use strict";
     d3.select("#context")
@@ -484,30 +526,110 @@ function eventRemoveContext() {
     updateGraph();
 }
 
+// This function runs every time a dataset changes.
+function updateDataset() {
+    "use strict";
+    var id = d3.select("main select.data").property("value");
+
+    // Reset data.
+    d3.select("img.ajax")
+        .style("visibility", "visible");
+
+    app.selection = false;
+    app.topics = [];
+    app.distance = [];
+    app.pins = [];
+    eventRemoveContext();
+    updatePins();
+    updateSelection();
+    updatePlugins();
+
+    // Load new data.
+    d3.json(app.url + "/datasets/" + id + "/topics/data?content=mean,center_dist,first_word,topic_dist,trend", function (topic_data) {
+
+        // Collect data
+        app.matrix = topic_data.topic_dist;
+        var colors = d3.scale.category20(),
+            count = topic_data.first_word.length;
+
+        // Add topics
+        d3.range(0, count - 1).forEach(function (d) {
+            app.topics.push({
+                id: d,
+                mean: topic_data.mean[d],
+                trend: topic_data.trend[d],
+                dist: topic_data.center_dist[d],
+                x: Math.random() * 1000,
+                y: Math.random() * 1000,
+                title: topic_data.first_word[d],
+                color: colors(d)
+            });
+        });
+
+        // Add zero.
+        app.topics.push({
+            id: -1,
+            mean: 0.005,
+            x: Math.random() * 1000,
+            y: Math.random() * 1000,
+            zero: true,
+            title: "zero",
+            color: "white"
+        });
+
+        // Insert edges
+        app.topics.forEach(function (source, i) {
+            app.topics.slice(i + 1).forEach(function (target) {
+                var weight;
+
+                if (source.zero) {
+                    weight = target.dist;
+                } else if (target.zero) {
+                    weight = source.dist;
+                } else {
+                    weight = get_distance(source.id, target.id, count);
+                }
+
+                app.distance.push({
+                    "source": source,
+                    "target": target,
+                    "weight": weight
+                });
+            });
+        });
+
+        // Update page
+        updateGraph();
+        updatePlugins();
+
+        app.force
+            .nodes(app.topics)
+            .links(app.distance)
+            .start();
+
+        d3.select(".ajax").style("visibility", "hidden");
+    });
+}
+
+// This function runs once on page load.
 function eventLoad() {
     "use strict";
-    var data = d3.select("select.data").property("value");
-
     window.onresize = function () {
         updateSize();
         updatePlugins();
     };
     window.onresize();
 
-    d3.select("main select")
+    // Top menu
+    d3.select("main select.color")
         .on("change", updateGraph);
 
-    d3.select("select.data")
+    d3.select("main select.data")
         .on("change", function () {
-            var href = location.href.split("?")[0] + "?data=" + d3.select(this).property("value");
-            location.replace(href);
+            updateDataset();
         });
 
-    d3.select("body")
-        .append("img")
-        .attr("src", "static/ajax-loader.gif")
-        .attr("class", "ajax");
-
+    // Bottom bar buttons
     d3.select("#bottombar .shake")
         .on("click", function () {
             app.force.start();
@@ -522,6 +644,10 @@ function eventLoad() {
             updateGraph();
         });
 
+    d3.selectAll("#bottombar select")
+        .on("change", updatePlugins);
+
+    // Context menu
     d3.select("#context .pin")
         .on("click", function () {
             if (app.pins.indexOf(app.context) === -1) {
@@ -543,12 +669,11 @@ function eventLoad() {
             }
         });
 
+    // Help menus
     d3.selectAll(".help")
         .on("click", updateHelp);
 
-    d3.selectAll("#bottombar select")
-        .on("change", updatePlugins);
-
+    // Normal click
     d3.select("#graph")
         .on("click", eventRemoveContext)
         .call(
@@ -563,8 +688,9 @@ function eventLoad() {
                     d3.select("#graph g").attr("transform", transform);
                 })
         )
-        .on("click", eventContext);
+        .on("click", eventGraphClick);
 
+    // Set up force directed graph.
     app.force
         .nodes(app.topics)
         .links(app.distance)
@@ -592,184 +718,32 @@ function eventLoad() {
                 });
         });
 
-    function parse_int(value) {
-        if (value.indexOf("e") > -1) {
-            value = parseFloat(value);
+    // Upload dataset information.
+    d3.json(app.url + "/datasets", function(json) {
+        var data = window.location.search;
+        if (data) {
+            data = data.split("=")[1];
         }
-        return parseInt(value, 10);
-    }
 
-    function process_tokens(obj) {
-        obj.id = parse_int(obj.id);
+        var options = d3.select("select.data")
+            .selectAll("option")
+            .data(json.datasets);
 
-        app.tokens[obj.id] = obj.token;
-        app.tokeni[obj.token] = obj.id;
-    }
+        options.enter().append("option");
+        options.exit().remove();
 
-    // Depends on tokens.
-    var category = d3.scale.category20();
-    function process_topics(value) {
-        //Static data
-        value.id = parse_int(value.id);
-        value.mean = parseFloat(value.mean);
-        value.alpha = parseFloat(value.alpha);
-        value.dist = parseFloat(value.dist);
-        value.trend = parseFloat(value.trend);
-        value.x = 500;
-        value.y = 500;
-        value.total = 0;
-        value.title = value["key.0"];
-        value.color = category(value.id);
-        value.tokens = {};
-
-        //Topic keys.
-        value.data = [];
-        Object.keys(value).forEach(function (key) {
-            if (key.substring(0, 4) === "key.") {
-                var index = app.tokeni[value[key]],
-                    obj = {
-                        selected: true,
-                        word: index,
-                        count: 0,
-                        pruned: false
-                    };
-
-                if (index === undefined) {
-                    obj.word = value[key];
-                    obj.pruned = true;
-                    obj.selected = false;
+        options.text(function (d) {
+                return d.name;
+            })
+            .attr("value", function (d) {
+                return d.id;
+            })
+            .property("selected", function (d) {
+                if (d.name === data) {
+                    return true;
                 }
-
-                value.data[parse_int(key.substring(4))] = obj;
-                delete value[key];
-            }
-        });
-
-        app.topics[value.id] = value;
-    }
-
-    function process_documents (value) {
-        //Static data.
-        value.id = parse_int(value.id);
-
-        //Metadata value for Token visualization.
-        if (value.date === undefined) {
-            value.date = null;
-            app.tokenViz = false;
-        }
-
-        //Metadata value for Documents visualization.
-        if (value.name === undefined) {
-            value.name = value.source;
-        }
-        delete value.source;
-
-        //Document topics.
-        value.data = [];
-        Object.keys(value).forEach(function (key) {
-            if (key.indexOf("topic") > -1) {
-                value.data[parse_int(key.substring(6))] = parseFloat(value[key]);
-                delete value[key];
-            }
-        });
-        app.documents[value.id] = value;
-    }
-
-    function process_state(state) {
-        state.token = parse_int(state.token);
-        state.doc = parse_int(state.doc);
-        state.topic = parse_int(state.topic);
-        state.count = parse_int(state.count);
-
-        var topic = app.topics[state.topic],
-            year = app.documents[state.doc].date,
-            index = -1;
-
-        topic.data.some(function (d, i) {
-            if (d.word === state.token) {
-                index = i;
-                return true;
-            }
-        });
-
-        //Increment total.
-        topic.total += state.count;
-        if (index > -1) {
-
-            // Insert into token.
-            if (topic.tokens[year] === undefined) {
-                topic.tokens[year] = {};
-            }
-
-            if (topic.tokens[year][state.token] === undefined) {
-                topic.tokens[year][state.token] = 0;
-            }
-            topic.tokens[year][state.token] += state.count;
-
-            //Increment local.
-            topic.data[index].count += state.count;
-        }
-    }
-
-    function process_distance(dist) {
-        var copy = [];
-        Object.keys(dist).forEach(function (key) {
-            copy[key] = parseFloat(dist[key]);
-        });
-        return copy;
-    }
-
-    d3.csv("data/" + data + "/tokens.csv", process_tokens, function () {
-        d3.csv("data/" + data + "/topics.csv", process_topics, function () {
-            d3.csv("data/" + data + "/documents.csv", process_documents, function () {
-                d3.csv("data/" + data + "/state.csv", process_state, function () {
-                    d3.csv("data/" + data + "/distance.csv", process_distance, function (distance) {
-
-                        // Insert zero.
-                        app.topics.push({
-                            id: -1,
-                            mean: 0.005,
-                            x: 500,
-                            y: 500,
-                            zero: true,
-                            title: "zero",
-                            color: "white",
-                            data: []
-                        });
-
-                        app.topics.forEach(function (source, i) {
-                            app.topics.slice(i + 1).forEach(function (target) {
-                                var weight;
-
-                                if (source.zero) {
-                                    weight = target.dist;
-                                } else if (target.zero) {
-                                    weight = source.dist;
-                                } else {
-                                    weight = distance[source.id][target.id];
-                                }
-
-                                app.distance.push({
-                                    "source": source,
-                                    "target": target,
-                                    "weight": weight
-                                });
-                            });
-                        });
-
-                        var merged = [];
-                        app.dist_extent = d3.extent(merged.concat.apply(merged, distance))
-
-                        app.matrix = distance;
-
-                        //Update visualization.
-                        updateGraph();
-                        app.force.start();
-                        d3.select(".ajax").remove();
-                        delete app.tokeni;
-                    });
-                });
             });
-        });
+
+        updateDataset();
     });
 }
