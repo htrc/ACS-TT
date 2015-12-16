@@ -296,7 +296,7 @@ def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta
     token_topic_count.columns = ['tokenid', 'topic', 'count']
 
     tokenid_max = np.max(token_topic_count['tokenid'])
-    print("done, {:,} tokens".format(tokenid_max+1))
+    print("done, {:,} tokens".format(len(tokenid_map)))
 
     print("Creating topics...", end='', flush=True)
 
