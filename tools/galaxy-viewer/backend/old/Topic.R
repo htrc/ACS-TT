@@ -1,12 +1,17 @@
 library("compiler", lib.loc="/usr/lib/R/library")
 
 Topic <- function(v) {
-  #New softmax
-  exponent = exp(as.numeric(v))
-  exponent = exponent / sum(exponent)
-  class(exponent) <- "Topic"
+  total = sum(as.numeric(v))
+  zeros = length(v[v == 0])
   
-  return (exponent)
+  if (zeros > 0) {
+    v[v == 0] <- 1 / zeros
+    total = total + 1
+  }
+  
+  v = v / total
+  class(v) <- "Topic"
+  return(v)
 }
 
 Topic.add <- function (x, y) {
