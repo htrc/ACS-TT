@@ -15,7 +15,7 @@ __maintainer__ = "Boris Capitanu"
 __version__ = "1.0.0"
 
 
-def parallel_for(f, l, *, threads=cpu_count(), return_=False, return_ordered=True):
+def parallel_for(f, l, *, threads=int(cpu_count()/2), return_=False, return_ordered=True):
     """Applies f to each element of l, in parallel over the specified number of threads
 
     :param f: The function to apply
@@ -89,7 +89,7 @@ def parallel_for(f, l, *, threads=cpu_count(), return_=False, return_ordered=Tru
             return
 
 
-def parallel_map(f, l, *, threads=cpu_count(), ordered=True):
+def parallel_map(f, l, *, threads=int(cpu_count()/2), ordered=True):
     """Applies f to each element of l, in parallel over the specified number of threads, and returns the result
 
     :param f: The function to apply

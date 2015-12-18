@@ -24,9 +24,8 @@ __version__ = "1.0.0"
 
 
 class Topic(object):
-    def __init__(self, vector, alg=2):
-        total = np.sum(vector)
-        if total == 1:
+    def __init__(self, vector, alg=2, *, skip_scale=False):
+        if skip_scale:
             self.value = vector
         elif alg == 1:
             # this is the new algorithm which handles zero better, but it's failing in other areas;
@@ -35,6 +34,7 @@ class Topic(object):
             self.value = top / np.sum(top)
         elif alg == 2:
             # this is the old algorithm which seems to work better in practice
+            total = np.sum(vector)
             zeros = vector.size - np.count_nonzero(vector)
             if zeros > 0:
                 vector[vector == 0] = float(1) / zeros
@@ -47,15 +47,15 @@ class Topic(object):
         self._length = None
 
     def __repr__(self):
-        return str(self.value)
+        return self.value
 
     def add(self, other):
         top = self.value * other.value
-        return Topic(top / np.sum(top))
+        return Topic(top / np.sum(top), skip_scale=True)
 
     def scaler(self, k):
         top = self.value ** k
-        return Topic(top / np.sum(top))
+        return Topic(top / np.sum(top), skip_scale=True)
 
     def dot(self, other):
         """Calculates the theoretical dot product
@@ -79,7 +79,6 @@ class Topic(object):
 
         # This is a major problem function!!!!!!
         # Any optimizations on this function are well worth it.
-
         if self._length is None:
             powerx = np.log(self.value)
             sums = map(lambda x: np.sum((powerx - x) ** 2), powerx)
@@ -238,7 +237,9 @@ def retrieve_meta(doc_topics, solr_url):
     return meta
 
 
-def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta_filename, solr_url, output_dir, date_format):
+def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta_filename,
+        solr_url, output_dir, date_format):
+
     if not os.path.exists(doc_topics_filename):
         raise FileNotFoundError(doc_topics_filename)
 
@@ -314,21 +315,34 @@ def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta
 
     # calculate trend
     print("Calculating topic trend...", end='', flush=True)
-    doc_topics_complete = pd.merge(doc_meta, doc_topics, on="source")
+    doc_topics_complete = pd.merge(doc_meta, doc_topics, on='source')
+    doc_topics_complete = doc_topics_complete.rename(columns={'id_x': 'volid', 'id_y': 'docid'}, copy=False)
 
-    state_trend = pd.merge(state[["docid", "topic"]], doc_topics_complete[["id", "publishDate"]],
-        left_on="docid", right_on="id")[["topic", "publishDate"]]
+    state_trend = pd.merge(state[['docid', 'topic']],
+                           doc_topics_complete[['docid', 'publishDate']],
+                           on='docid')[['topic', 'publishDate']]
+
+    def get_year_from_date(d):
+        try:
+            return datetime.strptime(str(d), date_format).year
+        except ValueError:
+            return -1
 
     def slope(topic):
-        state_small = state_trend[state_trend["topic"] == topic].groupby(["topic", "publishDate"]).size().reset_index()
-        state_small.columns = ["topic", "publishDate", "count"]
+        state_small = state_trend[state_trend['topic'] == topic].groupby(['topic', 'publishDate']).size().reset_index()
+        state_small.columns = ['topic', 'publishDate', 'count']
 
-        dates = [datetime.strptime(x, date_format).year for x in state_small["publishDate"]]
+        dates = [get_year_from_date(d) for d in state_small['publishDate']]
+        values = state_small['count'].values
 
-        test = stats.linregress(dates, list(state_small["count"]))
-        return test[0]
+        # filter out values corresponding to invalid dates (date = -1)
+        values = [values[i] for i in range(len(values)) if dates[i] != -1]
+        dates = [d for d in dates if d != -1]
 
-    topic_keys['trend'] = [slope(x) for x in topicids]
+        lm = stats.linregress(dates, values)
+        return lm[0]
+
+    topic_keys['trend'] = list(parallel_map(slope, topicids))
     print("done")
 
     # Insert dists
@@ -348,14 +362,13 @@ def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta
 
     # Create Distance Matrix
     dist = pd.DataFrame(data=0, dtype='float64', index=topicids, columns=topicids)
-
     print("Calculating inter-topic distances...", end='', flush=True)
 
     def calc_dist(tuple):
         x, y = tuple
         d = topics[x].distance(topics[y])
-        dist[x][y] = d
-        dist[y][x] = d
+        dist.iloc[x, y] = d
+        dist.iloc[y, x] = d
 
     parallel_for(calc_dist, itertools.combinations(topicids, 2))
     print("done")
@@ -395,7 +408,8 @@ if __name__ == '__main__':
                              "disable the pruning, but expect the running time to increase significantly.")
     parser.add_argument('--output', dest='output_dir', metavar='DIR', required=True,
                         help="The output folder where the results should be written to")
-
+    parser.add_argument('--date-format', dest='date_format', metavar='FORMAT', default='%Y-%m-%dT%H:%M:%SZ',
+                        help="Date format to interpret metadata publishDate (used with datetime.datetime.strptime)")
     meta_group = parser.add_mutually_exclusive_group(required=True)
     meta_group.add_argument('--meta', dest='meta_filename',
                             help="The metadata CSV file containing info about each document (at a minimum, the "
@@ -403,9 +417,6 @@ if __name__ == '__main__':
                                  "correlate with the 'source' (2nd) column from the '--doc-topics' file)")
     meta_group.add_argument('--solr', dest='solr_url',
                             help="The SOLR base URL to use for looking up document metadata")
-
-    meta_group.add_argument('--date-format', dest='date_format', default='%Y-%m-%dT%H:%M:%SZ',
-                            help="Date format to interpret metadata publishDate")
 
     args = parser.parse_args()
     doc_topics_filename = args.doc_topics_filename
@@ -417,4 +428,5 @@ if __name__ == '__main__':
     solr_url = args.solr_url
     date_format = args.date_format
 
-    run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta_filename, solr_url, output_dir, date_format)
+    run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta_filename,
+        solr_url, output_dir, date_format)
