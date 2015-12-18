@@ -152,14 +152,14 @@ create.state <- function() {
   # Try import.
   tryCatch({
     state <- TRUE
-    state <- read.table(find.input("topic-state"), comment.char='', quote='', skip=3)
+    state <- read.table(gzfile(find.input("topic-state")), comment.char='', quote='', skip=3)
     names(state) <- c("doc", "source", "pos", "typeindex", "type", "topic")
   }, 
   error = function (error) {
     print(error)
     
     # There are spaces in source. We need to do a slower import.
-    state <- scan(find.input("topic-state"), what="char", skip=3, sep="\n")
+    state <- scan(gzfile(find.input("topic-state")), what="char", skip=3, sep="\n")
     state <- strsplit(state, " ")
     
     #Correct for spaces in filename.
