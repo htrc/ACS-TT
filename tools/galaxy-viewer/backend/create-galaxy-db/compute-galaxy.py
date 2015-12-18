@@ -237,6 +237,24 @@ def retrieve_meta(doc_topics, solr_url):
     return meta
 
 
+def reindex_tokenids(state):
+    """Re-index the token IDs (usually needed after pruning)
+    :param state: The state data
+    """
+    i = 0
+    tokenids = {}
+    newids = []
+
+    for oldid in state['typeindex']:
+        if oldid not in tokenids:
+            tokenids[oldid] = i
+            i += 1
+
+        newids.append(tokenids[oldid])
+
+    state['typeindex'] = newids
+
+
 def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta_filename,
         solr_url, output_dir, date_format):
 
@@ -284,18 +302,8 @@ def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta
         state = prune_state(state, max_dict)
         print("done")
 
-        print("Reindexing tokens...", end='', flush=True)
-        i = 0
-        tokenids = {}
-        newids = []
-        for oldid in state["typeindex"]:
-            if oldid not in tokenids:
-                tokenids[oldid] = i
-                i +=1
-
-            newids.append(tokenids[oldid])
-
-        state["typeindex"] = newids
+        print("Re-indexing tokens...", end='', flush=True)
+        reindex_tokenids(state)
         print("done")
 
     print("Processing state data...", end='', flush=True)
@@ -322,18 +330,17 @@ def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta
         for tid, _, cnt in token_count.itertuples(index=False):
             vector[tid] = np.float64(cnt)
 
-        topic = Topic(vector)
-        return topic
+        return Topic(vector)
 
-    topics = [create_topic(t) for t in topicids]
-    # topics = list(parallel_map(create_topic, topicids))
+    topics = list(parallel_map(create_topic, topicids))
     print("done")
 
     # calculate trend
     print("Calculating topic trend...", end='', flush=True)
 
     doc_topics_complete = pd.merge(doc_meta, doc_topics, on='source')
-    doc_topics_complete = doc_topics_complete.rename(columns={'id': 'docid', 'id_x': 'volid', 'id_y': 'docid'}, copy=False)
+    doc_topics_complete = doc_topics_complete.rename(columns={'id': 'docid', 'id_x': 'volid', 'id_y': 'docid'},
+                                                     copy=False)
 
     state_trend = pd.merge(state[['docid', 'topic']],
                            doc_topics_complete[['docid', 'publishDate']],
