@@ -57,6 +57,7 @@ augmented topic modeling output.
 ```
 usage: compute-galaxy.py [-h] [--doc-topics FILE] [--topic-keys FILE]
                          [--state FILE] [--max-dict N] --output DIR
+                         [--date-format FORMAT]
                          (--meta META_FILENAME | --solr SOLR_URL)
 
 Performs auxiliary computation on Mallet output for use in the Galaxy Viewer
@@ -78,6 +79,9 @@ optional arguments:
                         significantly. (default: 2000)
   --output DIR          The output folder where the results should be written
                         to (default: None)
+  --date-format FORMAT  Date format to interpret metadata publishDate (used
+                        with datetime.datetime.strptime) (default:
+                        %Y-%m-%dT%H:%M:%SZ)
   --meta META_FILENAME  The metadata CSV file containing info about each
                         document (at a minimum, the columns must contain
                         'source', 'title', 'publishDate' - where 'source' must
@@ -86,6 +90,8 @@ optional arguments:
   --solr SOLR_URL       The SOLR base URL to use for looking up document
                         metadata (default: None)
 ```
+
+**Note:** When using the `--solr` argument with an HTRC SOLR instance, the `--date-format` should be `"%Y"`
 
 ## Step 3 - Load data into database
 Use the `create-galaxy-db.py` tool for creating a database based on the output from Step 2. After this process the
