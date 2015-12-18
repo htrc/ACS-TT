@@ -282,7 +282,20 @@ def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta
     if max_dict > 0:
         print("Pruning tokens, keeping only the top {:,} tokens by frequency...".format(max_dict), end='', flush=True)
         state = prune_state(state, max_dict)
-        # reindex token ids
+        print("done")
+
+        print("Reindexing tokens...", end='', flush=True)
+        i = 0
+        tokenids = {}
+        newids = []
+        for oldid in state["typeindex"]:
+            if oldid not in tokenids:
+                tokenids[oldid] = i
+                i +=1
+
+            newids.append(tokenids[oldid])
+
+        state["typeindex"] = newids
         print("done")
 
     print("Processing state data...", end='', flush=True)
@@ -318,12 +331,15 @@ def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta
 
     # calculate trend
     print("Calculating topic trend...", end='', flush=True)
+
     doc_topics_complete = pd.merge(doc_meta, doc_topics, on='source')
-    doc_topics_complete = doc_topics_complete.rename(columns={'id_x': 'volid', 'id_y': 'docid'}, copy=False)
+    doc_topics_complete = doc_topics_complete.rename(columns={'id': 'docid', 'id_x': 'volid', 'id_y': 'docid'}, copy=False)
 
     state_trend = pd.merge(state[['docid', 'topic']],
                            doc_topics_complete[['docid', 'publishDate']],
-                           on='docid')[['topic', 'publishDate']]
+                           on='docid')[['topic', 'publishDate']].groupby(['topic', 'publishDate']).size().reset_index()
+
+    state_trend.columns = ['topic', 'publishDate', 'count']
 
     def get_year_from_date(d):
         try:
@@ -332,8 +348,7 @@ def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta
             return -1
 
     def slope(topic):
-        state_small = state_trend[state_trend['topic'] == topic].groupby(['topic', 'publishDate']).size().reset_index()
-        state_small.columns = ['topic', 'publishDate', 'count']
+        state_small = state_trend[state_trend['topic'] == topic]
 
         dates = [get_year_from_date(d) for d in state_small['publishDate']]
         values = state_small['count'].values
