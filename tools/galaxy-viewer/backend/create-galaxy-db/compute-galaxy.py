@@ -47,7 +47,7 @@ class Topic(object):
         self._length = None
 
     def __repr__(self):
-        return self.value
+        return str(self.value)
 
     def add(self, other):
         top = self.value * other.value
@@ -282,6 +282,7 @@ def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta
     if max_dict > 0:
         print("Pruning tokens, keeping only the top {:,} tokens by frequency...".format(max_dict), end='', flush=True)
         state = prune_state(state, max_dict)
+        # reindex token ids
         print("done")
 
     print("Processing state data...", end='', flush=True)
@@ -294,23 +295,25 @@ def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta
     state.columns = ['docid', 'tokenid', 'topic']
 
     # compute token, topic -> count mapping
-    token_topic_count = state[['tokenid', 'topic']].groupby(['tokenid', 'topic']).size().reset_index()
+    token_topic_count = state[['tokenid', 'topic']].groupby(['tokenid', 'topic'], sort=False).size().reset_index()
     token_topic_count.columns = ['tokenid', 'topic', 'count']
 
-    tokenid_max = np.max(token_topic_count['tokenid'])
-    print("done, {:,} tokens".format(len(tokenid_map)))
+    num_tokens = len(tokenid_map)
+    print("done, {:,} tokens".format(num_tokens))
 
     print("Creating topics...", end='', flush=True)
 
     def create_topic(topicid):
         token_count = token_topic_count[token_topic_count['topic'] == topicid]
-        vector = np.repeat(np.float64(0), tokenid_max+1)
-        for _, tid, _, cnt in token_count.itertuples():
+        vector = np.repeat(np.float64(0), num_tokens)
+        for tid, _, cnt in token_count.itertuples(index=False):
             vector[tid] = np.float64(cnt)
 
-        return Topic(vector)
+        topic = Topic(vector)
+        return topic
 
-    topics = list(parallel_map(create_topic, topicids))
+    topics = [create_topic(t) for t in topicids]
+    # topics = list(parallel_map(create_topic, topicids))
     print("done")
 
     # calculate trend
