@@ -213,7 +213,7 @@ def run(dataset_name, dist_file, docs_file, meta_file, state_file, tokens_file, 
         ('datasetId', ASCENDING),
         ('topicId', ASCENDING),
         ('docId', ASCENDING)
-    ], name='dataset_topic', unique=True)
+    ], name='dataset_state', unique=True)
 
     db.state.create_indexes([state_composite_idx])
 
