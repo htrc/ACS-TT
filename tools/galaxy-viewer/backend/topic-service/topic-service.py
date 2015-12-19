@@ -241,7 +241,7 @@ def get_topic_token_counts(dataset_id, topic_id, mongodb):
     if datasets is None:
         abort(404, "Unknown dataset id: {}".format(dataset_id))
 
-    token_map = {t['id']: t['token'] for t in datasets['tokens']}
+    token_map = {t['tokenid']: t['token'] for t in datasets['tokens']}
 
     topics = mongodb['topics'].find_one({'datasetId': ObjectId(dataset_id), 'topicId': topic_id},
                                         {'_id': False, 'keywords': 1})
