@@ -16,7 +16,7 @@ from pymongo import IndexModel, ASCENDING
 remove_dataset = __import__('remove-dataset')  # needed due to the dash in the file name
 
 __author__ = "Boris Capitanu"
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 
 def load_distances(filename):
