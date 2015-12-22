@@ -99,18 +99,23 @@ Galaxy Viewer visualization that's connected to the API endpoint linked to this 
 dataset, and will be ready for displaying it.
 
 ```
-usage: create-galaxy-db.py [-h] [--dist DISTANCE_FILENAME]
+usage: create-galaxy-db.py [-h] --name DATASET_NAME [--mongo MONGO_URI]
+                           [--dbname DBNAME] [--dist DISTANCE_FILENAME]
                            [--docs DOCUMENTS_FILENAME]
                            [--state STATE_FILENAME] [--tokens TOKENS_FILENAME]
-                           [--topics TOPICS_FILENAME] --name DATASET_NAME
-                           [--mongo MONGO_URI] [--dbname DBNAME]
-                           [--meta META_FILENAME]
+                           [--topics TOPICS_FILENAME] [--cby CBY_FILENAME]
+                           [--cbty CBTY_FILENAME] [--meta META_FILENAME]
+                           [--date-format FORMAT]
 
-Converts data created by the GalaxyViewer backend R scripts to Javascript
-files for ingestion into MongoDB
+Loads data produced by compute-galaxy.py into a MongoDB database
 
 optional arguments:
   -h, --help            show this help message and exit
+  --name DATASET_NAME   The name of the dataset (default: None)
+  --mongo MONGO_URI     The URI of the MongoDB instance to use (default:
+                        mongodb://localhost:27017/)
+  --dbname DBNAME       The name of the database to use (default:
+                        galaxyviewer)
   --dist DISTANCE_FILENAME
                         The topic distance CSV file (default: distance.csv)
   --docs DOCUMENTS_FILENAME
@@ -123,11 +128,13 @@ optional arguments:
                         tokens.csv)
   --topics TOPICS_FILENAME
                         The topics CSV file (default: topics.csv)
-  --name DATASET_NAME   The name of the dataset (default: None)
-  --mongo MONGO_URI     The URI of the MongoDB instance to use (default:
-                        mongodb://localhost:27017/)
-  --dbname DBNAME       The name of the database to use (default:
-                        galaxyviewer)
+  --cby CBY_FILENAME    The CSV file containing total token counts by year at
+                        the dataset level (default: counts_by_year.csv)
+  --cbty CBTY_FILENAME  The CSV file containing token counts by topic by year
+                        (default: counts_by_topic_year.csv)
   --meta META_FILENAME  The metadata file containing info about each document
                         (default: docmeta.csv)
+  --date-format FORMAT  Date format to interpret metadata publishDate (used
+                        with datetime.datetime.strptime) (default:
+                        %Y-%m-%dT%H:%M:%SZ)
 ```
