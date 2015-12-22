@@ -20,7 +20,7 @@ from handythread import parallel_map, parallel_for
 from solr_meta import get_meta
 
 __author__ = "Ryan Chartier, Boris Capitanu"
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 
 class Topic(object):
@@ -185,10 +185,24 @@ def try_parse_number(x):
         return x
 
 
-def read_meta(meta_filename):
+def date_to_year(d, date_format):
+    """Try to parse the given object as a date
+
+    :param d: The object to parse
+    :param date_format: The expected date format
+    :return: The year if the parse succeeded, -1 otherwise
+    """
+    try:
+        return datetime.strptime(str(d), date_format).year
+    except ValueError:
+        return -1
+
+
+def read_meta(meta_filename, date_format):
     """Reads a CSV metadata file
 
     :param meta_filename: The CSV metadata filename
+    :param date_format: The date format
     :return: A DataFrame containing the metadata
     :raises ValueError: if the metadata CSV file does not include all required columns
     """
@@ -199,16 +213,19 @@ def read_meta(meta_filename):
         if attr not in meta:
             raise ValueError("Missing metadata attribute: {}".format(attr))
 
+    meta['year'] = meta['publishDate'].apply(lambda d: date_to_year(d, date_format))
+
     return meta
 
 
-def retrieve_meta(doc_topics, solr_url):
+def retrieve_meta(doc_topics, solr_url, date_format):
     """Retrieves metadata for each document from a SOLR endpoint
 
     :param doc_topics: The Mallet-generated file containing the topic allocations per document
     :param solr_url: The SOLR endpoint URL
+    :param date_format: The date format
     :return: A DataFrame containing ('id', 'title', 'author', 'publishDate', 'source') for each document;
-             if 'publishDate' was missing or invalid, the value '-1' will be assigned to it in the DataFrame
+             if 'publishDate' was missing or invalid, the value None will be assigned to it in the DataFrame
     """
     sources = doc_topics['source'].values
     meta = pd.DataFrame(columns=['id', 'title', 'author', 'publishDate', 'source'], index=np.arange(len(sources)))
@@ -227,32 +244,15 @@ def retrieve_meta(doc_topics, solr_url):
             author = ht_meta.get('author')
             if author is not None: author = str(author)
             publish_date = ht_meta['publishDate']
-            if publish_date is None: publish_date = -1
-            meta.loc[i] = [htid, title, author, try_parse_number(publish_date), source]
+            meta.loc[i] = [htid, title, author, publish_date, source]
         else:
             print("WARN: Error retrieving (or missing) metadata for {}".format(htid))
-            meta.loc[i] = [htid, None, None, -1, source]
+            meta.loc[i] = [htid, None, None, None, source]
             continue
 
+    meta['year'] = meta['publishDate'].apply(lambda d: date_to_year(d, date_format))
+
     return meta
-
-
-def reindex_tokenids(state):
-    """Re-index the token IDs (usually needed after pruning)
-    :param state: The state data
-    """
-    i = 0
-    tokenids = {}
-    newids = []
-
-    for oldid in state['typeindex']:
-        if oldid not in tokenids:
-            tokenids[oldid] = i
-            i += 1
-
-        newids.append(tokenids[oldid])
-
-    state['typeindex'] = newids
 
 
 def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta_filename,
@@ -287,11 +287,11 @@ def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta
 
     if meta_filename is not None:
         print("Reading metadata from {}...".format(meta_filename), end='', flush=True)
-        doc_meta = read_meta(meta_filename)
+        doc_meta = read_meta(meta_filename, date_format)
         print("done, {:,} entries found".format(len(doc_meta)))
     else:
         print("Retrieving metadata from {}...".format(solr_url), end='', flush=True)
-        doc_meta = retrieve_meta(doc_topics, solr_url)
+        doc_meta = retrieve_meta(doc_topics, solr_url, date_format)
         print("done, {:,} entries retrieved".format(len(doc_meta)))
 
     topicids = range(num_topics)
@@ -303,7 +303,7 @@ def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta
         print("done")
 
         print("Re-indexing tokens...", end='', flush=True)
-        reindex_tokenids(state)
+        state['typeindex'] = pd.factorize(state['typeindex'])[0]
         print("done")
 
     print("Processing state data...", end='', flush=True)
@@ -320,7 +320,32 @@ def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta
     token_topic_count.columns = ['tokenid', 'topic', 'count']
 
     num_tokens = len(tokenid_map)
+
+    doc_topics_complete = pd.merge(doc_meta, doc_topics, on='source')
+    doc_topics_complete = doc_topics_complete.rename(columns={'id': 'docid', 'id_x': 'volid', 'id_y': 'docid'},
+                                                     copy=False)
+
+    docid_publishdate = doc_topics_complete[['docid', 'year']]
     print("done, {:,} tokens".format(num_tokens))
+
+    # Create aggregate state object
+    print("Calculating aggregate stats...", end='', flush=True)
+    agg = state.groupby(['docid', 'tokenid', 'topic']).size().reset_index()
+    agg.columns = ['docid', 'tokenid', 'topic', 'count']
+    agg_token = pd.merge(agg, tokenid_map, on='tokenid')
+    full_state = pd.merge(agg_token, docid_publishdate, on='docid')
+    full_state.drop('docid', axis=1, inplace=True)
+    corpus_token_counts_by_year = full_state[['year', 'count']].groupby('year').sum().reset_index()
+    topic_keywords = pd.melt(topic_keys,
+                             id_vars='id',
+                             value_vars=['key.' + str(i) for i in range(num_topwords)],
+                             value_name='token')
+    topic_keywords = topic_keywords.rename(columns={'id': 'topic'}, copy=False)
+    topic_keywords.drop('variable', axis=1, inplace=True)
+    topic_token_counts_by_year = \
+        pd.merge(full_state[['topic', 'year', 'token', 'count']],
+        topic_keywords, on=['topic', 'token']).groupby(['topic', 'year', 'token']).sum().reset_index()
+    print("done")
 
     print("Creating topics...", end='', flush=True)
 
@@ -337,32 +362,17 @@ def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta
 
     # calculate trend
     print("Calculating topic trend...", end='', flush=True)
-
-    doc_topics_complete = pd.merge(doc_meta, doc_topics, on='source')
-    doc_topics_complete = doc_topics_complete.rename(columns={'id': 'docid', 'id_x': 'volid', 'id_y': 'docid'},
-                                                     copy=False)
-
     state_trend = pd.merge(state[['docid', 'topic']],
-                           doc_topics_complete[['docid', 'publishDate']],
-                           on='docid')[['topic', 'publishDate']].groupby(['topic', 'publishDate']).size().reset_index()
+                           docid_publishdate,
+                           on='docid')[['topic', 'year']].groupby(['topic', 'year']).size().reset_index()
 
-    state_trend.columns = ['topic', 'publishDate', 'count']
-
-    def get_year_from_date(d):
-        try:
-            return datetime.strptime(str(d), date_format).year
-        except ValueError:
-            return -1
+    state_trend.columns = ['topic', 'year', 'count']
 
     def slope(topic):
-        state_small = state_trend[state_trend['topic'] == topic]
+        state_small = state_trend[(state_trend['topic'] == topic) & (state_trend['year'] != -1)]
 
-        dates = [get_year_from_date(d) for d in state_small['publishDate']]
+        dates = state_small['year'].values
         values = state_small['count'].values
-
-        # filter out values corresponding to invalid dates (date = -1)
-        values = [values[i] for i in range(len(values)) if dates[i] != -1]
-        dates = [d for d in dates if d != -1]
 
         lm = stats.linregress(dates, values)
         return lm[0]
@@ -377,12 +387,6 @@ def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta
 
     print("Calculating topic means...", end='', flush=True)
     topic_keys['mean'] = doc_topics.ix[:, 'topic.0':].mean().values
-    print("done")
-
-    # Create aggregate state object
-    print("Calculating aggregate stats...", end='', flush=True)
-    agg = state.groupby(['docid', 'tokenid', 'topic']).size().reset_index()
-    agg.columns = ['docid', 'tokenid', 'topic', 'count']
     print("done")
 
     # Create Distance Matrix
@@ -405,8 +409,12 @@ def run(doc_topics_filename, topic_keys_filename, state_filename, max_dict, meta
     tokenid_map.to_csv(os.path.join(output_dir, 'tokens.csv'), index=False, encoding='utf-8')
     agg.to_csv(os.path.join(output_dir, 'state.csv'), index=False, encoding='utf-8')
     dist.to_csv(os.path.join(output_dir, 'distance.csv'), encoding='utf-8')
+    corpus_token_counts_by_year.to_csv(os.path.join(output_dir, 'counts_by_year.csv'), index=False, encoding='utf-8')
+    topic_token_counts_by_year.to_csv(os.path.join(output_dir, 'counts_by_topic_year.csv'),
+                                      index=False, encoding='utf-8')
 
     if solr_url is not None:
+        doc_meta.drop('year', axis=1, inplace=True)
         doc_meta.to_csv(os.path.join(output_dir, 'docmeta.csv'), index=False, encoding='utf-8')
     print("done")
 

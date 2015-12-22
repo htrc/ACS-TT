@@ -2,34 +2,21 @@
 """Tool for loading the processed Mallet topic modeling output into a MongoDB database"""
 
 import argparse
-import collections
-import csv
+import io
 import os
 import sys
+import traceback
 
-import dateutil.parser
-import datetime
+import pandas as pd
+import numpy as np
+from datetime import datetime
 import pymongo
 from pymongo import IndexModel, ASCENDING
-from numbers import Number
+
+remove_dataset = __import__('remove-dataset')  # needed due to the dash in the file name
 
 __author__ = "Boris Capitanu"
 __version__ = "1.0.0"
-
-
-def try_parse_number(x):
-    """Helper method for identifying and returning numbers, where possible.
-
-    :param x: The potential number
-    :return: The number representation of the argument, or the original argument if not a number
-    """
-    try:
-        return int(x)
-    except ValueError:
-        try:
-            return float(x)
-        except ValueError:
-            return x
 
 
 def load_distances(filename):
@@ -38,17 +25,15 @@ def load_distances(filename):
     :param filename: The file containing the calculated inter-topic distances
     :return: An upper-triangular matrix encoded as a vector
     """
-    data = []
     with open(filename, encoding='utf-8') as f:
-        reader = csv.reader(f, quoting=csv.QUOTE_NONE)
-        next(reader)  # skip header
-        skip = 0
-        for line in reader:
-            data.append([try_parse_number(col) for col in line[2 + skip:]])
-            skip += 1
+        data = io.StringIO(f.read())
 
-    # only keep the upper triangular matrix (less diagonal) to prevent redundancy
-    return [item for sublist in data for item in sublist]
+    with data:
+        num_topics = len(data.readline().split(',')) - 1
+        data.seek(0)  # rewind
+        distances = pd.read_csv(filename, header=None, engine='c', skiprows=1, index_col=0)
+
+    return distances.as_matrix()[np.triu_indices(num_topics, k=1)]
 
 
 def load_csv(filename):
@@ -60,13 +45,7 @@ def load_csv(filename):
     if filename is None:
         return None
 
-    data = []
-    with open(filename, encoding='utf-8') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            data.append({k: try_parse_number(v) for k, v in row.items()})
-
-    return data
+    return pd.read_csv(filename, engine='c', encoding='utf-8')
 
 
 def get_distance(num_topics, distances, topic_x, topic_y):
@@ -90,77 +69,81 @@ def get_distance(num_topics, distances, topic_x, topic_y):
     return distances[i]
 
 
-def parse_state(data):
-    """Reads the topic modeling state data
+def parse_as_date(d, date_format):
+    """Try to parse the given object as a date
 
-    :param data: An iterable over the state data rows
-    :return: A dictionary mapping (topic_id, doc_id) to (token_id, count)
+    :param d: The object to parse
+    :param date_format: The expected date format
+    :return: The date if the parse succeeded, None otherwise
     """
-    state = collections.defaultdict(lambda: collections.defaultdict(list))
-
-    for row in data:
-        doc_id, token_id, topic_id, count = row['docid'], row['tokenid'], row['topic'], row['count']
-        state[topic_id][doc_id].append((token_id, count))
-
-    return state
+    try:
+        return datetime.strptime(str(d), date_format)
+    except ValueError:
+        return None
 
 
-def get_docs_meta(doc_meta, doc_topics):
-    """Parses metadata for each document into an appropriate format for use with the Galaxy Viewer
+def run(dataset_name, mongo_uri, dbname, dist_file, docs_file, meta_file,
+        state_file, tokens_file, topics_file, cby_file, cbty_file, date_format):
+    print("Loading %s..." % dist_file, end='', flush=True)
+    distances = load_distances(dist_file).tolist()
+    print("done")
 
-    :param doc_meta: The document metadata
-    :param doc_topics: The topic allocation for each document
-    :return: An array of document metadata, with one entry per document
-    :raises ValueError: if 'doc_meta' does not contain metadata for all documents referenced in 'doc_topics'
-    """
-    if doc_meta is None:
-        documents = [{
-                         'title': doc['title'],
-                         'source': doc['source'],
-                         'publishDate': dateutil.parser.parse(str(doc['publishDate']))
-                     } for doc in doc_topics]
-    else:
-        docs = {meta['source']: meta for meta in doc_meta}
-        documents = []
-        for doc in doc_topics:
-            source = doc['source']
-            meta = docs.get(source)
-            if meta is None:
-                raise ValueError("Missing metadata for: %s" % source)
-            if 'id' in meta:
-                meta['volid'] = meta.pop('id')  # rename the field (GV expects 'volid')
-            doc_date = meta['publishDate']
-            if isinstance(doc_date, Number):
-                if doc_date > 0:
-                    doc_date = datetime.datetime(doc_date, 1, 1)
-                else:
-                    doc_date = None
-            else:
-                doc_date = dateutil.parser.parse(str(doc_date))
-            meta['publishDate'] = doc_date
-            documents.append(meta)
-
-    return documents
-
-
-def run(dataset_name, dist_file, docs_file, meta_file, state_file, tokens_file, topics_file, dbname, mongo_uri):
-    distances = load_distances(dist_file)
+    print("Loading %s..." % docs_file, end='', flush=True)
     doc_topics = load_csv(docs_file)
+    print("done")
+
+    print("Loading %s..." % meta_file, end='', flush=True)
     doc_meta = load_csv(meta_file)
-    state = parse_state(load_csv(state_file))
-    tokens = load_csv(tokens_file)
+    doc_meta = pd.merge(doc_topics[['id', 'source']], doc_meta, on='source', how='left') \
+        .rename(columns={'id': 'docid', 'id_x': 'docid', 'id_y': 'volid'}, copy=False)
+    doc_meta.set_index(['docid'], inplace=True)
+    doc_meta.sort_index(inplace=True)
+    print("done")
+
+    print("Loading %s..." % state_file, end='', flush=True)
+    state = load_csv(state_file)
+    state['tokenid'] = state['tokenid'].astype(int).astype(str)
+    state.set_index(['topic', 'docid'], inplace=True)
+    print("done")
+
+    print("Loading %s..." % tokens_file, end='', flush=True)
+    token_map = load_csv(tokens_file)
+    token_map.set_index(['tokenid'], inplace=True)
+    token_map.sort_index(inplace=True)
+    print("done")
+
+    print("Loading %s..." % topics_file, end='', flush=True)
     topics = load_csv(topics_file)
+    topics.set_index(['id'], inplace=True)
+    topics.sort_index(inplace=True)
+    print("done")
 
-    documents = get_docs_meta(doc_meta, doc_topics)
+    print("Loading %s..." % cby_file, end='', flush=True)
+    corpus_token_counts_by_year = load_csv(cby_file).astype(object)
+    corpus_token_counts_by_year['year'] = corpus_token_counts_by_year['year'].astype(int).astype(str)
+    corpus_token_counts_by_year.set_index(['year'], inplace=True)
+    print("done")
 
+    print("Loading %s..." % cbty_file, end='', flush=True)
+    topic_keyword_counts_by_year = load_csv(cbty_file)
+    topic_keyword_counts_by_year['year'] = topic_keyword_counts_by_year['year'].astype(int).astype(str)
+    topic_keyword_counts_by_year.set_index(['topic', 'year'], inplace=True)
+    print("done")
+
+    print("Creating dataset...")
     mongo = pymongo.MongoClient(mongo_uri)
     db = mongo[dbname]
 
-    num_docs = len(documents)
-    num_tokens = len(tokens)
+    num_docs = len(doc_meta)
+    num_tokens = len(token_map)
     num_topics = len(topics)
 
-    num_kw_per_topic = len([key for key in topics[0].keys() if key.startswith('key.')])
+    num_kw_per_topic = topics.columns.str.startswith('key.').sum()
+
+    # convert the publishDate into a real datetime object
+    documents = doc_meta.to_dict(orient='records')
+    for doc in documents:
+        doc['publishDate'] = parse_as_date(doc['publishDate'], date_format)
 
     print("Dataset: {}".format(dataset_name))
     print("Number of documents: {:,}".format(num_docs))
@@ -173,51 +156,69 @@ def run(dataset_name, dist_file, docs_file, meta_file, state_file, tokens_file, 
         'numDocs': num_docs,
         'numTopics': num_topics,
         'numTokens': num_tokens,
-        'tokens': tokens,
+        'tokens': token_map['token'].values.tolist(),
         'distances': distances,
-        'centerDist': list(map(lambda topic: topic['dist'], topics)),
-        'documents': documents
+        'centerDist': topics['dist'].values.tolist(),
+        'documents': documents,
+        'tokenCountsByYear': corpus_token_counts_by_year.to_dict()['count']
     }
 
     dataset_id = db.datasets.insert_one(dataset).inserted_id
     print("Dataset id: {}".format(dataset_id))
 
-    for topic in topics:
-        topic_id = topic['id']
-        t = {
-            'datasetId': dataset_id,
-            'topicId': topic_id,
-            'alpha': topic['alpha'],
-            'trend': topic['trend'],
-            'mean': topic['mean'],
-            'keywords': [topic[key] for key in map(lambda x: 'key.{}'.format(x), range(num_kw_per_topic))],
-            'docAllocation': [topic_alloc['topic.{}'.format(topic_id)] for topic_alloc in doc_topics]
-        }
-        db.topics.insert_one(t)
-        db.state.insert_many([{
-                                  'datasetId': dataset_id,
-                                  'topicId': topic_id,
-                                  'docId': doc_id,
-                                  'tokens': [token_id for token_id, _ in token_counts],
-                                  'counts': [count for _, count in token_counts]
-                              } for doc_id, token_counts in state[topic_id].items()])
+    try:
+        for topic_id, topic_state in state.groupby(level=0):
+            topic_docs = [{
+                              'datasetId': dataset_id,
+                              'topicId': topic_id.item(),
+                              'docId': doc_id.item(),
+                              'tokenCounts': doc_data.set_index(['tokenid']).to_dict()['count']
+                          } for doc_id, doc_data in topic_state.astype(object).groupby(level=1)]
 
-    topic_composite_idx = IndexModel([
-        ('datasetId', ASCENDING),
-        ('topicId', ASCENDING)
-    ], name='dataset_topic', unique=True)
+            topic_doc_allocation = doc_topics['topic.%s' % topic_id].values.tolist()
+            topic = topics.loc[topic_id]
+            topic_keywords = topic['key.0':'key.{}'.format(num_kw_per_topic - 1)].values.tolist()
 
-    db.topics.create_indexes([topic_composite_idx])
+            t = {
+                'datasetId': dataset_id,
+                'topicId': topic_id.item(),
+                'alpha': topic['alpha'].item(),
+                'trend': topic['trend'].item(),
+                'mean': topic['mean'].item(),
+                'keywords': topic_keywords,
+                'docAllocation': topic_doc_allocation,
+                'keywordCountsByYear': {
+                    year: {
+                        'keywords': counts['token'].values.tolist(),
+                        'counts': counts['count'].values.tolist()
+                    }
+                    for year, counts in topic_keyword_counts_by_year.astype(object).loc[topic_id].groupby(level=0)
+                }
+            }
 
-    state_composite_idx = IndexModel([
-        ('datasetId', ASCENDING),
-        ('topicId', ASCENDING),
-        ('docId', ASCENDING)
-    ], name='dataset_state', unique=True)
+            db.topics.insert_one(t)
+            db.state.insert_many(topic_docs)
 
-    db.state.create_indexes([state_composite_idx])
+        topic_composite_idx = IndexModel([
+            ('datasetId', ASCENDING),
+            ('topicId', ASCENDING)
+        ], name='dataset_topic', unique=True)
 
-    print("All done.")
+        db.topics.create_indexes([topic_composite_idx])
+
+        state_composite_idx = IndexModel([
+            ('datasetId', ASCENDING),
+            ('topicId', ASCENDING),
+            ('docId', ASCENDING)
+        ], name='dataset_state', unique=True)
+
+        db.state.create_indexes([state_composite_idx])
+
+        print("All done.")
+    except:
+        traceback.print_exc(file=sys.stderr)
+        # remove the partial dataset if an error occurred
+        remove_dataset.remove_dataset(dataset_id, db)
 
 
 if __name__ == '__main__':
@@ -225,6 +226,12 @@ if __name__ == '__main__':
         description="Loads data produced by compute-galaxy.py into a MongoDB database",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
+    parser.add_argument('--name', dest='dataset_name', required=True,
+                        help="The name of the dataset")
+    parser.add_argument('--mongo', dest='mongo_uri', default='mongodb://localhost:27017/',
+                        help="The URI of the MongoDB instance to use")
+    parser.add_argument('--dbname', dest='dbname', default='galaxyviewer',
+                        help="The name of the database to use")
     parser.add_argument('--dist', dest='distance_filename', default='distance.csv',
                         help="The topic distance CSV file")
     parser.add_argument('--docs', dest='documents_filename', default='documents.csv',
@@ -235,31 +242,35 @@ if __name__ == '__main__':
                         help="The CSV file containing id <-> token mapping")
     parser.add_argument('--topics', dest='topics_filename', default='topics.csv',
                         help="The topics CSV file")
-    parser.add_argument('--name', dest='dataset_name', required=True,
-                        help="The name of the dataset")
-    parser.add_argument('--mongo', dest='mongo_uri', default='mongodb://localhost:27017/',
-                        help="The URI of the MongoDB instance to use")
-    parser.add_argument('--dbname', dest='dbname', default='galaxyviewer',
-                        help="The name of the database to use")
+    parser.add_argument('--cby', dest='cby_filename', default='counts_by_year.csv',
+                        help="The CSV file containing total token counts by year at the dataset level")
+    parser.add_argument('--cbty', dest='cbty_filename', default='counts_by_topic_year.csv',
+                        help="The CSV file containing token counts by topic by year")
     parser.add_argument('--meta', dest='meta_filename', default='docmeta.csv',
                         help="The metadata file containing info about each document")
+    parser.add_argument('--date-format', dest='date_format', metavar='FORMAT', default='%Y-%m-%dT%H:%M:%SZ',
+                        help="Date format to interpret metadata publishDate (used with datetime.datetime.strptime)")
 
     args = parser.parse_args()
+    dataset_name = args.dataset_name
+    mongo_uri = args.mongo_uri
+    dbname = args.dbname
     dist_file = args.distance_filename
     docs_file = args.documents_filename
     state_file = args.state_filename
     tokens_file = args.tokens_filename
     topics_file = args.topics_filename
-    dataset_name = args.dataset_name
-    dbname = args.dbname
-    mongo_uri = args.mongo_uri
+    cby_file = args.cby_filename
+    cbty_file = args.cbty_filename
     meta_file = args.meta_filename
+    date_format = args.date_format
 
     if meta_file is not None and not os.path.exists(meta_file):
         sys.exit("File not found: " + meta_file)
 
-    for f in [dist_file, docs_file, state_file, tokens_file, topics_file]:
+    for f in [dist_file, docs_file, state_file, tokens_file, topics_file, cby_file, cbty_file]:
         if not os.path.exists(f):
             sys.exit("File not found: " + f)
 
-    run(dataset_name, dist_file, docs_file, meta_file, state_file, tokens_file, topics_file, dbname, mongo_uri)
+    run(dataset_name, mongo_uri, dbname, dist_file, docs_file, meta_file,
+        state_file, tokens_file, topics_file, cby_file, cbty_file, date_format)
