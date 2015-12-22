@@ -10,10 +10,9 @@ from bottle import Bottle, request, response, abort
 from bottle_mongo import MongoPlugin
 from bson import ObjectId
 from collections import defaultdict, Counter, OrderedDict
-from operator import itemgetter
 
 __author__ = "Boris Capitanu"
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 
 class EnableCors(object):
@@ -175,27 +174,11 @@ def get_corpus_token_counts_by_year(dataset_id, mongodb):
     :return: The corpus-level token counts by year
     """
     datasets = mongodb['datasets'].find_one({'_id': ObjectId(dataset_id)},
-                                            {'_id': False, 'documents': 1})
+                                            {'_id': False, 'tokenCountsByYear': 1})
     if datasets is None:
         abort(404, "Unknown dataset id: {}".format(dataset_id))
 
-    documents = datasets['documents']
-
-    state_docs = mongodb['state'].find({'datasetId': ObjectId(dataset_id)},
-                                       {'_id': False})
-    if state_docs is None:
-        abort(404, "Unknown dataset id: {}".format(dataset_id))
-
-    years = defaultdict(Counter)
-
-    for doc in state_docs:
-        publish_date = documents[doc['docId']]['publishDate']
-        year = publish_date.year if publish_date is not None else -1  # a bit ugly, but None breaks sorted(...)
-        doc_token_counts = zip(doc['tokens'], doc['counts'])
-        topic_token_counts = Counter(dict(doc_token_counts))
-        years[year].update(topic_token_counts)
-
-    token_counts_by_year = OrderedDict(sorted([(y, sum(c.values())) for y, c in years.items()], key=itemgetter(0)))
+    token_counts_by_year = OrderedDict(sorted((y, c) for y, c in datasets['tokenCountsByYear'].items()))
 
     return jsonp(token_counts_by_year)
 
@@ -222,7 +205,7 @@ def get_corpus_doc_counts_by_year(dataset_id, mongodb):
         year = publish_date.year if publish_date is not None else -1  # a bit ugly, but None breaks sorted(...)
         years[year] += 1
 
-    doc_counts_by_year = OrderedDict(sorted([(y, c) for y, c in years.items()], key=itemgetter(0)))
+    doc_counts_by_year = OrderedDict(sorted((y, c) for y, c in years.items()))
 
     return jsonp(doc_counts_by_year)
 
@@ -237,27 +220,22 @@ def get_topic_token_counts(dataset_id, topic_id, mongodb):
     :return: The token counts
     """
     datasets = mongodb['datasets'].find_one({'_id': ObjectId(dataset_id)},
-                                            {'_id': False, 'tokens': 1})
+                                            {'_id': 1})
     if datasets is None:
         abort(404, "Unknown dataset id: {}".format(dataset_id))
 
-    token_map = {t['tokenid']: t['token'] for t in datasets['tokens']}
-
-    topics = mongodb['topics'].find_one({'datasetId': ObjectId(dataset_id), 'topicId': topic_id},
-                                        {'_id': False, 'keywords': 1})
-    if topics is None:
+    topic = mongodb['topics'].find_one({'datasetId': ObjectId(dataset_id), 'topicId': topic_id},
+                                        {'_id': False, 'keywords': 1, 'keywordCountsByYear': 1})
+    if topic is None:
         abort(404, "Unknown topic id: {}".format(topic_id))
 
-    state_docs = mongodb['state'].find({'datasetId': ObjectId(dataset_id), 'topicId': topic_id},
-                                       {'_id': False})
-
-    topic_keywords = topics['keywords']
+    topic_keywords = topic['keywords']
+    kw_cnt_by_year = topic['keywordCountsByYear']
 
     token_counts = Counter()
-    for doc in state_docs:
-        tokens = [token_map[tid] for tid in doc['tokens']]
-        doc_token_counts = Counter(dict(zip(tokens, doc['counts'])))
-        token_counts.update(doc_token_counts)
+    for _, year_token_counts in kw_cnt_by_year.items():
+        year_token_counts = dict(zip(year_token_counts['keywords'], year_token_counts['counts']))
+        token_counts.update(year_token_counts)
 
     token_counts = [[word, token_counts[word]] for word in topic_keywords]
 
@@ -280,12 +258,12 @@ def get_topic_doc_prominence(dataset_id, topic_id, mongodb):
 
     documents = datasets['documents']
 
-    topics = mongodb['topics'].find_one({'datasetId': ObjectId(dataset_id), 'topicId': topic_id},
-                                        {'_id': False, 'docAllocation': 1})
-    if topics is None:
+    topic = mongodb['topics'].find_one({'datasetId': ObjectId(dataset_id), 'topicId': topic_id},
+                                       {'_id': False, 'docAllocation': 1})
+    if topic is None:
         abort(404, "Unknown topic id: {}".format(topic_id))
 
-    topic_alloc_per_doc = list(enumerate(topics['docAllocation']))
+    topic_alloc_per_doc = list(enumerate(topic['docAllocation']))
     max_results = request.query.limit or None
     if max_results is not None:
         max_results = int(max_results)
@@ -315,31 +293,17 @@ def get_topic_token_counts_by_year(dataset_id, topic_id, mongodb):
     :return: The topic-level token counts by year for the given topic_id
     """
     datasets = mongodb['datasets'].find_one({'_id': ObjectId(dataset_id)},
-                                            {'_id': False, 'documents': 1, 'tokens': 1})
+                                            {'_id': 1})
     if datasets is None:
         abort(404, "Unknown dataset id: {}".format(dataset_id))
 
-    documents = datasets['documents']
-    token_map = {t['id']: t['token'] for t in datasets['tokens']}
-
-    topics = mongodb['topics'].find_one({'datasetId': ObjectId(dataset_id), 'topicId': topic_id},
-                                        {'_id': False, 'keywords': 1})
-    if topics is None:
+    topic = mongodb['topics'].find_one({'datasetId': ObjectId(dataset_id), 'topicId': topic_id},
+                                       {'_id': False, 'keywordCountsByYear': 1})
+    if topic is None:
         abort(404, "Unknown topic id: {}".format(topic_id))
 
-    state_docs = mongodb['state'].find({'datasetId': ObjectId(dataset_id), 'topicId': topic_id},
-                                       {'_id': False})
-
-    topic_keywords = set(topics['keywords'])
-
-    years = defaultdict(Counter)
-    for doc in state_docs:
-        publish_date = documents[doc['docId']]['publishDate']
-        year = publish_date.year if publish_date is not None else None
-        tokens = [token_map[tid] for tid in doc['tokens']]
-        doc_token_counts = zip(tokens, doc['counts'])
-        topic_token_counts = Counter({t: c for t, c in doc_token_counts if t in topic_keywords})
-        years[year].update(topic_token_counts)
+    years = {year: dict(zip(kw_counts['keywords'], kw_counts['counts']))
+             for year, kw_counts in topic['keywordCountsByYear'].items()}
 
     return jsonp(years)
 
