@@ -54,7 +54,7 @@ CORS support is already enabled, and currently allows requests from anywhere (bu
   ```
 * **`GET /datasets/<dataset_id>/token_counts_by_year`**
   * Retrieves the token counts by year at the corpus level
-  * Example response (note that `-1` is a placeholder for documents with missing `year` metadata.`):
+  * Example response (note that `-1` is a placeholder for documents with missing `year` metadata.):
   ```
   {"-1": 6464, "1800": 3452, "1812": 7668, "1820": 937, "1821": 5415, ...}
   ```
