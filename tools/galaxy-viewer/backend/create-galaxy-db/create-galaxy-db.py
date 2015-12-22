@@ -168,6 +168,7 @@ def run(dataset_name, mongo_uri, dbname, dist_file, docs_file, meta_file,
 
     try:
         for topic_id, topic_state in state.groupby(level=0):
+            print("Adding topic {}...".format(topic_id), end='', flush=True)
             topic_docs = [{
                               'datasetId': dataset_id,
                               'topicId': topic_id.item(),
@@ -198,7 +199,9 @@ def run(dataset_name, mongo_uri, dbname, dist_file, docs_file, meta_file,
 
             db.topics.insert_one(t)
             db.state.insert_many(topic_docs)
+            print("done, {:,} topic docs".format(len(topic_docs)))
 
+        print("Creating indexes...", end='', flush=True)
         topic_composite_idx = IndexModel([
             ('datasetId', ASCENDING),
             ('topicId', ASCENDING)
@@ -213,8 +216,9 @@ def run(dataset_name, mongo_uri, dbname, dist_file, docs_file, meta_file,
         ], name='dataset_state', unique=True)
 
         db.state.create_indexes([state_composite_idx])
+        print("done")
 
-        print("All done.")
+        print("Finished.")
     except:
         traceback.print_exc(file=sys.stderr)
         # remove the partial dataset if an error occurred
