@@ -1,6 +1,7 @@
 var app = {
     // Database api
-    url: "http://sandbox.htrc.illinois.edu:6001",
+    //url: "http://sandbox.htrc.illinois.edu:6001",
+    url: undefined,
 
     //d3 static scales.
     force: d3.layout.force(),
