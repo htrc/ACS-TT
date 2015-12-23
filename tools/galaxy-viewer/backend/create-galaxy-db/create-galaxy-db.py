@@ -3,6 +3,8 @@
 
 import argparse
 import io
+import json
+import math
 import os
 import sys
 import traceback
@@ -16,7 +18,7 @@ from pymongo import IndexModel, ASCENDING
 remove_dataset = __import__('remove-dataset')  # needed due to the dash in the file name
 
 __author__ = "Boris Capitanu"
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 
 
 def load_distances(filename):
@@ -82,10 +84,17 @@ def parse_as_date(d, date_format):
         return None
 
 
+def replace_nan_with_none(o):
+    if isinstance(o, float):
+        return o if not math.isnan(o) else None
+    else:
+        return list(map(lambda n: n if not math.isnan(n) else None, o))
+
+
 def run(dataset_name, mongo_uri, dbname, dist_file, docs_file, meta_file,
         state_file, tokens_file, topics_file, cby_file, cbty_file, date_format):
     print("Loading %s..." % dist_file, end='', flush=True)
-    distances = load_distances(dist_file).tolist()
+    distances = load_distances(dist_file)
     print("done")
 
     print("Loading %s..." % docs_file, end='', flush=True)
@@ -140,9 +149,9 @@ def run(dataset_name, mongo_uri, dbname, dist_file, docs_file, meta_file,
 
     num_kw_per_topic = topics.columns.str.startswith('key.').sum()
 
-    # convert the publishDate into a real datetime object
-    documents = doc_meta.to_dict(orient='records')
+    documents = json.loads(doc_meta.to_json(orient='records'))  # need this to convert NaN into None for JSON compat.
     for doc in documents:
+        # convert the publishDate into a real datetime object
         doc['publishDate'] = parse_as_date(doc['publishDate'], date_format)
 
     print("Dataset: {}".format(dataset_name))
@@ -157,8 +166,8 @@ def run(dataset_name, mongo_uri, dbname, dist_file, docs_file, meta_file,
         'numTopics': num_topics,
         'numTokens': num_tokens,
         'tokens': token_map['token'].values.tolist(),
-        'distances': distances,
-        'centerDist': topics['dist'].values.tolist(),
+        'distances': replace_nan_with_none(distances.tolist()),
+        'centerDist': replace_nan_with_none(topics['dist'].values.tolist()),
         'documents': documents,
         'tokenCountsByYear': corpus_token_counts_by_year.to_dict()['count']
     }
@@ -183,11 +192,11 @@ def run(dataset_name, mongo_uri, dbname, dist_file, docs_file, meta_file,
             t = {
                 'datasetId': dataset_id,
                 'topicId': topic_id.item(),
-                'alpha': topic['alpha'].item(),
-                'trend': topic['trend'].item(),
-                'mean': topic['mean'].item(),
+                'alpha': replace_nan_with_none(topic['alpha'].item()),
+                'trend': replace_nan_with_none(topic['trend'].item()),
+                'mean': replace_nan_with_none(topic['mean'].item()),
                 'keywords': topic_keywords,
-                'docAllocation': topic_doc_allocation,
+                'docAllocation': replace_nan_with_none(topic_doc_allocation),
                 'keywordCountsByYear': {
                     year: {
                         'keywords': counts['token'].values.tolist(),
