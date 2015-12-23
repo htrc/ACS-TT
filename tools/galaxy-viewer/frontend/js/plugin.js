@@ -38,6 +38,12 @@ function timeGraph(svg, data) {
 
     svg.attr("class", "timeGraph");
 
+    // Filter out invalid dates
+    data = data.filter(function (d) {
+        return !isNaN(d.date.getTime());
+    });
+
+    // Create line
     d3.set(data.map(function (d) { return d.id;}))
         .values()
         .forEach(function (title) {
@@ -133,7 +139,13 @@ function timeGraph(svg, data) {
 
     nodes
         .attr("d", function (d) {return linegen(d); })
-        .style("stroke", function (d) {return d[0].color; });
+        .style("stroke", function (d) {
+            if (d.length > 0) {
+                return d[0].color;
+            } else {
+                return "white";
+            }
+        });
 }
 
 // Main update function.
@@ -284,8 +296,9 @@ var updateDocuments = complexGraph("/doc_prominence", "documentviz", function (s
         });
 
     viz.on("click", function (d) {
-        if (d.id.indexOf(".") === 3) {
-            window.open("http://babel.hathitrust.org/cgi/pt?id=" + d.id, '_blank');
+        if (isNaN(parseInt(d.id.charAt(0)))) {
+            var url = "http://babel.hathitrust.org/cgi/pt?id=" + d.id;
+            window.open(url, '_blank');
         }
     });
 

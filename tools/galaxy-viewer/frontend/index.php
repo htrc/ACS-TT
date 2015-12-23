@@ -111,5 +111,16 @@
         <aside id="tooltip">
         </aside>
 
+        <script>
+            <?php
+            if (isset($_GET['d'])) {
+                $url = $_GET['d'];
+            } else {
+                $url = "http://sandbox.htrc.illinois.edu:6001";
+            }
+
+            echo "app.url = '$url';";
+            ?>
+        </script>
     </body>
 </html>
