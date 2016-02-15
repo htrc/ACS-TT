@@ -339,11 +339,11 @@ if __name__ == '__main__':
     mongo_plugin = MongoPlugin(uri='mongodb://%s' % args.db_host, db=args.db_name, json_mongo=True)
 
     app.install(mongo_plugin)
+    app.debug = args.debug
 
     handlers = [ TimedRotatingFileHandler(args.logfile, 'd', 7) , ]
     wsgi_logger = WSGILogger(app, handlers, ApacheFormatter())
 
     server = make_server(args.host, args.port, wsgi_logger, handler_class=NoLoggingWSGIRequestHandler)
     server.serve_forever()
-    #app.run(server=server, debug=args.debug)
 
