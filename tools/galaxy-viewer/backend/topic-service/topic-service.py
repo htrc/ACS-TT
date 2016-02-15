@@ -6,14 +6,21 @@ a set of API calls for retrieving required data from the associated MongoDB data
 
 """
 
-from bottle import Bottle, request, response, abort
+from bottle import Bottle, request, response, abort, run
 from bottle_mongo import MongoPlugin
 from bson import ObjectId
 from collections import defaultdict, Counter, OrderedDict
+from requestlogger import WSGILogger, ApacheFormatter
+from logging.handlers import TimedRotatingFileHandler
+from wsgiref.simple_server import make_server, WSGIRequestHandler
 
 __author__ = "Boris Capitanu"
-__version__ = "1.1.0"
+__version__ = "1.1.1"
 
+
+class NoLoggingWSGIRequestHandler(WSGIRequestHandler):
+    def log_message(self, format, *args):
+        pass
 
 class EnableCors(object):
     """BottlePy plugin for enabling CORS"""
@@ -325,9 +332,18 @@ if __name__ == '__main__':
                         help="The name of the database containing the GalaxyViewer data")
     parser.add_argument('--debug', dest='debug', action='store_true',
                         help="Enable debug mode")
+    parser.add_argument('--log', metavar='logfile', dest='logfile', default='access.log',
+                        help="Access log file location")
     args = parser.parse_args()
 
     mongo_plugin = MongoPlugin(uri='mongodb://%s' % args.db_host, db=args.db_name, json_mongo=True)
 
     app.install(mongo_plugin)
-    app.run(host=args.host, port=args.port, debug=args.debug)
+
+    handlers = [ TimedRotatingFileHandler(args.logfile, 'd', 7) , ]
+    wsgi_logger = WSGILogger(app, handlers, ApacheFormatter())
+
+    server = make_server(args.host, args.port, wsgi_logger, handler_class=NoLoggingWSGIRequestHandler)
+    server.serve_forever()
+    #app.run(server=server, debug=args.debug)
+
