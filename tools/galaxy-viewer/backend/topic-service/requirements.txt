@@ -1,4 +1,4 @@
-bottle==0.12.9
+bottle==0.12.19
 bottle-mongo==0.3.0
 pymongo==3.1.1
 wsgi-request-logger==0.4.4
